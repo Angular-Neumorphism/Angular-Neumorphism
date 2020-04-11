@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  background: #f0f0f3;
+  box-shadow: 2px 2px 5px rgba(174, 174, 192, 0.4), -2px -2px 5px #ffffff;
+  border-radius: 2rem;
+}
+
+.title {
+  margin: 2.5rem 0 1.5rem 2rem;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  text-transform: capitalize;
+  color: #575a63;
+}
+
+.text {
+  margin: 0 2rem 4rem 2rem;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: rgba(87, 90, 99, 0.75);
+}

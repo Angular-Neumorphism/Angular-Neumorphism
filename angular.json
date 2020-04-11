@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Angular-Neumorphism"
+    }
+  },
+  "defaultProject": "Angular-Neumorphism",
+  "cli": {
+    "analytics": false
+  }
 }

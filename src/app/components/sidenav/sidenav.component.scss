@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 100%;
+}
+.menu-wrapper {
+  display: flex;
+  flex: 1;
+  height: auto;
+  background: #e8e9ed;
+  box-shadow: inset 2px 2px 5px rgba(174, 174, 192, 0.4),
+    inset -2px -2px 5px #ffffff;
+  border-radius: 20px;
+  margin: 4rem 0 0 5rem;
+  padding: 1.6rem;
+}
+

@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "./dist/Angular-Neumorphism",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "./dist/Angular-Neumorphism/index.html"
+      }
+    ]
+  }
+}
