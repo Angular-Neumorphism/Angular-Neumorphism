@@ -11,6 +11,7 @@ import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     CardComponent,
     ExpansionPanelComponent,
     LandingComponent,
-    SidenavComponent
+    SidenavComponent,
+    CheckboxComponent
   ],
   imports: [
     BrowserModule,
