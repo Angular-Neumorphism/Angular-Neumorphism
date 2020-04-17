@@ -11,8 +11,10 @@
 .neo-button {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  padding: 1.2rem 1.6rem;
+  padding: 0 1.6rem;
   width: auto;
   height: 4rem;
   color: #ffffff;
@@ -58,8 +60,15 @@
 }
 
 .neo-button:active::before {
-  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
 }
 .neo-button:active::after {
+  box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
+}
+
+.neo-button:focus::before {
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+.neo-button:focus::after {
   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
 }

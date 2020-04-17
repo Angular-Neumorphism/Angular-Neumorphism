@@ -4,14 +4,36 @@
   min-height: 100%;
 }
 .menu-wrapper {
+  position: relative;
   display: flex;
   flex: 1;
   height: auto;
-  background: #e8e9ed;
-  box-shadow: inset 2px 2px 5px rgba(174, 174, 192, 0.4),
-    inset -2px -2px 5px #ffffff;
+  background: #ebebeb;
   border-radius: 20px;
+
   margin: 4rem 0 0 5rem;
   padding: 1.6rem;
+ 
 }
 
+.menu-wrapper::before,
+.menu-wrapper::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.menu-wrapper::before {
+  mix-blend-mode: color-burn;
+  box-shadow: inset 1px 1px 3px rgba(34, 34, 34, 0.1);
+}
+
+.menu-wrapper::after {
+  mix-blend-mode: color-burn;
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.1);
+}

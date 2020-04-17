@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,7 +18,11 @@ $Angular-Neumorphism-accent: mat-palette($mat-pink, A200, A100, A400);
 $Angular-Neumorphism-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$Angular-Neumorphism-theme: mat-light-theme($Angular-Neumorphism-primary, $Angular-Neumorphism-accent, $Angular-Neumorphism-warn);
+$Angular-Neumorphism-theme: mat-light-theme(
+  $Angular-Neumorphism-primary,
+  $Angular-Neumorphism-accent,
+  $Angular-Neumorphism-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -33,12 +36,29 @@ html,
 body {
   height: 100%;
   margin: 0;
-  background-color: #f0f0f3;
+  background-color: #f3f3f3;
   font-size: 10px;
-  color: #575A63;
+  color: #575a63;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
+::-webkit-scrollbar {
+  width: 1rem;
+}
 
+::-webkit-scrollbar-thumb {
+  background: #8c8c8c;
+  box-shadow: 1px 1px 2px rgba(34, 34, 34, 0.2),
+    -1px -1px 2px rgba(255, 255, 255, 0.5),
+    inset -1px -1px 2px rgba(34, 34, 34, 0.3), inset 1px 1px 2px #ffffff;
+  border-radius: 50px;
+  background-clip: content-box;
+}

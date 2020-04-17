@@ -7,6 +7,8 @@
   border-radius: 0px 0px 20px 20px;
   padding: 0 68px;
   background: #2086ed;
+  box-sizing: border-box;
+  justify-self: flex-end;
 }
 
 .menu::before,
@@ -72,4 +74,23 @@
 
 .menu-button {
   margin: 0 12px;
+}
+
+.github-logo{
+  margin-right: 1rem;
+}
+
+.spacer{
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.guthub-button:active .shadow{
+  transform: scale(0.95);
+  }
+
+.shadow {
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6)) drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6)) drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
 }
