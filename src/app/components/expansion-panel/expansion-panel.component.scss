@@ -55,6 +55,13 @@
 }
 
 .item {
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  cursor: pointer;
   min-height: 4rem;
   display: flex;
   align-items: center;
@@ -78,4 +85,9 @@
 
 ::ng-deep .header > .mat-expansion-indicator:after {
   color: #474747;
+}
+
+.disabled{
+  cursor: default;
+  opacity: .5;
 }

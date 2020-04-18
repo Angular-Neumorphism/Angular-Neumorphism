@@ -11,7 +11,15 @@ import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { CheckboxComponent } from './components/checkbox/checkbox.component';
+import { ButtonsComponent } from './conteiners/buttons/buttons.component';
+import { CategoriesComponent } from './conteiners/categories/categories.component';
+import { InputsComponent } from './conteiners/inputs/inputs.component';
+import { RadiobuttonsComponent } from './conteiners/radiobuttons/radiobuttons.component';
+import { CheckboxesComponent } from './conteiners/checkboxes/checkboxes.component';
+import { TogglebuttonComponent } from './conteiners/togglebutton/togglebutton.component';
+import { CardpageComponent } from './conteiners/cardpage/cardpage.component';
+import { DividerComponent } from './conteiners/divider/divider.component';
+import { ExpansionpageComponent } from './conteiners/expansionpage/expansionpage.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +30,15 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
     ExpansionPanelComponent,
     LandingComponent,
     SidenavComponent,
-    CheckboxComponent
+    ButtonsComponent,
+    CategoriesComponent,
+    InputsComponent,
+    RadiobuttonsComponent,
+    CheckboxesComponent,
+    TogglebuttonComponent,
+    CardpageComponent,
+    DividerComponent,
+    ExpansionpageComponent
   ],
   imports: [
     BrowserModule,

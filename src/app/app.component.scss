@@ -1,5 +1,21 @@
 :host {
     height: 100%;
     width: 100%;
-    display: block;
 }
+
+.main-wrapper{
+    width: 100%;
+    height: calc(100% - 8rem);
+    display: flex;
+}
+
+.content-wrapper{
+    width: 85%;
+    box-sizing: border-box;
+}
+
+.sidenav {
+    width: 15%;
+    height: fit-content;
+    box-sizing: border-box;
+  }

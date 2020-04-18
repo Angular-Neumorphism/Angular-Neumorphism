@@ -1,4 +1,4 @@
-.button-reset {
+.neo-button {
   cursor: pointer;
   outline: none;
   border: none;
@@ -6,9 +6,7 @@
   &::-moz-focus-inner {
     border: 0;
   }
-}
-
-.neo-button {
+  background-color: inherit;
   position: relative;
   display: flex;
   justify-content: center;
@@ -17,8 +15,6 @@
   padding: 0 1.6rem;
   width: auto;
   height: 4rem;
-  color: #ffffff;
-  background: #2086ed;
   border-radius: 8px;
   font-family: Open Sans;
   font-style: normal;
@@ -30,8 +26,16 @@
   mix-blend-mode: normal;
 }
 
-.neo-button::before,
-.neo-button::after {
+/**********basic**************/
+
+.basic {
+  color: #474747;
+  background: linear-gradient(117.15deg, #F5F5F5 0%, #F3F3F3 100%);
+
+}
+
+.basic::before,
+.basic::after {
   pointer-events: none;
   content: "";
   position: absolute;
@@ -42,33 +46,208 @@
   border-radius: inherit;
 }
 
-.neo-button::before {
+.basic::before {
+  mix-blend-mode: soft-light;
+  box-shadow: -1px -1px 3px rgba(255, 255, 255, 1);
+}
+
+.basic::after {
+  mix-blend-mode: color-burn;
+  box-shadow: 4px 4px 8px rgba(34, 34, 34, 0.4);
+}
+
+.basic:hover::before {
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.8);
+}
+.basic:hover::after {
+  box-shadow: 2px 2px 6px rgba(34, 34, 34, 0.4);
+}
+
+.basic:active::before {
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.9);
+}
+.basic:active::after {
+  box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.4);
+}
+
+.basic:focus::before {
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+}
+.basic:focus::after {
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.4);
+}
+
+/**********primary**************/
+.primary {
+  color: #ffffff;
+  background: #2086ed;
+}
+
+.primary:active {
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.03),
+      rgba(34, 34, 34, 0.03)
+    ),
+    #2086ed;
+}
+
+.primary:focus {
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.03),
+      rgba(34, 34, 34, 0.03)
+    ),
+    #2086ed;
+}
+
+.primary::before,
+.primary::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.primary::before {
   mix-blend-mode: soft-light;
   box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.3);
 }
 
-.neo-button::after {
+.primary::after {
   mix-blend-mode: color-burn;
   box-shadow: 5px 5px 10px rgba(34, 34, 34, 0.2);
 }
 
-.neo-button:hover::before {
+.primary:hover::before {
   box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.3);
 }
-.neo-button:hover::after {
+.primary:hover::after {
   box-shadow: 2px 2px 6px rgba(34, 34, 34, 0.2);
 }
 
-.neo-button:active::before {
+.primary:active::before {
   box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
 }
-.neo-button:active::after {
+.primary:active::after {
   box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
 }
 
-.neo-button:focus::before {
+.primary:focus::before {
   box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
 }
-.neo-button:focus::after {
+.primary:focus::after {
   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+}
+
+/**********warn**************/
+.warn {
+  color: #ffffff;
+  background: #f84f5a;
+}
+
+.warn:active {
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.03),
+      rgba(34, 34, 34, 0.03)
+    ),
+    #f84f5a;
+}
+
+.warn:focus {
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.03),
+      rgba(34, 34, 34, 0.03)
+    ),
+    #f84f5a;
+}
+
+.warn::before,
+.warn::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.warn::before {
+  mix-blend-mode: soft-light;
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.3);
+}
+
+.warn::after {
+  mix-blend-mode: color-burn;
+  box-shadow: 5px 5px 10px rgba(34, 34, 34, 0.2);
+}
+
+.warn:hover::before {
+  box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.3);
+}
+.warn:hover::after {
+  box-shadow: 2px 2px 6px rgba(34, 34, 34, 0.2);
+}
+
+.warn:active::before {
+  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+.warn:active::after {
+  box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
+}
+
+.warn:focus::before {
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+.warn:focus::after {
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+}
+
+/**********disabled**************/
+
+.disabled {
+  opacity: 0.5;
+  cursor: initial;
+}
+
+.disabled::before,
+.disabled::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.disabled::before {
+  mix-blend-mode: soft-light;
+  box-shadow: -2px -2px 5px #ffffff;
+}
+
+.disabled::after {
+  mix-blend-mode: color-burn;
+  box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.4);
+}
+
+.disabled.basic:hover::before,
+.disabled.primary:hover::before,
+.disabled.warn:hover::before {
+  box-shadow: -2px -2px 5px #ffffff;
+}
+
+.disabled.basic:hover::after,
+.disabled.primary:hover::after,
+.disabled.warn:hover::after {
+  box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.4);
 }

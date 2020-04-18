@@ -1,0 +1,97 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 4rem 4rem 4rem 4rem;
+}
+
+.card {
+  width: 80%;
+  height: 50%;
+}
+
+.text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.container {
+  margin: 0 3rem;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 30px;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background: #f3f3f3;
+  box-shadow: inset -1px -1px 2px #ffffff,
+    inset 1px 1px 2px rgba(34, 34, 34, 0.5);
+  border-radius: 50%;
+}
+
+input:checked ~ .checkmark{
+    box-shadow: inset -2px -2px 4px #FFFFFF, inset 2px 2px 4px rgba(34, 34, 34, 0.5);
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    box-shadow: inset -2px -2px 4px #FFFFFF, inset 2px 2px 4px rgba(34, 34, 34, 0.5);
+}
+
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  top: calc(50% - 5px);
+  left: calc(50% - 5px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2086ED;
+}

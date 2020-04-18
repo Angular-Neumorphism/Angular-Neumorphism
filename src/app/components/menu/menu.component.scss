@@ -73,24 +73,41 @@
 }
 
 .menu-button {
+  position: relative;
   margin: 0 12px;
+
 }
 
-.github-logo{
+
+.github-logo {
   margin-right: 1rem;
 }
 
-.spacer{
+.spacer {
   display: flex;
   flex: 1;
   height: 100%;
 }
 
-.guthub-button:active .shadow{
+.guthub-button:active .shadow {
   transform: scale(0.95);
-  }
+}
 
 .shadow {
-  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6)) drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6)) drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: pointer;
 }

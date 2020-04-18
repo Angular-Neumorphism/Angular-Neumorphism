@@ -1,0 +1,35 @@
+<div class="text">
+  mat-radio-button provides the same functionality as a native input
+  type="radio" enhanced with Material Design styling and animations.
+</div>
+<app-card class="card"
+  ><span title>Expansion panel</span>
+  <span text>Controls that collect and validate user input.</span>
+  <mat-accordion multi="true" class="accordion">
+    <mat-expansion-panel class="panel">
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Self aware panel
+        </mat-panel-title>
+        <mat-panel-description>
+          <mat-panel-description>
+            Type your name and age
+          </mat-panel-description>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="item">I'm visible because I am open</div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="panel">
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="item">Menu</div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</app-card>

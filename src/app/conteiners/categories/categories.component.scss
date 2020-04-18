@@ -1,0 +1,28 @@
+.main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .text {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: #474747;
+    margin: 4rem 4rem 4rem 4rem;
+  }
+  
+  .cardblock {
+    margin: 0 0 0 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+  }
+  
+  .card {
+    height: 15rem;
+    margin: 4rem 4rem 0 0;
+    max-width: 27rem;
+    min-width: 22rem;
+  }

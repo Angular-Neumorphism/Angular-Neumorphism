@@ -1,0 +1,132 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 4rem 4rem 4rem 4rem;
+}
+
+.card {
+  width: 80%;
+  height: 50%;
+}
+
+.text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
+
+.example-form {
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+}
+
+.form-wrapper {
+  height: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+}
+//**************input text*************//@extend
+
+input[type="text"] {
+  padding: 0 12px;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  background: #f3f3f3;
+  box-shadow: inset 1px 1px 2px rgba(34, 34, 34, 0.3),
+    inset -1px -1px 2px #ffffff;
+  border-radius: 10px;
+  width: 180px;
+  height: 40px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(71, 71, 71);
+}
+
+input[type="text"]:hover {
+  box-shadow: inset 2px 2px 4px rgba(34, 34, 34, 0.3),
+    inset -2px -2px 5px #ffffff;
+}
+
+input[type="text"]:focus {
+  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
+    inset -4px -4px 8px #ffffff;
+}
+
+input[type="text"]::placeholder {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: rgba(71, 71, 71, 0.6);
+}
+
+textarea#neoMorph {
+  padding: 12px;
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  background: #f3f3f3;
+  box-shadow: inset 1px 1px 2px rgba(34, 34, 34, 0.4),
+    inset -1px -1px 2px #ffffff;
+  border-radius: 10px;
+  width: 180px;
+  height: 40px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(71, 71, 71);
+}
+
+textarea#neoMorph::placeholder {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: capitalize;
+  color: rgba(71, 71, 71, 0.6);
+}
+
+textarea#neoMorph:hover {
+  box-shadow: inset 2px 2px 4px rgba(34, 34, 34, 0.3),
+    inset -2px -2px 5px #ffffff;
+}
+
+textarea#neoMorph:focus {
+  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
+    inset -4px -4px 8px #ffffff;
+}
+
+.label {
+  margin: 0 0 .5rem .5rem;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #474747;
+}
