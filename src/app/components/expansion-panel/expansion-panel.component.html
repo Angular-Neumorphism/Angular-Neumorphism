@@ -1,74 +1,179 @@
 <mat-accordion multi="true" class="accordion">
-  <mat-expansion-panel expanded="true" class="panel">
-    <mat-expansion-panel-header class="header">
-      <mat-panel-title class="title">
-        Form controls
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div routerLink="/checkbox" class="item">Checkbox</div>
-    <div class="divider"></div>
-    <div routerLink="/input" class="item">Input</div>
-    <div class="divider"></div>
-    <div routerLink="/radiobutton" class="item">Radio button</div>
-    <div class="divider"></div>
-    <div class="item disabled">Select</div>
-    <div class="divider"></div>
-    <div routerLink="/togglebutton" class="item">Slide toggle</div>
-  </mat-expansion-panel>
+  <div class="shadow-wrapper">
+    <mat-expansion-panel
+      hideToggle="true"
+      expanded="false"
+      class="panel mat-elevation-z0"
+    >
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Form controls
+        </mat-panel-title>
+        <div class="toggle">
+          <svg
+            class="shadow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
 
-  <mat-expansion-panel expanded="true" class="panel">
-    <mat-expansion-panel-header class="header">
-      <mat-panel-title class="title">
-        Navigation
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="item disabled">Menu</div>
-    <div class="divider"></div>
-    <div class="item disabled">Sidenav</div>
-    <div class="divider"></div>
-    <div class="item disabled">Toolbar</div>
-  </mat-expansion-panel>
+              fill="#474747"
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        </div>
+      </mat-expansion-panel-header>
+      <div routerLink="/checkbox" class="item">Checkbox</div>
+      <div class="divider"></div>
+      <div routerLink="/input" class="item">Input</div>
+      <div class="divider"></div>
+      <div routerLink="/radiobutton" class="item">Radio button</div>
+      <div class="divider"></div>
+      <div class="item disabled">Select</div>
+      <div class="divider"></div>
+      <div routerLink="/togglebutton" class="item">Slide toggle</div>
+    </mat-expansion-panel>
+  </div>
 
-  <mat-expansion-panel expanded="true" class="panel">
-    <mat-expansion-panel-header class="header">
-      <mat-panel-title class="title">
-        Layout
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div routerLink="/card" class="item">Card</div>
-    <div class="divider"></div>
-    <div routerLink="/divider" class="item">Divider</div>
-    <div class="divider"></div>
-    <div routerLink="/expansion" class="item">Expansion panel</div>
-    <div class="divider"></div>
-    <div class="item disabled">List</div>
-    <div class="divider"></div>
-    <div class="item disabled">Tabs</div>
-  </mat-expansion-panel>
+  <div class="shadow-wrapper">
+    <mat-expansion-panel
+      hideToggle="true"
+      expanded="true"
+      class="panel mat-elevation-z0"
+    >
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Navigation
+        </mat-panel-title>
+        <div class="toggle">
+          <svg
+            class="shadow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              fill="#474747"
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        </div>
+      </mat-expansion-panel-header>
+      <div class="item disabled">Menu</div>
+      <div class="divider"></div>
+      <div class="item disabled">Sidenav</div>
+      <div class="divider"></div>
+      <div class="item disabled">Toolbar</div>
+    </mat-expansion-panel>
+  </div>
 
-  <mat-expansion-panel expanded="true" class="panel">
-    <mat-expansion-panel-header class="header">
-      <mat-panel-title class="title">
-        Buttons & Indicators
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div routerLink="/buttons" class="item">Button</div>
-    <div class="divider"></div>
-    <div class="item disabled">Badge</div>
-    <div class="divider"></div>
-    <div class="item disabled">Chips</div>
-  </mat-expansion-panel>
+  <div class="shadow-wrapper">
+    <mat-expansion-panel
+      hideToggle="true"
+      expanded="true"
+      class="panel mat-elevation-z0"
+    >
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Layout
+        </mat-panel-title>
+        <div class="toggle">
+          <svg
+            class="shadow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              fill="#474747"
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        </div>
+      </mat-expansion-panel-header>
+      <div routerLink="/card" class="item">Card</div>
+      <div class="divider"></div>
+      <div routerLink="/divider" class="item">Divider</div>
+      <div class="divider"></div>
+      <div routerLink="/expansion" class="item">Expansion panel</div>
+      <div class="divider"></div>
+      <div class="item disabled">List</div>
+      <div class="divider"></div>
+      <div class="item disabled">Tabs</div>
+    </mat-expansion-panel>
+  </div>
 
-  <mat-expansion-panel expanded="true" class="panel">
-    <mat-expansion-panel-header class="header">
-      <mat-panel-title class="title">
-        Popups & Modals
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <div class="item disabled">Snackbar</div>
-    <div class="divider"></div>
-    <div class="item disabled">Dialog</div>
-    <div class="divider"></div>
-    <div class="item disabled">Tooltip</div>
-  </mat-expansion-panel>
+  <div class="shadow-wrapper">
+    <mat-expansion-panel
+      hideToggle="true"
+      expanded="true"
+      class="panel mat-elevation-z0"
+    >
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Buttons & Indicators
+        </mat-panel-title>
+        <div class="toggle">
+          <svg
+            class="shadow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              fill="#474747"
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        </div>
+      </mat-expansion-panel-header>
+      <div routerLink="/buttons" class="item">Button</div>
+      <div class="divider"></div>
+      <div class="item disabled">Badge</div>
+      <div class="divider"></div>
+      <div class="item disabled">Chips</div>
+    </mat-expansion-panel>
+  </div>
+  <div class="shadow-wrapper">
+    <mat-expansion-panel
+      hideToggle="true"
+      expanded="true"
+      class="panel mat-elevation-z0"
+    >
+      <mat-expansion-panel-header class="header">
+        <mat-panel-title class="title">
+          Popups & Modals
+        </mat-panel-title>
+        <div class="toggle">
+          <svg
+            class="shadow"
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            viewBox="0 0 20 20"
+            width="20"
+          >
+            <path
+              fill="#474747"
+              d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+            />
+            <path d="M0 0h24v24H0z" fill="none" />
+          </svg>
+        </div>
+      </mat-expansion-panel-header>
+      <div class="item disabled">Snackbar</div>
+      <div class="divider"></div>
+      <div class="item disabled">Dialog</div>
+      <div class="divider"></div>
+      <div class="item disabled">Tooltip</div>
+    </mat-expansion-panel>
+  </div>
 </mat-accordion>

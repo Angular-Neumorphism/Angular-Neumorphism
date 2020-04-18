@@ -6,30 +6,65 @@
   ><span title>Expansion panel</span>
   <span text>Controls that collect and validate user input.</span>
   <mat-accordion multi="true" class="accordion">
-    <mat-expansion-panel class="panel">
-      <mat-expansion-panel-header class="header">
-        <mat-panel-title class="title">
-          Self aware panel
-        </mat-panel-title>
-        <mat-panel-description>
+    <div class="shadow-wrapper">
+      <mat-expansion-panel hideToggle="true" class="panel mat-elevation-z0">
+        <mat-expansion-panel-header class="header">
+          <mat-panel-title class="title">
+            Self aware panel
+          </mat-panel-title>
+          <mat-panel-description>
+            <mat-panel-description>
+              Type your name and age
+            </mat-panel-description>
+          </mat-panel-description>
+          <div class="toggle">
+            <svg
+              class="shadow"
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 0 20 20"
+              width="20"
+            >
+              <path
+  
+                fill="#474747"
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+          </div>
+        </mat-expansion-panel-header>
+        <div class="item">I'm visible because I am open</div>
+      </mat-expansion-panel>
+    </div>
+    <div class="shadow-wrapper">
+      <mat-expansion-panel hideToggle="true" class="panel mat-elevation-z0">
+        <mat-expansion-panel-header class="header">
+          <mat-panel-title class="title">
+            Personal data
+          </mat-panel-title>
           <mat-panel-description>
             Type your name and age
           </mat-panel-description>
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div class="item">I'm visible because I am open</div>
-    </mat-expansion-panel>
-
-    <mat-expansion-panel class="panel">
-      <mat-expansion-panel-header class="header">
-        <mat-panel-title class="title">
-          Personal data
-        </mat-panel-title>
-        <mat-panel-description>
-          Type your name and age
-        </mat-panel-description>
-      </mat-expansion-panel-header>
-      <div class="item">Menu</div>
-    </mat-expansion-panel>
+          <div class="toggle">
+            <svg
+              class="shadow"
+              xmlns="http://www.w3.org/2000/svg"
+              height="20"
+              viewBox="0 0 20 20"
+              width="20"
+            >
+              <path
+  
+                fill="#474747"
+                d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+              />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+          </div>
+        </mat-expansion-panel-header>
+        <div class="item">Menu</div>
+      </mat-expansion-panel>
+    </div>
   </mat-accordion>
 </app-card>

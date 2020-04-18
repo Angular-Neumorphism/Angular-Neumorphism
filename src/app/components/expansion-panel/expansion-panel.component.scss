@@ -6,23 +6,38 @@
   width: 100%;
 }
 
-.accordion:first-child{
-  margin-top: 0!important;
+.accordion:first-child {
+  margin-top: 0 !important;
+}
+
+.header{
+  padding: 0 10px 0 10px!important;
 }
 
 .panel {
+  position: relative;
   margin-bottom: 1rem;
   background: #f3f3f3;
   border-radius: 1rem !important;
-  box-shadow: 1px 1px 2px rgba(34, 34, 34, 0.2), -1px -1px 3px #FFFFFF;
 }
 
-.accordion:first-child{
-  margin-top: 0!important;
+.header:hover {
+  background: #f3f3f3 !important;
 }
 
-.panel::before,
-.panel::after {
+.accordion:first-child {
+  margin-top: 0 !important;
+}
+
+.shadow-wrapper {
+  position: relative;
+  height: auto;
+  width: auto;
+  border-radius: 1rem;
+}
+
+.shadow-wrapper::before,
+.shadow-wrapper::after {
   pointer-events: none;
   content: "";
   position: absolute;
@@ -33,15 +48,25 @@
   border-radius: inherit;
 }
 
-.panel::before {
+.shadow-wrapper::before {
   mix-blend-mode: color-burn;
-  box-shadow: -1px -1px 3px #ffffff!important;
+  box-shadow: -5px -5px 5px #ffffff;
 }
 
-// .panel::after {
-//   mix-blend-mode: color-burn;
-//   box-shadow: 1px 1px 2px rgba(63, 42, 42, 0.1)!important;
-// }
+.shadow-wrapper::after {
+  mix-blend-mode: color-burn;
+  box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2);
+}
+
+.shadow-wrapper:hover::before {
+  mix-blend-mode: color-burn;
+  box-shadow: -1px -1px 2px #ffffff;
+}
+
+.shadow-wrapper:hover::after {
+  mix-blend-mode: color-burn;
+  box-shadow: 1px 1px 2px rgba(34, 34, 34, 0.2);
+}
 
 .title {
   font-family: Open Sans;
@@ -87,7 +112,33 @@
   color: #474747;
 }
 
-.disabled{
+.disabled {
   cursor: default;
-  opacity: .5;
+  opacity: 0.5;
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(-1px -1px 1px #ffffff);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(-1px -1px 1px #ffffff);
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow {
+  transition: all 0.2s linear;
+  transform-origin: 60% 50%;
+}
+
+.mat-expanded.panel .shadow {
+  transform: rotate(-180deg);
+  -webkit-filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 1px #ffffff);
+  filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 1px #ffffff);
 }
