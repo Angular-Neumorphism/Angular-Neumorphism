@@ -20,6 +20,8 @@ import { TogglebuttonComponent } from './conteiners/togglebutton/togglebutton.co
 import { CardpageComponent } from './conteiners/cardpage/cardpage.component';
 import { DividerComponent } from './conteiners/divider/divider.component';
 import { ExpansionpageComponent } from './conteiners/expansionpage/expansionpage.component';
+import { SelectPageComponent } from './conteiners/select-page/select-page.component';
+import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-select.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ExpansionpageComponent } from './conteiners/expansionpage/expansionpage
     TogglebuttonComponent,
     CardpageComponent,
     DividerComponent,
-    ExpansionpageComponent
+    ExpansionpageComponent,
+    SelectPageComponent,
+    NeomorphSelectComponent
   ],
   imports: [
     BrowserModule,
