@@ -22,6 +22,8 @@ import { DividerComponent } from './conteiners/divider/divider.component';
 import { ExpansionpageComponent } from './conteiners/expansionpage/expansionpage.component';
 import { SelectPageComponent } from './conteiners/select-page/select-page.component';
 import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-select.component';
+import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
+import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-s
     DividerComponent,
     ExpansionpageComponent,
     SelectPageComponent,
-    NeomorphSelectComponent
+    NeomorphSelectComponent,
+    MenuPageComponent,
+    ToolbarPageComponent
   ],
   imports: [
     BrowserModule,

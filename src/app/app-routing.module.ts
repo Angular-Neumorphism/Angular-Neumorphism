@@ -10,7 +10,9 @@ import { TogglebuttonComponent } from './conteiners/togglebutton/togglebutton.co
 import { CardpageComponent } from './conteiners/cardpage/cardpage.component';
 import { DividerComponent} from './conteiners/divider/divider.component';
 import { ExpansionpageComponent} from './conteiners/expansionpage/expansionpage.component';
-import { SelectPageComponent} from './conteiners/select-page/select-page.component'
+import { SelectPageComponent} from './conteiners/select-page/select-page.component';
+import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
+import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
 
 const routes: Routes = [
   {
@@ -31,7 +33,9 @@ const routes: Routes = [
       { path: 'card', component: CardpageComponent },
       { path: 'divider', component: DividerComponent },
       { path: 'expansion', component: ExpansionpageComponent },
-      { path: 'select', component: SelectPageComponent }
+      { path: 'select', component: SelectPageComponent },
+      { path: 'menu', component: MenuPageComponent },
+      { path: 'toolbar', component: ToolbarPageComponent }
     ],
   },
 ];

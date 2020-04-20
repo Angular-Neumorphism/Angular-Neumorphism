@@ -1,0 +1,84 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 4rem 4rem 4rem 4rem;
+}
+
+.card {
+  width: 80%;
+  height: auto;
+}
+
+.text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.button {
+  width: 70px;
+  position: relative;
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+  width: 180px;
+  height: 40px;
+}
+
+.menu-items {
+  background: #f3f3f3;
+  width: 130px;
+  box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
+    inset -2px -2px 5px rgba(34, 34, 34, 0.3);
+  border-radius: 10px;
+  position: absolute;
+  background: #f3f3f3;
+  top: 120%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.menu-items div {
+  text-align: left;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: rgba(71, 71, 71);
+  padding: 13px 16px;
+  cursor: pointer;
+  text-transform: none;
+}
+
+.menu-items div:first-of-type {
+  border-radius: 10px 10px 0 0;
+}
+
+.menu-items div:last-of-type {
+  border-radius: 0 0 10px 10px;
+}
+
+
+.menu-items div:hover,
+.same-as-selected {
+  background-color: rgba(34, 34, 34, 0.05);
+  box-shadow: inset 5px 0 3px -2.5px #ffffff;
+}
