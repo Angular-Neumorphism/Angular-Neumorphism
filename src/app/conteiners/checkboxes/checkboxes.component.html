@@ -1,18 +1,59 @@
 <div class="text">
-    mat-radio-button provides the same functionality as a native input type="radio" enhanced with Material Design styling and animations.
+  mat-radio-button provides the same functionality as a native input
+  type="radio" enhanced with Material Design styling and animations.
 </div>
 <app-card class="card"
   ><span title>Checkboxes</span>
   <span text>Controls that collect and validate user input.</span>
   <div class="wrapper">
-    <label class="container">One
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-      
-      <label class="container">Two
-        <input type="checkbox">
-        <span class="checkmark"></span>
-      </label>
+    <label class="container"
+      ><div class="checkbox-text">Option one</div>
+      <input type="checkbox" checked="checked" />
+      <span class="fakeCheckbox">      
+        <svg
+        class="checkmark"
+        style="enable-background: new 0 0 20 20;"
+        version="1.1"
+        viewBox="-3 -3 28 28"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g id="info" />
+        <g id="icons">
+          <path
+          fill="#2086ED"
+            d="M10,18c-0.5,0-1-0.2-1.4-0.6l-4-4c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2.1-0.8,2.8,0l2.6,2.6l6.6-6.6   c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-8,8C11,17.8,10.5,18,10,18z"
+            id="check"
+          />
+        </g>
+      </svg></span>
+
+    </label>
+
+    <label class="container"
+    ><div class="checkbox-text">Option two</div>
+    <input type="checkbox" />
+    <span class="fakeCheckbox">      
+      <svg
+      class="checkmark"
+      style="enable-background: new 0 0 20 20;"
+      version="1.1"
+      viewBox="-3 -3 28 28"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+    >
+      <g id="info" />
+      <g id="icons">
+        <path
+        fill="#2086ED"
+          d="M10,18c-0.5,0-1-0.2-1.4-0.6l-4-4c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2.1-0.8,2.8,0l2.6,2.6l6.6-6.6   c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-8,8C11,17.8,10.5,18,10,18z"
+          id="check"
+        />
+      </g>
+    </svg></span>
+
+  </label>
   </div>
 </app-card>

@@ -11,30 +11,24 @@
 }
 
 .select-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: #f3f3f3;
   box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
     inset -4px -4px 8px #ffffff;
   border-radius: 10px;
 }
 
+.select-selected:hover {
+  box-shadow: inset 4px 4px 6px rgba(34, 34, 34, 0.3),
+    inset -4px -4px 6px #ffffff;
+}
 
-/* Style the arrow inside the select element: */
-// .select-selected:after {
-//   position: absolute;
-//   content: "";
-//   top: 14px;
-//   right: 10px;
-//   width: 0;
-//   height: 0;
-//   border: 6px solid transparent;
-//   border-color: #fff transparent transparent transparent;
-// }
-
-/* Point the arrow upwards when the select box is open (active): */
-// .select-selected.select-arrow-active:after {
-//   border-color: transparent transparent #fff transparent;
-//   top: 7px;
-// }
+.select-selected.select-arrow-active {
+  box-shadow: inset 4px 4px 6px rgba(34, 34, 34, 0.3),
+    inset -4px -4px 6px #ffffff;
+}
 
 /* style the items (options), including the selected item: */
 .select-items {
@@ -85,4 +79,30 @@
 .same-as-selected {
   background-color: rgba(34, 34, 34, 0.05);
   box-shadow:  inset 5px 0 3px -2.5px #ffffff
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(-1px -1px 1px #ffffff);
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(-1px -1px 1px #ffffff);
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow {
+  transition: all 0.1s linear;
+  transform-origin: 50% 50%;
+}
+
+.select-selected.select-arrow-active .shadow {
+  transform: rotate(180deg);
+  -webkit-filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 1px #ffffff);
+  filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 1px #ffffff);
 }

@@ -11,6 +11,7 @@ import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
 import { ButtonsComponent } from './conteiners/buttons/buttons.component';
 import { CategoriesComponent } from './conteiners/categories/categories.component';
 import { InputsComponent } from './conteiners/inputs/inputs.component';
@@ -24,6 +25,7 @@ import { SelectPageComponent } from './conteiners/select-page/select-page.compon
 import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-select.component';
 import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
 import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.com
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

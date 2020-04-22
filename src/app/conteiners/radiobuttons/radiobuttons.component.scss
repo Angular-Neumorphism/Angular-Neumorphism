@@ -78,6 +78,7 @@ input:checked ~ .checkmark{
 .checkmark:after {
   content: "";
   position: absolute;
+  box-shadow: -1px -1px 3px #FFFFFF, 1px 1px 3px rgba(34, 34, 34, 0.5);
   display: none;
 }
 
@@ -94,4 +95,12 @@ input:checked ~ .checkmark{
   height: 10px;
   border-radius: 50%;
   background: #2086ED;
+}
+
+.checkbox-text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
 }

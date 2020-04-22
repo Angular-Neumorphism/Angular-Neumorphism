@@ -34,11 +34,13 @@ export class NeomorphSelectComponent implements AfterViewInit {
   public originalSelect: HTMLSelectElement;
   public fakeSelect: HTMLElement;
   public fakeSelectList: HTMLElement;
+  public fakeSelectText: HTMLElement;
 
   @ViewChild('customSelect') customSelect: ElementRef;
   @ViewChild('select') select: ElementRef;
   @ViewChild('fakeSelect') fakeSelectRef: ElementRef;
   @ViewChild('fakeSelectList') fakeSelectListRef: ElementRef;
+  @ViewChild('fakeSelectText') fakeSelectTextRef: ElementRef;
 
   constructor() {}
 
@@ -47,14 +49,16 @@ export class NeomorphSelectComponent implements AfterViewInit {
     this.originalSelect = this.select.nativeElement;
     this.fakeSelect = this.fakeSelectRef.nativeElement;
     this.fakeSelectList = this.fakeSelectListRef.nativeElement;
+    this.fakeSelectText = this.fakeSelectTextRef.nativeElement;
     this.createFakeOptionsList();
 
     this.fakeSelect.addEventListener('click', (e) => {
       e.stopPropagation();
+      console.log('hi');
       this.fakeSelectList.classList.toggle('select-hide');
       this.fakeSelect.classList.toggle('select-arrow-active');
     });
-    document.addEventListener('click', this.closeSelect);
+    document.addEventListener('click', this.closeSelect.bind(this));
   }
 
   createFakeOptionsList() {
@@ -64,11 +68,13 @@ export class NeomorphSelectComponent implements AfterViewInit {
       fakeOptionItem.addEventListener('click', (e) => {
         for (let i = 0; i < this.originalSelect.length; i++) {
           if (
-            this.originalSelect.options[i].innerHTML === fakeOptionItem.innerHTML
+            this.originalSelect.options[i].innerHTML ===
+            fakeOptionItem.innerHTML
           ) {
             this.fakeSelect.classList.remove('not-choosen');
             this.originalSelect.selectedIndex = i;
-            this.fakeSelect.innerHTML = fakeOptionItem.innerHTML;
+            this.fakeSelectText.innerHTML = fakeOptionItem.innerHTML;
+            this.fakeSelect.classList.toggle('select-arrow-active');
             const fakeItemPrevioseChoosed = document.getElementsByClassName(
               'same-as-selected'
             );
@@ -86,6 +92,9 @@ export class NeomorphSelectComponent implements AfterViewInit {
 
   closeSelect() {
     const list = document.getElementsByClassName('select-items');
-    list[0].classList.add('select-hide');
+    if (list) {
+      list[0].classList.add('select-hide');
+      this.fakeSelect.classList.remove('select-arrow-active');
+    }
   }
 }
