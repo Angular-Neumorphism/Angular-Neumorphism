@@ -48,6 +48,7 @@ body {
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow: hidden;
   &::-webkit-scrollbar {
     width: 1rem;
   }
@@ -57,6 +58,7 @@ body {
 ::-webkit-scrollbar {
   width: .5rem;
 }
+
 
 ::-webkit-scrollbar-thumb {
   background: #8c8c8c;

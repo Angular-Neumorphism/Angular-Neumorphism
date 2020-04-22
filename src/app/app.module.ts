@@ -26,6 +26,8 @@ import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-s
 import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
 import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTabsModule} from '@angular/material/tabs';
+import { TubsComponent } from './conteiners/tubs/tubs.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     SelectPageComponent,
     NeomorphSelectComponent,
     MenuPageComponent,
-    ToolbarPageComponent
+    ToolbarPageComponent,
+    TubsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     BrowserAnimationsModule,
     MatExpansionModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

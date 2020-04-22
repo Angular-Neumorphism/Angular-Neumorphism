@@ -4,7 +4,7 @@
 
 .wrapper {
   position: relative;
-  height: 100%;
+  height: auto;
   width: 100%;
   border-radius: 2rem;
   display: flex;
@@ -58,6 +58,7 @@
 }
 
 .other-content {
+  box-sizing: border-box;
   display: flex;
   flex:1;
   margin: 0 2rem 4rem 2rem;
