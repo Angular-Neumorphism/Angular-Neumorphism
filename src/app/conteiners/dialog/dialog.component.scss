@@ -1,0 +1,36 @@
+:host {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 4rem 4rem 4rem 4rem;
+  }
+  
+  .card {
+    width: 80%;
+    height: auto;
+  }
+  
+  .text {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+    color: #474747;
+    margin: 0 0 4rem 0;
+  }
+  
+  .wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  .button {
+    width: 70px;
+    position: relative;
+  }
+

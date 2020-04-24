@@ -28,6 +28,9 @@ import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.com
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTabsModule} from '@angular/material/tabs';
 import { TubsComponent } from './conteiners/tubs/tubs.component';
+import { DialogComponent } from './conteiners/dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogPageComponent } from './conteiners/dialog/dialog-page/dialog-page.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,9 @@ import { TubsComponent } from './conteiners/tubs/tubs.component';
     NeomorphSelectComponent,
     MenuPageComponent,
     ToolbarPageComponent,
-    TubsComponent
+    TubsComponent,
+    DialogComponent,
+    DialogPageComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,11 @@ import { TubsComponent } from './conteiners/tubs/tubs.component';
     MatExpansionModule,
     MatIconModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

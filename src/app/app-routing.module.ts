@@ -13,7 +13,8 @@ import { ExpansionpageComponent} from './conteiners/expansionpage/expansionpage.
 import { SelectPageComponent} from './conteiners/select-page/select-page.component';
 import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
 import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
-import { TubsComponent } from './conteiners/tubs/tubs.component'
+import { TubsComponent } from './conteiners/tubs/tubs.component';
+import { DialogComponent } from './conteiners/dialog/dialog.component';
 
 const routes: Routes = [
   {
@@ -37,7 +38,8 @@ const routes: Routes = [
       { path: 'select', component: SelectPageComponent },
       { path: 'menu', component: MenuPageComponent },
       { path: 'toolbar', component: ToolbarPageComponent },
-      { path: 'tabs', component: TubsComponent }
+      { path: 'tabs', component: TubsComponent },
+      { path: 'dialog', component: DialogComponent }
     ],
   },
 ];

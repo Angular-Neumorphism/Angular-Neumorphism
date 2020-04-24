@@ -52,13 +52,11 @@ body {
   &::-webkit-scrollbar {
     width: 1rem;
   }
-
 }
 
 ::-webkit-scrollbar {
-  width: .5rem;
+  width: 0.5rem;
 }
-
 
 ::-webkit-scrollbar-thumb {
   background: #8c8c8c;
@@ -68,3 +66,21 @@ body {
   border-radius: 50px;
   background-clip: content-box;
 }
+
+.custom-dialog-container {
+  .mat-dialog-container {
+    padding: 0;
+    box-sizing: border-box;
+    background: #f3f3f3;
+    box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
+      inset -2px -2px 5px rgba(34, 34, 34, 0.3);
+    border-radius: 8px;
+  }
+}
+
+.backdropBackground {
+ // backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
