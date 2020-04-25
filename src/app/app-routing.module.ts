@@ -15,6 +15,7 @@ import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
 import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
 import { TubsComponent } from './conteiners/tubs/tubs.component';
 import { DialogComponent } from './conteiners/dialog/dialog.component';
+import { BadgesComponent } from './conteiners/badges/badges.component';
 
 const routes: Routes = [
   {
@@ -39,7 +40,8 @@ const routes: Routes = [
       { path: 'menu', component: MenuPageComponent },
       { path: 'toolbar', component: ToolbarPageComponent },
       { path: 'tabs', component: TubsComponent },
-      { path: 'dialog', component: DialogComponent }
+      { path: 'dialog', component: DialogComponent },
+      { path: 'badges', component: BadgesComponent }
     ],
   },
 ];

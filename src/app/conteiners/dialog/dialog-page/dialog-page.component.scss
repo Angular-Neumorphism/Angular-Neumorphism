@@ -9,9 +9,20 @@
 .button-wrapper{
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 2.5rem;
-    margin-right: 2rem;
+    // margin-bottom: 2.5rem;
+    // margin-right: 2rem;
 }
 .button{
+    width: 8rem;
     margin: 0 1.5rem;
 }
+
+.divider {
+    margin: 1rem 0;
+    height: 2px;
+    width: 100%;
+    background: #f3f3f3;
+    box-shadow: inset 1px 1px 1px rgba(174, 174, 192, 0.3),
+      inset -1px -1px 1px rgba(255, 255, 255, 0.5);
+    border-radius: 2px;
+  }

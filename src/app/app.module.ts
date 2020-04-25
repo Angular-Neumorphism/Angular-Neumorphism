@@ -31,6 +31,9 @@ import { TubsComponent } from './conteiners/tubs/tubs.component';
 import { DialogComponent } from './conteiners/dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { DialogPageComponent } from './conteiners/dialog/dialog-page/dialog-page.component';
+import { BadgesComponent } from './conteiners/badges/badges.component';
+import { ChipsComponent } from './conteiners/chips/chips.component';
+import { ProgressbarComponent } from './conteiners/progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { DialogPageComponent } from './conteiners/dialog/dialog-page/dialog-page
     ToolbarPageComponent,
     TubsComponent,
     DialogComponent,
-    DialogPageComponent
+    DialogPageComponent,
+    BadgesComponent,
+    ChipsComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,
