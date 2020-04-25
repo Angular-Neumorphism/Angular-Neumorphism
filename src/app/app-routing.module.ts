@@ -16,6 +16,8 @@ import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.com
 import { TubsComponent } from './conteiners/tubs/tubs.component';
 import { DialogComponent } from './conteiners/dialog/dialog.component';
 import { BadgesComponent } from './conteiners/badges/badges.component';
+import { ChipsComponent } from './conteiners/chips/chips.component';
+import { ProgressbarComponent} from './conteiners/progressbar/progressbar.component';
 
 const routes: Routes = [
   {
@@ -41,7 +43,9 @@ const routes: Routes = [
       { path: 'toolbar', component: ToolbarPageComponent },
       { path: 'tabs', component: TubsComponent },
       { path: 'dialog', component: DialogComponent },
-      { path: 'badges', component: BadgesComponent }
+      { path: 'badges', component: BadgesComponent },
+      { path: 'progressbar', component: ProgressbarComponent },
+      { path: 'chips', component: ChipsComponent }
     ],
   },
 ];

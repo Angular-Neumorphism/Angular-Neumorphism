@@ -1,0 +1,48 @@
+:host {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 4rem 4rem 4rem 4rem;
+}
+
+.card {
+  width: 80%;
+  height: 50%;
+}
+
+.text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.progressbar {
+  width: 24rem;
+  height: 0.4rem;
+  background: #ebebeb;
+  box-shadow: inset 1px 1px 1px rgba(34, 34, 34, 0.3),
+    inset -1px -1px 1px #ffffff;
+  border-radius: 2px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.progressbar-indicator {
+  height: 100%;
+  width: 65%;
+  background: #2086ed;
+  border-radius: 2px;
+}
