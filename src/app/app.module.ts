@@ -35,6 +35,7 @@ import { BadgesComponent } from './conteiners/badges/badges.component';
 import { ChipsComponent } from './conteiners/chips/chips.component';
 import { ProgressbarComponent } from './conteiners/progressbar/progressbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

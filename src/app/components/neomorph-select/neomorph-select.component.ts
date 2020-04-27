@@ -8,6 +8,24 @@ import {
   HostListener,
 } from '@angular/core';
 
+import { trigger, state, style, transition, animate} from '@angular/animations';
+
+export const Animations = [
+  trigger('dropdownAnimation', [
+      state('true', style({
+          maxHeight: '{{numberOfDropdownItems}}px',
+          overflow: 'hidden'
+      }),  {params: {numberOfDropdownItems: 1}}),
+      state('false',   style({
+          maxHeight: '0px',
+          overflow: 'hidden',
+          opacity:0
+      })),
+      transition('true => false', animate('600ms ease-out')),
+      transition('false => true', animate('1000ms ease-in'))
+  ])
+]
+
 @Component({
   selector: 'app-neomorph-select',
   templateUrl: './neomorph-select.component.html',
@@ -36,6 +54,8 @@ export class NeomorphSelectComponent implements AfterViewInit {
   public fakeSelectList: HTMLElement;
   public fakeSelectText: HTMLElement;
 
+  public isOpen = false;
+
   @ViewChild('customSelect') customSelect: ElementRef;
   @ViewChild('select') select: ElementRef;
   @ViewChild('fakeSelect') fakeSelectRef: ElementRef;
@@ -54,7 +74,7 @@ export class NeomorphSelectComponent implements AfterViewInit {
 
     this.fakeSelect.addEventListener('click', (e) => {
       e.stopPropagation();
-      console.log('hi');
+      this.isOpen = !this.isOpen
       this.fakeSelectList.classList.toggle('select-hide');
       this.fakeSelect.classList.toggle('select-arrow-active');
     });

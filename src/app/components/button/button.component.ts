@@ -68,17 +68,7 @@ export class ButtonComponent {
     const deltaX = w / 2 + offsetX;
     const deltaY = h / 2 + offsetY;
     const scaleRatio = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
-    // this.useX = xData;
-    // this.useY = yData;
-    // if (this.ripple.nativeElement.hasAttribute('x')) {
-    //   console.log(this.ripple.nativeElement.attributes)
-    //   this.ripple.nativeElement.removeAttribute('x');
-    // }
-    // if (this.ripple.nativeElement.hasAttribute('y')) {
-    //   this.ripple.nativeElement.removeAttribute('y');
-    // }
-    // this.ripple.nativeElement.setAttribute('x', xData);
-    // this.ripple.nativeElement.setAttribute('y', xData);
+ 
 
     tl.fromTo(
       this.ripple.nativeElement,
