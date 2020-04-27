@@ -4,13 +4,12 @@
     justify-content: flex-end;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .button-wrapper{
     display: flex;
     justify-content: flex-end;
-    // margin-bottom: 2.5rem;
-    // margin-right: 2rem;
 }
 .button{
     width: 8rem;

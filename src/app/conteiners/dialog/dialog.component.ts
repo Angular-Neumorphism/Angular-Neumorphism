@@ -16,7 +16,7 @@ export class DialogComponent implements OnInit {
   }
 
   openDialog(){
-    this.dialogService.openDialog()
+    this.dialogService.openDialog();
   }
 
 }

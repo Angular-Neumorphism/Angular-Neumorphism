@@ -1,3 +1,41 @@
+:host{
+  position: relative;
+}
+
+.ripple-obj {
+  height: calc(100% - 3px);
+  display: flex;
+  flex: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 3px);
+  z-index: 0;
+  border-radius: 8px;
+
+}
+
+.primary-shadow{
+  filter: drop-shadow(1px 1px 1px #2086ed) drop-shadow(-1px -1px 1px #2492ff);
+}
+
+.basic-shadow{
+  filter: drop-shadow(1px 1px 1px #f3f3f3) drop-shadow(-1px -1px 1px #ffffff);
+}
+
+.warn-shadow{
+  filter: drop-shadow(1px 1px 1px #f84f5a) drop-shadow(-1px -1px 1px #ff636d);
+}
+
+.ripple-obj use {
+  opacity: 0;
+}
+
+.content{
+  z-index: 1;
+}
+
 .neo-button {
   cursor: pointer;
   outline: none;
@@ -24,15 +62,13 @@
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   mix-blend-mode: normal;
-  
 }
 
 /**********basic**************/
 
 .basic {
   color: #474747;
-  background: linear-gradient(117.15deg, #F5F5F5 0%, #F3F3F3 100%);
-
+  background: linear-gradient(117.15deg, #f5f5f5 0%, #f3f3f3 100%);
 }
 
 .basic::before,
@@ -64,19 +100,19 @@
   box-shadow: 2px 2px 6px rgba(34, 34, 34, 0.4);
 }
 
-.basic:active::before {
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.9);
-}
-.basic:active::after {
-  box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.4);
-}
+// .basic:active::before {
+//   box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.9);
+// }
+// .basic:active::after {
+//   box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.4);
+// }
 
-.basic:focus::before {
-  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.9);
-}
-.basic:focus::after {
-  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.4);
-}
+// .basic:focus::before {
+//   box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.9);
+// }
+// .basic:focus::after {
+//   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.4);
+// }
 
 /**********primary**************/
 .primary {
@@ -84,23 +120,23 @@
   background: #2086ed;
 }
 
-.primary:active {
-  background: linear-gradient(
-      0deg,
-      rgba(34, 34, 34, 0.03),
-      rgba(34, 34, 34, 0.03)
-    ),
-    #2086ed;
-}
+// .primary:active {
+//   background: linear-gradient(
+//       0deg,
+//       rgba(34, 34, 34, 0.03),
+//       rgba(34, 34, 34, 0.03)
+//     ),
+//     #2086ed;
+// }
 
-.primary:focus {
-  background: linear-gradient(
-      0deg,
-      rgba(34, 34, 34, 0.03),
-      rgba(34, 34, 34, 0.03)
-    ),
-    #2086ed;
-}
+// .primary:focus {
+//   background: linear-gradient(
+//       0deg,
+//       rgba(34, 34, 34, 0.03),
+//       rgba(34, 34, 34, 0.03)
+//     ),
+//     #2086ed;
+// }
 
 .primary::before,
 .primary::after {
@@ -131,19 +167,19 @@
   box-shadow: 2px 2px 6px rgba(34, 34, 34, 0.2);
 }
 
-.primary:active::before {
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
-}
-.primary:active::after {
-  box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
-}
+// .primary:active::before {
+//   box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+// }
+// .primary:active::after {
+//   box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
+// }
 
-.primary:focus::before {
-  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
-}
-.primary:focus::after {
-  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
-}
+// .primary:focus::before {
+//   box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+// }
+// .primary:focus::after {
+//   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+// }
 
 /**********warn**************/
 .warn {
@@ -151,23 +187,23 @@
   background: #f84f5a;
 }
 
-.warn:active {
-  background: linear-gradient(
-      0deg,
-      rgba(34, 34, 34, 0.03),
-      rgba(34, 34, 34, 0.03)
-    ),
-    #f84f5a;
-}
+// .warn:active {
+//   background: linear-gradient(
+//       0deg,
+//       rgba(34, 34, 34, 0.03),
+//       rgba(34, 34, 34, 0.03)
+//     ),
+//     #f84f5a;
+// }
 
-.warn:focus {
-  background: linear-gradient(
-      0deg,
-      rgba(34, 34, 34, 0.03),
-      rgba(34, 34, 34, 0.03)
-    ),
-    #f84f5a;
-}
+// .warn:focus {
+//   background: linear-gradient(
+//       0deg,
+//       rgba(34, 34, 34, 0.03),
+//       rgba(34, 34, 34, 0.03)
+//     ),
+//     #f84f5a;
+// }
 
 .warn::before,
 .warn::after {
@@ -198,19 +234,19 @@
   box-shadow: 2px 2px 6px rgba(34, 34, 34, 0.2);
 }
 
-.warn:active::before {
-  box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
-}
-.warn:active::after {
-  box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
-}
+// .warn:active::before {
+//   box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+// }
+// .warn:active::after {
+//   box-shadow: inset 2px 2px 6px rgba(34, 34, 34, 0.2);
+// }
 
-.warn:focus::before {
-  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
-}
-.warn:focus::after {
-  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
-}
+// .warn:focus::before {
+//   box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+// }
+// .warn:focus::after {
+//   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+// }
 
 /**********disabled**************/
 
