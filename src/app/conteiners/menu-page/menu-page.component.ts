@@ -14,6 +14,8 @@ export class MenuPageComponent implements OnInit {
 
   menuClickHandler(event) {
     event.preventDefault();
-    this.menuShow = !this.menuShow;
+    setTimeout(() => {
+      this.menuShow = !this.menuShow;
+    }, 200);
   }
 }
