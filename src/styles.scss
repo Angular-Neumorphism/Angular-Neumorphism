@@ -55,7 +55,14 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: 0.8rem;
+}
+
+@media (max-width: 870px) {
+  ::-webkit-scrollbar {
+ 
+    width: 0.5rem;
+  }
 }
 
 ::-webkit-scrollbar-thumb {
@@ -69,7 +76,6 @@ body {
 
 .custom-dialog-container {
   .mat-dialog-container {
-   // padding: 0;
     box-sizing: border-box;
     background: #f3f3f3;
     box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
@@ -79,7 +85,6 @@ body {
 }
 
 .backdropBackground {
- // backdrop-filter: blur(5px);
   background-color: rgba(32, 32, 32, 0.6);
 }
 

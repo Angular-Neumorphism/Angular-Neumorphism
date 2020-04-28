@@ -7,8 +7,8 @@ import {
   HostListener,
   ViewChild,
 } from '@angular/core';
-import { TimelineMax , gsap} from 'gsap';
-import { CSSPlugin } from 'gsap/CSSPlugin'
+import { TimelineMax, gsap } from 'gsap';
+import { CSSPlugin } from 'gsap/CSSPlugin';
 
 enum ButtonTypes {
   basic = 'basic',
@@ -36,7 +36,7 @@ export class ButtonComponent {
   public useY = null;
 
   constructor(private elementRef: ElementRef) {
-    gsap.registerPlugin(CSSPlugin)
+    gsap.registerPlugin(CSSPlugin);
     for (const attr of BUTTON_HOST_ATTRIBUTES) {
       if (this._hasHostAttributes(attr)) {
         if (attr === ButtonTypes.primary) {
@@ -53,22 +53,24 @@ export class ButtonComponent {
   @ViewChild('ripple') ripple: ElementRef;
   @HostListener('click', ['$event'])
   ckickHandler(event) {
-    this.rippleAnimation.call(this, event, 1);
+    const curTarget = event.currentTarget;
+    setTimeout(() => {
+      this.rippleAnimation.call(this, event, 1, curTarget);
+    }, 0);
   }
 
-  rippleAnimation(event, timing) {
+  rippleAnimation(event, timing, curTarget) {
     const tl = new TimelineMax();
-    const rect = event.currentTarget.getBoundingClientRect();
+    const rect = curTarget.getBoundingClientRect();
     const xData = event.clientX - rect.left - 3;
     const yData = event.clientY - rect.top - 4;
-    const w = event.currentTarget.offsetWidth;
-    const h = event.currentTarget.offsetHeight;
+    const w = curTarget.offsetWidth;
+    const h = curTarget.offsetHeight;
     const offsetX = Math.abs(w / 2 - xData);
     const offsetY = Math.abs(h / 2 - yData);
     const deltaX = w / 2 + offsetX;
     const deltaY = h / 2 + offsetY;
     const scaleRatio = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
- 
 
     tl.fromTo(
       this.ripple.nativeElement,

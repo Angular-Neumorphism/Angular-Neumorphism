@@ -75,10 +75,17 @@
 .menu-button {
   position: relative;
   margin: 0 12px;
-
 }
 
+.button-block{
+  display: flex;
+}
 
+.version {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 1.4rem;
+}
 
 .github-logo {
   margin-right: 1rem;
@@ -112,3 +119,79 @@ a:visited {
   color: inherit;
   cursor: pointer;
 }
+
+.router-link-active.menu-button::before {
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+}
+.router-link-active.menu-button::after {
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+}
+
+@media (max-width: 870px)  {
+
+  .menu {
+    position: relative;
+    display: flex;
+    height: auto;
+    flex: 1;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    padding: 0 20px;
+    background: #2086ed;
+    flex-wrap: wrap;
+  }
+  .spacer {
+    display: none;
+
+  }
+  .menu-button {
+   display: flex;
+   flex:1;
+   margin: 12px;
+  }
+
+  .button-block{
+    order: 4;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .guthub-button{
+    flex:0;
+    margin-left: auto;
+    justify-self: end;
+  }
+  .version {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 420px)  {
+
+  .menu {
+    padding: 0 10px;
+  }
+  .spacer {
+    display: none;
+
+  }
+  .menu-button {
+   display: flex;
+   flex:1;
+   margin: 10px 0 10px 5px;
+  }
+
+  .button-block{
+    order: 4;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .guthub-button{
+    flex:1;
+    margin-left: 10px;
+    justify-self: end;
+  }
+
+}
+

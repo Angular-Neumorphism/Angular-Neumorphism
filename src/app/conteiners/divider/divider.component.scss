@@ -1,26 +1,26 @@
 :host {
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    margin: 4rem 4rem 4rem 4rem;
-  }
-  
-  .card {
-    width: 80%;
-    height: auto;
-  }
-  
-  .text {
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    color: #474747;
-    margin: 0 0 4rem 0;
-  }
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  width: 90%;
+  height: 50%;
+}
+
+.text {
+  width: 90%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
 
   .text-item {
     font-family: Open Sans;

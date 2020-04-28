@@ -2,17 +2,17 @@
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  margin: 4rem 4rem 4rem 4rem;
 }
 
 .card {
-  width: 80%;
+  width: 90%;
   height: 50%;
 }
 
 .text {
+  width: 90%;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;

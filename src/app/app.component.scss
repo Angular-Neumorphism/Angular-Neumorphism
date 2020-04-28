@@ -19,51 +19,15 @@ z-index: 999;
 width: 100vw;
 }
 
-.main-wrapper {
-  width: 100%;
-  height: calc(100% - 9rem);
-  display: flex;
-  transition: all .3s ease-in-out;
+
+@media (max-width: 860px) {
+  .fake-menu{
+    height: 13rem;
+  }
 }
 
-.content-wrapper {
-  display: flex;
-  flex: 1;
-  width: auto;
-  padding: 1rem 3rem;
-  box-sizing: border-box;
-}
 
-.menu-wrapper {
-position: relative;
-width: 18%;
-}
 
-.sidenav {
-    margin: auto;
-  width: 100%;
-  height: fit-content;
-  box-sizing: border-box;
- 
-}
-
-.button {
-  position: absolute;
-  width: 4rem;
-  height: 4rem;
-  top: 4rem;
-  left: 1rem;
-  left: 105%;
-}
-
-.material-icons{
-    color: #474747
-}
-
-.closed{
-    width: 122%;
-    transform: translate(-18%);
-}
 
 
 

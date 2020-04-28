@@ -2,17 +2,17 @@
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  margin: 4rem 4rem 4rem 4rem;
 }
 
 .card {
-  width: 80%;
-  height: auto;
+  width: 90%;
+  height: 50%;
 }
 
 .text {
+  width: 90%;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
@@ -66,7 +66,8 @@ display: none;
 }
 
 :host ::ng-deep .tab-group .mat-tab-label {
-  margin-bottom: 0.5rem;
+  //margin-bottom: 0.5rem;
+  margin: 0 0.4rem 0.5rem 0.4rem;
 }
 
 

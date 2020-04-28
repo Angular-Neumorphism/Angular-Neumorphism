@@ -1,25 +1,28 @@
 :host {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  margin: 4rem 4rem 4rem 4rem;
 }
 
 .card {
-  width: 80%;
+  width: 90%;
   height: 50%;
 }
 
 .text {
+  width: 90%;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
+  margin: 0 0 4rem 0;
 }
+
 .margin-bottom {
     margin-bottom: 4rem;
 }
@@ -33,10 +36,13 @@
 }
 
 .badge-wrapper{
+  display: flex;
+  justify-content: flex-end;
+  white-space:nowrap;
  position: relative;
 }
 .text-with-badge{
-    padding: .3rem .5rem;
+    padding: .2rem .5rem;
 }
 
 .button {

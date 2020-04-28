@@ -1,18 +1,8 @@
 <app-menu class="menu"></app-menu>
 <div class="fake-menu"></div>
 <div class="scroll-container"> 
-<div class="main-wrapper">
-  <div class="menu-wrapper" >
-    <app-sidenav class="sidenav ">
-  </app-sidenav>
-  <button (mousedown)='menuToggle($event)' neo-button basic class="button"><span class="material-icons">
-   {{opened ? 'close' : 'menu'}} 
-    </span></button>
-  </div>
-  
-  <div class="content-wrapper">
+<div class="main-page-wrapper">
     <router-outlet></router-outlet>
-  </div>
 </div>
 </div>
 

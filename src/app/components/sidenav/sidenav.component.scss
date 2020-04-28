@@ -7,12 +7,9 @@
   position: relative;
   display: flex;
   flex: 1;
- 
   height: fit-content;
   background: #ebebeb;
   border-radius: 20px;
-  
-  margin: 4rem 0 0 5rem;
   padding: 1.6rem;
  
 }
@@ -37,6 +34,18 @@
 .menu-wrapper::after {
   mix-blend-mode: color-burn;
   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.1);
+}
+
+@media (max-width: 870px)  {
+  .menu-wrapper {
+    margin: 4rem 0 0 2rem; 
+  }
+
+}
+
+@media (max-width: 420px)  {
+
+
 }
 
 

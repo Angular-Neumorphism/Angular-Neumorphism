@@ -1,10 +1,14 @@
 <nav class="menu">
   <img class="menu-logo" src="../../../assets/angular-logo.png" />
   <div class="menu-text">neomorphism</div>
-  <button neo-button primary routerLink="/categoties" class="menu-button">Conponents</button>
-  <button neo-button  primary class="menu-button">CDK</button>
-    <button neo-button  primary  class="menu-button">Guides</button>
+  <div class="button-block">
+      <button neo-button primary routerLink="/about" routerLinkActive="router-link-active" class="menu-button">About</button>
+  <button neo-button  routerLink="/components" routerLinkActive="router-link-active" [routerLinkActiveOptions]="{ exact: false }"  primary class="menu-button">Components</button>
+    <button neo-button routerLink="/contacts" routerLinkActive="router-link-active" primary  class="menu-button">Contacts</button>
+  </div>
+
   <div class="spacer"></div>
+  <div class="version">V 0.1.0</div>
   <button (click)='goToUrl()' neo-button  primary tabIndex="-1" class="menu-button guthub-button">
     <svg
       class="github-logo shadow"

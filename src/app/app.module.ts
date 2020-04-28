@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,6 +35,9 @@ import { DialogPageComponent } from './conteiners/dialog/dialog-page/dialog-page
 import { BadgesComponent } from './conteiners/badges/badges.component';
 import { ChipsComponent } from './conteiners/chips/chips.component';
 import { ProgressbarComponent } from './conteiners/progressbar/progressbar.component';
+import { AboutComponent } from './conteiners/about/about.component';
+import { ContactsComponent } from './conteiners/contacts/contacts.component';
+import { ComponentsComponent } from './conteiners/components/components.component';
 
 
 @NgModule({
@@ -63,7 +67,10 @@ import { ProgressbarComponent } from './conteiners/progressbar/progressbar.compo
     DialogPageComponent,
     BadgesComponent,
     ChipsComponent,
-    ProgressbarComponent
+    ProgressbarComponent,
+    AboutComponent,
+    ContactsComponent,
+    ComponentsComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +80,8 @@ import { ProgressbarComponent } from './conteiners/progressbar/progressbar.compo
     MatIconModule,
     MatSidenavModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule
   ],
   entryComponents: [
     DialogComponent

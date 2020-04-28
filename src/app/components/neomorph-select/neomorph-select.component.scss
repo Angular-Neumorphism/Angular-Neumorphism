@@ -15,19 +15,20 @@
   justify-content: space-between;
   align-items: center;
   background: #f3f3f3;
-  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
-    inset -4px -4px 8px #ffffff;
+  box-shadow: inset 4px 4px 6px rgba(34, 34, 34, 0.3),
+  inset -4px -4px 6px #ffffff;
+ 
   border-radius: 10px;
 }
 
 .select-selected:hover {
-  box-shadow: inset 4px 4px 6px rgba(34, 34, 34, 0.3),
-    inset -4px -4px 6px #ffffff;
+  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
+    inset -4px -4px 8px #ffffff;
 }
 
 .select-selected.select-arrow-active {
-  box-shadow: inset 4px 4px 6px rgba(34, 34, 34, 0.3),
-    inset -4px -4px 6px #ffffff;
+  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
+  inset -4px -4px 8px #ffffff;
 }
 
 /* style the items (options), including the selected item: */
@@ -36,7 +37,6 @@
   box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
     inset -2px -2px 5px rgba(34, 34, 34, 0.3);
   border-radius: 10px;
-
   position: absolute;
   background: #f3f3f3;
   top: 120%;
