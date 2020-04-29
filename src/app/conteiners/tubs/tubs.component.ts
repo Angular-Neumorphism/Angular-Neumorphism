@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-tubs',
   templateUrl: './tubs.component.html',
   styleUrls: ['./tubs.component.scss']
 })
-export class TubsComponent implements OnInit {
+export class TubsComponent implements AfterViewInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
+    const tabs = document.getElementsByClassName('mat-tab-label');
+    const tab: HTMLElement = tabs[0] as HTMLElement;
+    tab.focus();
   }
 
 }

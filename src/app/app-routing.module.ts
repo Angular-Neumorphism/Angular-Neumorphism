@@ -52,10 +52,9 @@ const routes: Routes = [
           { path: 'dialog', component: DialogComponent },
           { path: 'badges', component: BadgesComponent },
           { path: 'progressbar', component: ProgressbarComponent },
+          { path: 'chips', component: ChipsComponent }
         ],
       },
-
-      { path: 'chips', component: ChipsComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contacts', component: ContactsComponent },
     ],

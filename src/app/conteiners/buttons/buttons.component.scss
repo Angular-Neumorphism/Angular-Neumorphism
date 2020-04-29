@@ -1,12 +1,13 @@
 :host {
   height: 100%;
   display: flex;
+  width: 100%;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
 }
 
-.card {
+.button-card {
   width: 90%;
   height: 50%;
 }
@@ -19,6 +20,10 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
+ 
+}
+
+.margin-bottom {
   margin: 0 0 4rem 0;
 }
 

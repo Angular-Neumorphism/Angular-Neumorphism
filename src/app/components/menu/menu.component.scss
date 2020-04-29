@@ -168,6 +168,15 @@ a:visited {
 
 @media (max-width: 420px)  {
 
+  .menu-text {
+ 
+    margin: 0 10px 0 4px;
+  }
+
+  .github-text{
+    display: none;
+  }
+
   .menu {
     padding: 0 10px;
   }
@@ -187,9 +196,13 @@ a:visited {
     justify-content: space-between;
   }
 
+  .version {
+    margin-left: .3rem;
+  }
+
   .guthub-button{
-    flex:1;
-    margin-left: 10px;
+    flex:0;
+    margin-left: auto;
     justify-self: end;
   }
 

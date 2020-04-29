@@ -21,12 +21,6 @@
   box-sizing: border-box;
 }
 
-// .sidenav {
-//   margin: auto;
-//   width: 100%;
-//   height: fit-content;
-//   box-sizing: border-box;
-// }
 
 .button {
   position: absolute;
@@ -100,8 +94,7 @@
         transform: none;
       }
   .components-content-wrapper {
-    width: 0;
-    margin: 5rem 0;
+    display: none;
   }
   .closed .sidenav-menu-wrapper {
     width: 0;
@@ -113,6 +106,7 @@
   }
 
   .closed .components-content-wrapper {
+    display: flex;
     width: 100%;
   }
 }
