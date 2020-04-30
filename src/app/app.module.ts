@@ -73,7 +73,7 @@ import { ComponentsComponent } from './conteiners/components/components.componen
     ComponentsComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MatExpansionModule,

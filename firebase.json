@@ -1,16 +1,37 @@
 {
-  "hosting": {
-    "public": "./dist/Angular-Neumorphism",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+  "hosting": [
+    {
+      "public": "./dist/Angular-Neumorphism/browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html",
+          "function": "ssr"
+        }
+      ]
+    },
+    {
+      "target": "Angular-Neumorphism",
+      "public": "dist\\Angular-Neumorphism\\dist\\Angular-Neumorphism\\browser",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "ssr"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "source": "dist/Angular-Neumorphism"
   }
 }

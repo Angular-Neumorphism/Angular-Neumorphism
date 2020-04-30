@@ -1,31 +1,54 @@
 :host {
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .card {
-    width: 90%;
-    height: 50%;
-  }
-  
-  .text {
-    width: 90%;
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-    color: #474747;
-    margin: 0 0 4rem 0;
-  }
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 
-  .link{
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    color: #474747;
-  }
+.card {
+  width: 90%;
+  height: 50%;
+}
+
+.text {
+  width: 90%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
+
+.share-links {
+  display: flex;
+  width: 100%;
+  margin-top: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-right: 1rem;
+}
+
+
+.guthub-button:active .shadow {
+  transform: scale(0.95);
+}
+
+.shadow {
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.6))
+    drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.6));
+}

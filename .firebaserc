@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "angular-neomorphism"
+  },
+  "targets": {
+    "angular-neomorphism": {
+      "hosting": {
+        "Angular-Neumorphism": [
+          "angular-neomorphism"
+        ]
+      }
+    }
   }
 }
