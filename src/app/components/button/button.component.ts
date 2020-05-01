@@ -51,7 +51,7 @@ export class ButtonComponent {
   }
 
   @ViewChild('ripple') ripple: ElementRef;
-  @HostListener('click', ['$event'])
+  @HostListener('mousedown', ['$event'])
   ckickHandler(event) {
     const curTarget = event.currentTarget;
     setTimeout(() => {

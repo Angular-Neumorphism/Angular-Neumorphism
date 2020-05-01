@@ -16,4 +16,5 @@ export class MenuComponent implements OnInit {
       '_blank'
     );
   }
+
 }

@@ -10,9 +10,11 @@
   display: flex;
   flex-direction: column;
   background: inherit;
+  box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.8),
+  inset -2px -2px 5px rgba(255, 255, 255, 0.5);
 }
 
-.wrapper::before,
+// .wrapper::before,
 .wrapper::after {
   pointer-events: none;
   content: "";
@@ -24,11 +26,11 @@
   border-radius: inherit;
 }
 
-.wrapper::before {
-  mix-blend-mode: soft-light;
-  box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.8),
-  inset -2px -2px 5px rgba(255, 255, 255, 0.5);
-}
+// .wrapper::before {
+//   mix-blend-mode: soft-light;
+//   box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.8),
+//   inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+// }
 
 .wrapper::after {
   mix-blend-mode: color-burn;
