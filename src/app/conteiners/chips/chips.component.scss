@@ -32,12 +32,12 @@
 
 .material-icons {
   font-size: 1.4rem;
-  -webkit-touch-callout: none; 
-  -webkit-user-select: none;  
-  -khtml-user-select: none;    
-  -moz-user-select: none;     
-  -ms-user-select: none;      
-  user-select: none;   
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .chip {
@@ -76,18 +76,16 @@
 // }
 
 .chip-basic {
-  background: #f3f3f3;
   color: #474747;
-  box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.5),
-  2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
-  inset -2px -2px 5px rgba(34, 34, 34, 0.4);
+  background: #f3f3f3;
+  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(34, 34, 34, 0.4);
+  border-radius: 50px;
 }
 .chip-primary {
-  background: #2086ed;
   color: #ffffff;
-  box-shadow: -2px -2px 5px rgba(255, 255, 255, 0.5),
-  2px 2px 5px rgba(34, 34, 34, 0.2), inset 1px 1px 3px #ffffff,
-  inset -2px -2px 5px rgba(34, 34, 34, 0.4);
+  background: #2086ed;
+  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(34, 34, 34, 0.6);
+  border-radius: 50px;
 }
 
 .chip-text {
@@ -97,27 +95,21 @@
   flex: 1;
 }
 
-.chip:hover {
-  box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.5),
-    1px 1px 3px rgba(34, 34, 34, 0.2)
+.chip-primary:hover {
+  box-shadow: -1px -1px 3px #FFFFFF, 1px 1px 3px rgba(34, 34, 34, 0.6);
 }
 
-.chip:hover {
-    box-shadow:  inset 1px 1px 3px #ffffff,
-      inset -1px -1px 3px rgba(34, 34, 34, 0.4);
-  }
+.chip-basic:hover {
+  background: #F3F3F3;
+  box-shadow: -1px -1px 3px #FFFFFF, 1px 1px 3px rgba(34, 34, 34, 0.4);
+}
 
 .chip-basic:active {
   background: #ebebeb;
   box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.5),
-    1px 1px 3px rgba(34, 34, 34, 0.2)
+    1px 1px 3px rgba(34, 34, 34, 0.2), inset -2px -2px 5px #ffffff,
+    inset 2px 2px 5px rgba(34, 34, 34, 0.4);
 }
-
-.chip-basic:active {
-    background: #ebebeb;
-    box-shadow:  inset -2px -2px 5px #ffffff,
-      inset 2px 2px 5px rgba(34, 34, 34, 0.4);
-  }
 
 .chip-primary:active {
   background: linear-gradient(
@@ -127,29 +119,28 @@
     ),
     #2086ed;
   box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.5),
-    1px 1px 3px rgba(34, 34, 34, 0.2)
+    1px 1px 3px rgba(34, 34, 34, 0.2);
 }
 
 .chip-primary:active {
-    background: linear-gradient(
-        0deg,
-        rgba(34, 34, 34, 0.1),
-        rgba(34, 34, 34, 0.1)
-      ),
-      #2086ed;
-    box-shadow:
-      inset -2px -2px 5px rgba(255, 255, 255, 0.5),
-      inset 2px 2px 5px rgba(34, 34, 34, 0.4);
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.1),
+      rgba(34, 34, 34, 0.1)
+    ),
+    #2086ed;
+  box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.5),
+    1px 1px 3px rgba(34, 34, 34, 0.2),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.5),
+    inset 2px 2px 5px rgba(34, 34, 34, 0.3);
+}
+
+@media (max-width: 420px) {
+  .wrapper {
+    flex-direction: column;
   }
 
-
-  @media (max-width: 420px) {
-
-    .wrapper {
-    flex-direction: column;
-    }
-
-    .chip{
-      margin: 1rem;
-    }
+  .chip {
+    margin: 1rem;
+  }
 }
