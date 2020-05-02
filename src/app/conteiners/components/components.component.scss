@@ -1,3 +1,18 @@
+.example-container {
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-drawer-side {
+  border-right: 0;
+}
+.mat-drawer {
+  background-color: transparent;
+}
+
 .components-wrapper {
   width: 100%;
   height: calc(100% - 9rem);
@@ -9,7 +24,6 @@
 .components-content-wrapper {
   display: flex;
   flex: 1;
-  width: 100%;
   box-sizing: border-box;
   margin: 0 5rem;
 }
@@ -21,13 +35,10 @@
   box-sizing: border-box;
 }
 
-
 .button {
-  position: absolute;
   width: 4rem;
   height: 4rem;
-  top: 1rem;
-  left: 105%;
+  margin: 8px;
 }
 
 .material-icons {
@@ -45,19 +56,17 @@
   transform: translate(-21%);
 }
 
-
 @media (max-width: 870px) {
-    .components-wrapper {
-  
-        transition: none;
-      }
-    .closed .button {
-        left: 1rem;
-      }
-    .closed {
-        width: 100%;
-        transform: none;
-      }
+  .components-wrapper {
+    transition: none;
+  }
+  .closed .button {
+    left: 1rem;
+  }
+  .closed {
+    width: 100%;
+    transform: none;
+  }
   .components-content-wrapper {
     width: 0;
     margin: 5rem 0;
@@ -81,18 +90,17 @@
   }
 }
 
-
 @media (max-width: 420px) {
-    .components-wrapper {
-        transition: none;
-      }
-    .closed .button {
-        left: 1rem;
-      }
-    .closed {
-        width: 100%;
-        transform: none;
-      }
+  .components-wrapper {
+    transition: none;
+  }
+  .closed .button {
+    left: 1rem;
+  }
+  .closed {
+    width: 100%;
+    transform: none;
+  }
   .components-content-wrapper {
     display: none;
   }

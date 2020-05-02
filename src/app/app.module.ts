@@ -11,8 +11,8 @@ import { ExpansionPanelComponent } from './components/expansion-panel/expansion-
 import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatIconModule} from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 import { ButtonsComponent } from './conteiners/buttons/buttons.component';
 import { CategoriesComponent } from './conteiners/categories/categories.component';
 import { InputsComponent } from './conteiners/inputs/inputs.component';
@@ -26,11 +26,11 @@ import { SelectPageComponent } from './conteiners/select-page/select-page.compon
 import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-select.component';
 import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
 import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 import { TubsComponent } from './conteiners/tubs/tubs.component';
 import { DialogComponent } from './conteiners/dialog/dialog.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { DialogPageComponent } from './conteiners/dialog/dialog-page/dialog-page.component';
 import { BadgesComponent } from './conteiners/badges/badges.component';
 import { ChipsComponent } from './conteiners/chips/chips.component';
@@ -38,7 +38,6 @@ import { ProgressbarComponent } from './conteiners/progressbar/progressbar.compo
 import { AboutComponent } from './conteiners/about/about.component';
 import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
-
 
 @NgModule({
   declarations: [
@@ -70,7 +69,7 @@ import { ComponentsComponent } from './conteiners/components/components.componen
     ProgressbarComponent,
     AboutComponent,
     ContactsComponent,
-    ComponentsComponent
+    ComponentsComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -81,12 +80,10 @@ import { ComponentsComponent } from './conteiners/components/components.componen
     MatSidenavModule,
     MatTabsModule,
     MatDialogModule,
-    RouterModule
+    RouterModule,
   ],
-  entryComponents: [
-    DialogComponent
-  ],
+  entryComponents: [DialogComponent],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

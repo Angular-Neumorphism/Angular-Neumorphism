@@ -1,15 +1,17 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened">
+    <app-sidenav> </app-sidenav>
+  </mat-sidenav>
 
-<div class="components-wrapper" [class.closed] = '!opened'>
-    <div class="sidenav-menu-wrapper" >
-      <app-sidenav class="sidenav ">
-    </app-sidenav>
-    <button (mousedown)='menuToggle($event)' neo-button basic class="button"><span class="material-icons">
-     {{opened ? 'close' : 'menu'}} 
-      </span></button>
-    </div>
-    
+  <mat-sidenav-content>
+    <button (mousedown)="menuToggle($event)" neo-button basic class="button">
+      <span class="material-icons">
+        {{ opened ? "close" : "menu" }}
+      </span>
+    </button>
+
     <div class="components-content-wrapper">
       <router-outlet></router-outlet>
     </div>
-  </div>
-
+  </mat-sidenav-content>
+</mat-sidenav-container>
