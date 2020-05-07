@@ -60,7 +60,7 @@
     box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), -2px -2px 5px #ffffff;
   }
   
-  .shadow-wrapper::before,
+  // .shadow-wrapper::before,
   .shadow-wrapper::after {
     pointer-events: none;
     content: "";
@@ -77,15 +77,15 @@
   //   box-shadow: -2px -2px 5px #ffffff ;
   // }
   
-  // .shadow-wrapper::after {
-  //   mix-blend-mode: color-burn;
-  //   box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2);
-  // }
-  
-  .shadow-wrapper:hover::before {
+  .shadow-wrapper::after {
     mix-blend-mode: color-burn;
-    box-shadow: -1px -1px 2px #ffffff ;
+    box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2);
   }
+  
+  // .shadow-wrapper:hover::before {
+  //   mix-blend-mode: color-burn;
+  //   box-shadow: -1px -1px 2px #ffffff ;
+  // }
   
   .shadow-wrapper:hover::after {
     mix-blend-mode: color-burn;

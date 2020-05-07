@@ -1,6 +1,6 @@
 .example-container {
   position: absolute;
-  top: 80px;
+  top: 90px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -11,6 +11,10 @@
 }
 .mat-drawer {
   background-color: transparent;
+}
+
+.mat-drawer-content{
+  overflow-x: hidden;
 }
 
 .components-wrapper {
@@ -28,17 +32,10 @@
   margin: 0 5rem;
 }
 
-.sidenav-menu-wrapper {
-  position: relative;
-  width: 20%;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
 
 .button {
   width: 4rem;
   height: 4rem;
-  margin: 8px;
 }
 
 .material-icons {
@@ -51,70 +48,57 @@
   user-select: none;
 }
 
-.closed {
-  width: 122%;
-  transform: translate(-21%);
+
+
+.components-button-wrapper{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  box-sizing: border-box;
+  padding-left: .8rem;
 }
 
 @media (max-width: 870px) {
-  .components-wrapper {
-    transition: none;
-  }
-  .closed .button {
-    left: 1rem;
-  }
-  .closed {
-    width: 100%;
-    transform: none;
-  }
-  .components-content-wrapper {
-    width: 0;
-    margin: 5rem 0;
-  }
-  .closed .sidenav-menu-wrapper {
-    width: 0;
+ .closed  {
+    display: none;
   }
 
-  .sidenav-menu-wrapper {
-    width: 40%;
-  }
+  .example-container {
+    top: 130px;
 
-  .closed .components-content-wrapper {
-    width: 100%;
-  }
-}
-
-@media (max-width: 870px) {
-  .closed .sidenav-menu-wrapper {
-    padding: 0;
   }
 }
 
 @media (max-width: 420px) {
-  .components-wrapper {
-    transition: none;
-  }
-  .closed .button {
-    left: 1rem;
-  }
-  .closed {
-    width: 100%;
-    transform: none;
-  }
   .components-content-wrapper {
-    display: none;
+    margin: 0;
+    box-sizing: border-box;
   }
-  .closed .sidenav-menu-wrapper {
-    width: 0;
-    padding: 0;
-  }
+  // .components-wrapper {
+  //   transition: none;
+  // }
+  // .closed .button {
+  //   left: 1rem;
+  // }
+  // .closed {
+  //   width: 100%;
+  //   transform: none;
+  // }
+  // .components-content-wrapper {
+  //   display: none;
+  // }
+  // .closed .sidenav-menu-wrapper {
+  //   width: 0;
+  //   padding: 0;
+  // }
 
-  .sidenav-menu-wrapper {
-    width: 80%;
-  }
+  // .sidenav-menu-wrapper {
+  //   width: 80%;
+  // }
 
-  .closed .components-content-wrapper {
-    display: flex;
-    width: 100%;
-  }
+  // .closed .components-content-wrapper {
+  //   display: flex;
+  //   width: 100%;
+  // }
 }

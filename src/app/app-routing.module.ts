@@ -21,6 +21,7 @@ import { ProgressbarComponent } from './conteiners/progressbar/progressbar.compo
 import { AboutComponent } from './conteiners/about/about.component';
 import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
+import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 
 const routes: Routes = [
   {
@@ -52,7 +53,8 @@ const routes: Routes = [
           { path: 'dialog', component: DialogComponent },
           { path: 'badges', component: BadgesComponent },
           { path: 'progressbar', component: ProgressbarComponent },
-          { path: 'chips', component: ChipsComponent }
+          { path: 'chips', component: ChipsComponent },
+          { path: 'snackbar', component: SnackbarComponent },
         ],
       },
       { path: 'about', component: AboutComponent },
@@ -62,9 +64,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

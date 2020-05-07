@@ -60,7 +60,6 @@ body {
 
 @media (max-width: 870px) {
   ::-webkit-scrollbar {
- 
     width: 0.5rem;
   }
 }
@@ -85,7 +84,18 @@ body {
 }
 
 .backdropBackground {
-  background-color:  rgba(218, 218, 218, 0.5);
+  background-color: rgba(218, 218, 218, 0.5);
 }
 
-
+.custom-snackbar {
+  padding-top: 1.6rem!important;
+  display: flex;
+  align-items: center;
+  background: #474747;
+  color: white;
+  max-width: 240px!important;
+  height: 54px;
+  box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 1px 1px 3px #ffffff,
+    inset -2px -2px 5px rgba(34, 34, 34, 0.3);
+  border-radius: 8px;
+}

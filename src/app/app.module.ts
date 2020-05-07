@@ -38,6 +38,8 @@ import { ProgressbarComponent } from './conteiners/progressbar/progressbar.compo
 import { AboutComponent } from './conteiners/about/about.component';
 import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
+import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,7 @@ import { ComponentsComponent } from './conteiners/components/components.componen
     AboutComponent,
     ContactsComponent,
     ComponentsComponent,
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -78,6 +81,7 @@ import { ComponentsComponent } from './conteiners/components/components.componen
     MatExpansionModule,
     MatIconModule,
     MatSidenavModule,
+    MatSnackBarModule,
     MatTabsModule,
     MatDialogModule,
     RouterModule,
