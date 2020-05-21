@@ -77,7 +77,7 @@
   margin: 0 12px;
 }
 
-.button-block{
+.button-block {
   display: flex;
 }
 
@@ -120,15 +120,24 @@ a:visited {
   cursor: pointer;
 }
 
-.router-link-active.menu-button::before {
-  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
-}
-.router-link-active.menu-button::after {
-  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+button.router-link-active {
+  &::before {
+    box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+  }
+  &::after {
+    box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+  }
+  &:hover {
+    &::before {
+      box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
+    }
+    &::after {
+      box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+    }
+  }
 }
 
-@media (max-width: 870px)  {
-
+@media (max-width: 870px) {
   .menu {
     position: relative;
     display: flex;
@@ -142,22 +151,21 @@ a:visited {
   }
   .spacer {
     display: none;
-
   }
   .menu-button {
-   display: flex;
-   flex:1;
-   margin: 12px;
+    display: flex;
+    flex: 1;
+    margin: 12px;
   }
 
-  .button-block{
+  .button-block {
     order: 4;
     width: 100%;
     justify-content: space-between;
   }
 
-  .guthub-button{
-    flex:0;
+  .guthub-button {
+    flex: 0;
     margin-left: auto;
     justify-self: end;
   }
@@ -166,18 +174,16 @@ a:visited {
   }
 }
 
-@media (max-width: 420px)  {
-
+@media (max-width: 420px) {
   .menu-text {
- 
     margin: 0 10px 0 4px;
   }
 
-  .github-text{
+  .github-text {
     display: none;
   }
 
-  .github-logo{
+  .github-logo {
     margin-left: 1rem;
   }
 
@@ -186,29 +192,26 @@ a:visited {
   }
   .spacer {
     display: none;
-
   }
   .menu-button {
-   display: flex;
-   flex:1;
-   margin: 10px 0 10px 5px;
+    display: flex;
+    flex: 1;
+    margin: 10px 0 10px 5px;
   }
 
-  .button-block{
+  .button-block {
     order: 4;
     width: 100%;
     justify-content: space-between;
   }
 
   .version {
-    margin-left: .3rem;
+    margin-left: 0.3rem;
   }
 
-  .guthub-button{
-    flex:0;
+  .guthub-button {
+    flex: 0;
     margin-left: auto;
     justify-self: end;
   }
-
 }
-

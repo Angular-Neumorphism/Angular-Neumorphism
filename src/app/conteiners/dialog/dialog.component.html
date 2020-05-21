@@ -1,16 +1,13 @@
 <div class="text">
-  Dialog service can be used to open modal dialogs based on Material dialog with neomorph styling.
+  Dialog service can be used to open modal dialogs based on Material dialog with
+  neomorph styling.
+</div>
+<app-card class="card"
+  ><span title>Dialog</span>
+  <span class="text" text>Answer the question</span>
+  <div class="wrapper">
+    <button neo-button (mousedown)="openDialog()" class="button">
+      Open dialog
+    </button>
   </div>
-  <app-card class="card"
-    ><span  title>Dialog</span>
-    <span class="text" text>Answer the question</span>
-    <div class="wrapper">
-        <button (mousedown) ="openDialog()" neo-button basic class="button">Open dialog
-       
-        </button>
-          
-    </div>
-  </app-card>
- 
-    
- 
+</app-card>

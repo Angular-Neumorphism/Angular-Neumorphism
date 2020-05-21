@@ -1,22 +1,20 @@
 <div class="text margin-bottom">
-HTML buttons with neomorph style
+  HTML buttons with neomorph style
 </div>
 <app-card class="button-card"
   ><span title>Buttons</span>
   <div class="buttons-page-content">
     <span class="text" text>Regular</span>
-  <div class="button-wrapper">
-    <button
-     neo-button basic class=" button">Basic</button>
-    <button neo-button primary class=" button">Primary</button>
-    <button neo-button warn class=" button">Warn</button>
+    <div class="button-wrapper">
+      <button neo-button>Basic</button>
+      <button neo-button color="primary">Primary</button>
+      <button neo-button color="warn">Warn</button>
+    </div>
+    <span class="text" text>Disabled</span>
+    <div class="button-wrapper">
+      <button neo-button disabled>Basic</button>
+      <button neo-button color="primary" disabled>Primary</button>
+      <button neo-button color="warn" disabled>Warn</button>
+    </div>
   </div>
-  <span class="text" text>Disabled</span>
-  <div class="button-wrapper">
-    <button neo-button basic disabled class=" button">Basic</button>
-    <button neo-button primary disabled class=" button">Primary</button>
-    <button neo-button warn disabled class=" button">Warn</button>
-  </div>
-  </div>
-
 </app-card>

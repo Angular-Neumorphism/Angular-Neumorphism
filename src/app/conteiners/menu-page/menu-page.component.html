@@ -1,16 +1,16 @@
 <div class="text">
-    Menu is a floating panel containing list of options.
+  Menu is a floating panel containing list of options.
+</div>
+<app-card class="card"
+  ><span title>Basic menu</span>
+  <div class="wrapper">
+    <button neo-button (click)="menuClickHandler($event)" class="button">
+      Menu
+      <div *ngIf="menuShow" class="menu-items" #menuPanel>
+        <div class="menu-item">Item 1</div>
+        <div class="menu-item">Item 2</div>
+        <div class="menu-item">Item 3</div>
+      </div>
+    </button>
   </div>
-  <app-card class="card"
-    ><span title>Basic menu</span>
-    <div class="wrapper">
-        <button (click) ='menuClickHandler($event)' neo-button basic class="button">Menu
-            <div *ngIf='menuShow' class="menu-items" #menuPanel>
-                <div class="menu-item">Item 1</div>
-                <div class="menu-item">Item 2</div>
-                <div class="menu-item">Item 3</div>
-            </div>
-        </button>
-          
-    </div>
-  </app-card>
+</app-card>

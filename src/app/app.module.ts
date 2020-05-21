@@ -5,7 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { ButtonComponent } from './components/button/button.component';
+// import { ButtonComponent } from './components/button/button.component';
+import { NeoButtonComponent } from './components/neo-button/neo-button.component';
 import { CardComponent } from './components/card/card.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { LandingComponent } from './conteiners/landing/landing.component';
@@ -39,13 +40,14 @@ import { AboutComponent } from './conteiners/about/about.component';
 import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
 import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    ButtonComponent,
+    // ButtonComponent,
+    NeoButtonComponent,
     CardComponent,
     ExpansionPanelComponent,
     LandingComponent,

@@ -20,40 +20,39 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
- 
 }
 
 .margin-bottom {
   margin: 0 0 4rem 0;
 }
 
-  .button-wrapper{
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      margin: 2rem 0;
-  }
+.button-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 2rem 0;
 
-  .button{
-      margin-left: 2.5rem;
+  & > button {
+    margin-left: 2.5rem;
   }
+}
 
-  .buttons-page-content{
-      display: flex;
-      flex-direction: column;
-  }
+.buttons-page-content {
+  display: flex;
+  flex-direction: column;
+}
 
-  @media (max-width: 420px) {
-    .button-wrapper{
+@media (max-width: 420px) {
+  .button-wrapper {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
   }
-  .buttons-page-content{
-  width: 100%;
-}
-  .button{
+  .buttons-page-content {
+    width: 100%;
+  }
+  .button {
     width: 80%;
     margin-top: 2.5rem;
-}
+  }
 }
