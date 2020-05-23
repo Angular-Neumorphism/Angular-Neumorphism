@@ -1,0 +1,11 @@
+@import "~@angular/material/theming";
+
+$dark-color-shadow: rgba(34, 34, 34, 0.3) !default;
+$light-color-shadow: rgba(255, 255, 255, 0.5) !default;
+
+@mixin neo-divider-theme() {
+  .neo-divider {
+    box-shadow: inset 1px 1px 1px $dark-color-shadow,
+      inset -1px -1px 1px $light-color-shadow;
+  }
+}
