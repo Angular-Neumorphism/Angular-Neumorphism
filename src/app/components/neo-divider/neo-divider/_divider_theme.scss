@@ -1,11 +1,13 @@
 @import "~@angular/material/theming";
 
-$dark-color-shadow: rgba(34, 34, 34, 0.3) !default;
-$light-color-shadow: rgba(255, 255, 255, 0.5) !default;
+$divider-light-shadow: rgba(255, 255, 255, 0.5) !default;
 
 @mixin neo-divider-theme() {
+    $neo-theme:mat-light-theme(mat-palette($mat-red),mat-palette($mat-red),mat-palette($mat-red));
+    $foreground: map-get($neo-theme, foreground);
+   
   .neo-divider {
-    box-shadow: inset 1px 1px 1px $dark-color-shadow,
-      inset -1px -1px 1px $light-color-shadow;
+    box-shadow: inset 1px 1px 1px mat-color($foreground, divider, 0.3),
+      inset -1px -1px 1px $divider-light-shadow;
   }
 }
