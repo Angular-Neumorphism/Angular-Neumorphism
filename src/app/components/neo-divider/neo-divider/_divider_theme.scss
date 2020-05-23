@@ -3,11 +3,9 @@
 $divider-light-shadow: rgba(255, 255, 255, 0.5) !default;
 
 @mixin neo-divider-theme() {
-    $neo-theme:mat-light-theme(mat-palette($mat-red),mat-palette($mat-red),mat-palette($mat-red));
-    $foreground: map-get($neo-theme, foreground);
-   
+  
   .neo-divider {
-    box-shadow: inset 1px 1px 1px mat-color($foreground, divider, 0.3),
+    box-shadow: inset 1px 1px 1px mat-color($mat-light-theme-foreground, divider, 0.3),
       inset -1px -1px 1px $divider-light-shadow;
   }
 }
