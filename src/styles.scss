@@ -103,20 +103,3 @@ body {
   border-radius: 8px;
 }
 
-$mat-light-theme-foreground: (
-  base:              black,
-  divider:           red,
-  dividers:          red,
-  disabled:          red,
-  disabled-button:   red,
-  disabled-text:     red,
-  elevation:         black,
-  hint-text:         red,
-  secondary-text:    red,
-  icon:              rgba(black, 0.54),
-  icons:             rgba(black, 0.54),
-  text:              rgba(black, 0.87),
-  slider-min:        rgba(black, 0.87),
-  slider-off:        rgba(black, 0.26),
-  slider-off-active: rgba(black, 0.38),
-) !global;
