@@ -1,11 +1,11 @@
 @import "~@angular/material/theming";
+@import '../../../core/theme/theme.scss';
 
-$divider-light-shadow: rgba(255, 255, 255, 0.5) !default;
 
 @mixin neo-divider-theme() {
   
   .neo-divider {
-    box-shadow: inset 1px 1px 1px mat-color($mat-light-theme-foreground, divider, 0.3),
-      inset -1px -1px 1px $divider-light-shadow;
+    box-shadow: inset 1px 1px 1px mat-color($neo-light-theme-foreground, divider-shadow),
+      inset -1px -1px 1px mat-color($neo-light-theme-foreground, light-shadow);
   }
 }
