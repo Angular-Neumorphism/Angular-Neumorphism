@@ -41,7 +41,6 @@ import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
 import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatDividerModule} from '@angular/material/divider';
 import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
 
 @NgModule({
@@ -89,7 +88,6 @@ import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
     MatTabsModule,
     MatDialogModule,
     RouterModule,
-    MatDividerModule,
     NeoDividerModule
   ],
   entryComponents: [DialogComponent],

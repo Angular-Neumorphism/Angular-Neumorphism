@@ -1,14 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Input,
   ViewEncapsulation,
 } from '@angular/core';
-import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import { MatDivider } from '@angular/material/divider';
 
 @Component({
-  // tslint:disable-next-line:component-selector
   selector: 'neo-divider',
   // tslint:disable-next-line:no-host-metadata-property
   host: {
