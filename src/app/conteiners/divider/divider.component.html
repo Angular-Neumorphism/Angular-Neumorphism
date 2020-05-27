@@ -5,13 +5,50 @@
   ><span title>Didiver</span>
   <span text>List of items</span>
   <div class="wrapper">
-    <div class="text-item ">Item 1</div>
-    <div class="divider"></div>
-    <div class="text-item ">Item 2</div>
-    <div class="divider"></div>
-    <div class="text-item ">Item 3</div>
-    <div class="divider"></div>
-    <div class="text-item ">Item 4</div>
-    <div class="divider"></div>
+    <div class="text-item">Item 1</div>
+    <neo-divider></neo-divider>
+    <div class="text-item">Item 2</div>
+    <neo-divider></neo-divider>
+    <div class="text-item">Item 3</div>
+    <neo-divider></neo-divider>
+    <div class="text-item">Item 4</div>
+    <neo-divider></neo-divider>
   </div>
 </app-card>
+
+<app-card class="card"
+  ><span title>Didiver</span>
+  <span text>Vertical</span>
+  <div class="wrapper">
+    <div class="wrapper vertical">
+      <neo-divider [vertical]="true"></neo-divider>
+      <div class="text-item">Item 1</div>
+      <neo-divider [vertical]="true"></neo-divider>
+      <div class="text-item">Item 2</div>
+      <neo-divider [vertical]="true"></neo-divider>
+      <div class="text-item">Item 3</div>
+      <neo-divider [vertical]="true"></neo-divider>
+      <div class="text-item">Item 4</div>
+      <neo-divider [vertical]="true"></neo-divider>
+    </div>
+  </div>
+</app-card>
+
+<app-card class="card"
+  ><span title>Didiver</span>
+  <span text>Inset</span>
+  <div class="wrapper">
+    <div class="wrapper">
+      <div class="text-item">Item 1</div>
+      <neo-divider [inset]="true"></neo-divider>
+      <div class="text-item">Item 2</div>
+      <neo-divider [inset]="true"></neo-divider>
+      <div class="text-item">Item 3</div>
+      <neo-divider [inset]="true"></neo-divider>
+      <div class="text-item">Item 4</div>
+      <neo-divider [inset]="true"></neo-divider>
+    </div>
+  </div>
+</app-card>
+
+
