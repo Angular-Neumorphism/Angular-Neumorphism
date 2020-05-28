@@ -44,6 +44,7 @@
       size: map_get($neo-typography, headline);
       weight: map_get($neo-typography, title);
     }
+    color: mat-color($neo-light-theme-foreground, title);
   }
 
   .neo-card-header .neo-card-title {

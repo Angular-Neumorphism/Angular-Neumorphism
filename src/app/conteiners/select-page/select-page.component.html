@@ -1,10 +1,14 @@
 <div class="text">
   Provides the same functionality as a native input type="select"
 </div>
-<app-card class="card"
-  ><span title>Select</span>
+<neo-card class="card"
+  ><neo-card-header>
+    <neo-card-title>Select</neo-card-title>
+  </neo-card-header>
+  <neo-card-content class="card-content">
   <span text>Controls that collect and validate user input.</span>
-  <app-neomorph-select [placeholder]="'Favorive Food'">
+  <div class="form-wrapper">
+     <app-neomorph-select [placeholder]="'Favorive Food'">
     <option option value="0">Option 1</option>
     <option option value="1">Option 2</option>
     <option option value="2">Option 3</option>
@@ -12,4 +16,7 @@
     <option option value="4">Option 5</option>
     <option option value="5">Option 6</option>
   </app-neomorph-select>
-</app-card>
+  </div>
+ 
+  </neo-card-content>
+</neo-card>

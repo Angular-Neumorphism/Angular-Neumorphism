@@ -1,4 +1,5 @@
 @import "./card.theme";
+@import "../../neo-divider/neo-divider/neo-divider.component.scss";
 
 @include neo-card-color();
 @include neo-card-typography();
@@ -14,18 +15,19 @@ $neo-card-header-size: 40px !default;
   border-radius: $neo-card-border-radius;
 
   .neo-divider-horizontal {
+    --divider-offset: $neo-divider-inset-margin;
     position: absolute;
     left: 1%;
     width: 98%;
 
     [dir="rtl"] & {
       left: auto;
-      right: 0;
+      right: 1%;
     }
 
     &.neo-divider-inset {
       position: static;
-      margin: 0;
+      width: calc(99% - #{$neo-divider-inset-margin});
 
       [dir="rtl"] & {
         margin-right: 0;
@@ -56,23 +58,18 @@ $neo-card-header-size: 40px !default;
   padding: 8px 0;
 }
 
-.neo-card-image {
-  width: calc(100% + #{$neo-card-padding * 2});
-  margin: 0 (-$neo-card-padding) 16px (-$neo-card-padding);
-}
-
 .neo-card-actions-align-end {
   display: flex;
   justify-content: flex-end;
 }
 
-.mat-card-footer {
+.neo-card-footer {
   // The negative margins pulls out the element, countering the padding
   // to get the footer to be flush against the side of the card.
   $margin: -$neo-card-padding;
 
   display: block;
-  margin: 0 $margin $margin $margin;
+  margin: 0 0 $margin 0;
 }
 
 .neo-card-actions {

@@ -1,9 +1,12 @@
 <div class="text">
   Provides an expandable details-summary view.
 </div>
-<app-card class="card"
-  ><span title>Expansion panel</span>
-  <span text>Basic expansion panel</span>
+<neo-card class="card"
+  ><neo-card-header>
+    <neo-card-title>Expansion Panel</neo-card-title>
+  </neo-card-header>
+  <neo-card-content class="card-content">
+  <div class="card-text">Basic expansion panel</div>
   <mat-accordion multi="true" class="accordion">
     <div class="shadow-wrapper">
       <mat-expansion-panel hideToggle="true" class="panel mat-elevation-z0">
@@ -13,7 +16,7 @@
           </mat-panel-title>
           <mat-panel-description>
             <mat-panel-description>
-              Type your name 
+              Type your name
             </mat-panel-description>
           </mat-panel-description>
           <div class="toggle">
@@ -25,7 +28,6 @@
               width="20"
             >
               <path
-  
                 fill="#474747"
                 d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
               />
@@ -54,7 +56,6 @@
               width="20"
             >
               <path
-  
                 fill="#474747"
                 d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
               />
@@ -66,4 +67,5 @@
       </mat-expansion-panel>
     </div>
   </mat-accordion>
-</app-card>
+  </neo-card-content>
+</neo-card>

@@ -13,7 +13,7 @@ import { MatDivider } from '@angular/material/divider';
     '[attr.aria-orientation]': 'vertical ? "vertical" : "horizontal"',
     '[class.neo-divider-vertical]': 'vertical',
     '[class.neo-divider-horizontal]': '!vertical',
-    '[class.mat-divider-inset]': 'inset',
+    '[class.neo-divider-inset]': 'inset',
     class: 'neo-divider',
   },
   template: '',

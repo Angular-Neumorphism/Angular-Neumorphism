@@ -3,32 +3,25 @@
   width: 100%;
 }
 
-.fake-menu{
+.fake-menu {
   height: 8rem;
 }
 
-.scroll-container{
+.scroll-container {
   width: 100%;
   height: calc(100% - 9rem);
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.menu{ position: fixed;
-z-index: 999;
-width: 100vw;
+.menu {
+  position: fixed;
+  z-index: 999;
+  width: 100vw;
 }
 
-
 @media (max-width: 860px) {
-  .fake-menu{
+  .fake-menu {
     height: 13rem;
   }
 }
-
-
-
-
-
-
-

@@ -2,17 +2,20 @@
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: baseline;
   flex-direction: column;
 }
 
 .card {
-  width: 90%;
-  height: 50%;
+  width: 400px;
+  min-height: 150px;
+  height: fit-content;
+  margin-right: 20px;
 }
 
 .text {
   width: 90%;
+
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
@@ -21,16 +24,17 @@
   color: #474747;
   margin: 0 0 4rem 0;
 }
-  
-  .wrapper {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  
-  .button {
-    width: 70px;
-    position: relative;
-  }
 
+.card-content {
+  height: 120px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.button {
+  position: relative;
+}

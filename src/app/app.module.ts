@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 // import { ButtonComponent } from './components/button/button.component';
 import { NeoButtonComponent } from './components/neo-button/neo-button.component';
-import { CardComponent } from './components/card/card.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -50,7 +49,6 @@ import { NeoCardModule } from './components/neo-card/neo-card.module';
     MenuComponent,
     // ButtonComponent,
     NeoButtonComponent,
-    CardComponent,
     ExpansionPanelComponent,
     LandingComponent,
     SidenavComponent,

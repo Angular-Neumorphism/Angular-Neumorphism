@@ -1,18 +1,21 @@
 <div class="text">
   Neomorph styled input and textarea.
 </div>
-<app-card class="card"
-  ><span title>Basic Inputs</span>
+<neo-card class="card"
+  ><neo-card-header>
+    <neo-card-title>Basic Input</neo-card-title>
+  </neo-card-header>
+  <neo-card-content class="card-content">
   <span text>Controls that collect and validate user input.</span>
-<div class="form-wrapper">
+  <div class="form-wrapper">
     <form class="example-form">
-    <label class="label">Favorite food</label>
-    <input type="text" placeholder="Sushi" />
-  </form>
-  <form class="example-form">
-    <label class="label">Leave a comment</label>
-    <textarea id="neoMorph" placeholder="Ex. It makes me feel..."></textarea>
-  </form>  
-</div>
-
-</app-card>
+      <label class="label">Favorite food</label>
+      <input type="text" placeholder="Sushi" />
+    </form>
+    <form class="example-form">
+      <label class="label">Leave a comment</label>
+      <textarea id="neoMorph" placeholder="Ex. It makes me feel..."></textarea>
+    </form>
+  </div>
+  </neo-card-content>
+</neo-card>
