@@ -8,7 +8,6 @@ import {
   Inject,
 } from '@angular/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
-import * as MatCardModule from '@angular/material/card';
 
 @Directive({
   selector: 'neo-card-content, [neo-card-content], [neoCardContent]',
