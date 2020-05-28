@@ -1,0 +1,156 @@
+@import "./card.theme";
+
+@include neo-card-color();
+@include neo-card-typography();
+
+$neo-card-padding: 16px !default;
+$neo-card-border-radius: 8px !default;
+$neo-card-header-size: 40px !default;
+
+.neo-card {
+  display: block;
+  position: relative;
+  padding: $neo-card-padding;
+  border-radius: $neo-card-border-radius;
+
+  .neo-divider-horizontal {
+    position: absolute;
+    left: 1%;
+    width: 98%;
+
+    [dir="rtl"] & {
+      left: auto;
+      right: 0;
+    }
+
+    &.neo-divider-inset {
+      position: static;
+      margin: 0;
+
+      [dir="rtl"] & {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// base styles for each card section preset (neo-card-content, etc)
+%neo-card-section-base {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.neo-card-title {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.neo-card-content {
+  @extend %neo-card-section-base;
+}
+
+.neo-card-actions {
+  @extend %neo-card-section-base;
+  margin-left: -$neo-card-padding / 2;
+  margin-right: -$neo-card-padding / 2;
+  padding: 8px 0;
+}
+
+.neo-card-image {
+  width: calc(100% + #{$neo-card-padding * 2});
+  margin: 0 (-$neo-card-padding) 16px (-$neo-card-padding);
+}
+
+.neo-card-actions-align-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mat-card-footer {
+  // The negative margins pulls out the element, countering the padding
+  // to get the footer to be flush against the side of the card.
+  $margin: -$neo-card-padding;
+
+  display: block;
+  margin: 0 $margin $margin $margin;
+}
+
+.neo-card-actions {
+  .neo-button,
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button {
+    margin: 0 12px;
+  }
+}
+
+// HEADER STYLES
+
+.neo-card-header {
+  display: flex;
+  flex-direction: row;
+
+  .neo-card-title {
+    margin-bottom: 12px;
+  }
+}
+
+.neo-card-header-text {
+  margin: 0 $neo-card-padding;
+}
+
+.neo-card-title-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+// MEDIA QUERIES
+
+// @media ($mat-xsmall) {
+//   .mat-card-title-group {
+//     margin: 0;
+//   }
+// }
+
+// FIRST/LAST CHILD ADJUSTMENTS
+
+// top els in mat-card-content and mat-card can't have their default margin-tops (e.g. <p> tags)
+// or they'll incorrectly add to card's top padding
+.neo-card > :first-child,
+.neo-card-content > :first-child {
+  margin-top: 0;
+}
+
+// last els in mat-card-content and mat-card can't have their default margin-bottoms (e.g. <p> tags)
+// or they'll incorrectly add to card's bottom padding
+.neo-card > :last-child:not(.neo-card-footer),
+.neo-card-content > :last-child:not(.neo-card-footer) {
+  margin-bottom: 0;
+}
+
+// actions panel on bottom should be 8px from bottom of card
+// so must strip 16px from default card padding
+.neo-card > .neo-card-actions:last-child {
+  margin-bottom: -8px;
+  padding-bottom: 0;
+}
+
+// actions panel should always be 8px from sides,
+// so the first button in the actions panel can't add its own margins
+.neo-card-actions {
+  .neo-button,
+  .mat-button,
+  .mat-raised-button,
+  .mat-stroked-button {
+    &:first-child {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+// should be 12px space between titles and subtitles generally
+// default margin-bottom is 16px, so need to move lower title up 4px
+.neo-card-title:not(:first-child) {
+  margin-top: -4px;
+}

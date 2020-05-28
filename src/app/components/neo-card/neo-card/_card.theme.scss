@@ -1,0 +1,56 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+@import "../../../core/typography/typography.scss";
+
+@mixin neo-card-color() {
+  .neo-card {
+    background: mat-color($neo-light-theme-background, card);
+    color: mat-color($neo-light-theme-foreground, text);
+    box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow, 0.8);
+
+    &::before,
+    &::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    &::before {
+      mix-blend-mode: soft-light;
+      box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow, 0.8),
+        inset 2px 2px 5px rgba(34, 34, 34, 0.2);
+    }
+
+    &::after {
+      mix-blend-mode: color-burn;
+      box-shadow: 2px 2px 5px mat-color($neo-light-theme-foreground, card-shadow, 0.2),
+      inset 2px 2px 5px mat-color($neo-light-theme-foreground, card-shadow, 0.3);
+    }
+  }
+}
+
+@mixin neo-card-typography() {
+  .neo-card {
+    font-family: map_get($neo-typography, font-family);
+  }
+
+  .neo-card-title {
+    font: {
+      size: map_get($neo-typography, headline);
+      weight: map_get($neo-typography, title);
+    }
+  }
+
+  .neo-card-header .neo-card-title {
+    font-size: map_get($neo-typography, title);
+  }
+
+  .neo-card-content {
+    font-size: map_get($neo-typography, body-1);
+  }
+}
