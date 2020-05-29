@@ -1,7 +1,30 @@
 <div class="text">
     Just a content container.
 </div>
-<app-card class="card"
-  ><span title>Card</span>
-  <span text>Can contain some text.</span>
-</app-card>
+
+<neo-card class="card">
+  <neo-card-header>
+    <neo-card-title>Card with buttons</neo-card-title>
+  </neo-card-header>
+  <neo-card-content>
+    The Shiba Inu is the smallest of the six original and distinct spitz
+    breeds of dog from Japan. A small, agile dog that copes very well with
+    mountainous terrain, the Shiba Inu was originally bred for hunting.The
+    Shiba Inu is the smallest of the six original and distinct spitz breeds of
+    dog from Japan. A small, agile dog that copes very well with mountainous
+    terrain, the Shiba Inu was originally bred for hunting.</neo-card-content
+  >
+  <neo-card-footer>
+    <neo-divider></neo-divider>
+    <neo-card-actions align="end"
+      ><button neo-button >Confirm</button
+      ><button neo-button color="warn">Decline</button></neo-card-actions
+    >
+  </neo-card-footer>
+</neo-card>
+
+<neo-card class="card">
+  <neo-card-header>
+    <neo-card-title>Basic card</neo-card-title>
+  </neo-card-header>
+</neo-card>

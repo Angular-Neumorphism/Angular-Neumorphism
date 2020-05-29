@@ -42,6 +42,7 @@ import { ComponentsComponent } from './conteiners/components/components.componen
 import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
+import { NeoCardModule } from './components/neo-card/neo-card.module';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,7 @@ import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
     AboutComponent,
     ContactsComponent,
     ComponentsComponent,
-    SnackbarComponent
+    SnackbarComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -88,7 +89,8 @@ import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
     MatTabsModule,
     MatDialogModule,
     RouterModule,
-    NeoDividerModule
+    NeoDividerModule,
+    NeoCardModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],
