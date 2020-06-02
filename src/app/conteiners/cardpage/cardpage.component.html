@@ -2,27 +2,39 @@
   Just a content container.
 </div>
 <code class="code width">
-  <pre>    import &#123; NeoCardModule &#125;  from '~@Neomorph/neo-card/neo-card.module';    </pre>
+  <pre>
+    import &#123; NeoCardModule &#125;  from '~@Neomorph/neo-card/neo-card.module';    </pre
+  >
 </code>
 <neo-divider class="divider"></neo-divider>
 <div class="card-wrapper">
   <neo-card class="card">
     <neo-card-header>
+      <div neo-card-avatar class="example-header-image"></div>
       <neo-card-title>Card with buttons</neo-card-title>
+      <neo-card-subtitle>Dog Breed</neo-card-subtitle>
     </neo-card-header>
+    <img
+      neo-card-image
+      src="../../../assets/img/labrador.jpg"
+      alt="Photo of a Labrador"
+    />
     <neo-card-content>
-      The Shiba Inu is the smallest of the six original and distinct spitz
-      breeds of dog from Japan. A small, agile dog that copes very well with
-      mountainous terrain, the Shiba Inu was originally bred for hunting.The
-      Shiba Inu is the smallest of the six original and distinct spitz breeds of
-      dog from Japan. A small, agile dog that copes very well with mountainous
-      terrain, the Shiba Inu was originally bred for hunting.</neo-card-content
+      The Labrador Retriever, Labrador or just Lab, is a medium-large breed of
+      retriever-gun dog. The Labrador is the most popular breed of dog in
+      many nations. A favourite disability assistance breed in many countries,
+      Labradors are frequently trained to aid those with blindness or autism,
+      act as a therapy dog, or perform screening and detection work for law
+      enforcement and other official agencies. The breed is best known for
+      their obedience, loyalty, and playful composure. Additionally, they are
+      prized as sporting and hunting dogs. Originally used in Newfoundland, as
+      fishing dogs, they would help bring in the fishing nets and retrieve fish
+      that had gotten away.</neo-card-content
     >
-    <neo-divider></neo-divider>
     <neo-card-footer>
-      <neo-card-actions align="end"
-        ><button neo-button>Confirm</button
-        ><button neo-button color="warn">Decline</button></neo-card-actions
+      <neo-card-actions align="center"
+        ><button neo-button>Like</button
+        ><button neo-button>Share</button></neo-card-actions
       >
     </neo-card-footer>
   </neo-card>
@@ -31,21 +43,28 @@
     <pre>
       <span class="code-text">&lt;neo-card&gt;</span>
         <span class="code-text">&lt;neo-card-header&gt;</span>
+          <span class="code-text">&lt;div&gt; neo-card-avatar class="example-header-image"</span><span class="code-text">&lt;/div&gt;</span>
           <span class="code-text">&lt;neo-card-title&gt;</span>Card with buttons<span class="code-text">&lt;/neo-card-title&gt;</span>
+          <span class="code-text">&lt;neo-card-subtitle&gt;</span>Dog Breed<span class="code-text">&lt;/neo-card-title&gt;</span>
         <span class="code-text">&lt;/neo-card-header&gt;</span>
+        <span class="code-text">&lt;img neo-card-image src="../../assets/img/labrador.jpg" alt="Labrador"&gt;</span><span class="code-text"></span>
         <span class="code-text">&lt;neo-card-content&gt;</span>
-            The Shiba Inu is the smallest of the six original and distinct spitz
-            breeds of dog from Japan. A small, agile dog that copes very well with
-            mountainous terrain, the Shiba Inu was originally bred for hunting.The
-            Shiba Inu is the smallest of the six original and distinct spitz breeds of
-            dog from Japan. A small, agile dog that copes very well with mountainous
-            terrain, the Shiba Inu was originally bred for hunting.
+          The Labrador Retriever, Labrador or just Lab, is a medium-large breed of
+          retriever-gun dog. The Labrador is the most popular breed of dog in
+          many nations. A favourite disability assistance breed in many countries,
+          Labradors are frequently trained to aid those with blindness or autism,
+          act as a therapy dog, or perform screening and detection work for law
+          enforcement and other official agencies. The breed is best known for
+          their obedience, loyalty, and playful composure. Additionally, they are
+          prized as sporting and hunting dogs. Originally used in Newfoundland, as
+          fishing dogs, they would help bring in the fishing nets and retrieve fish
+          that had gotten away.
         <span class="code-text">&lt;/neo-card-content&gt;</span>
         <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
         <span class="code-text">&lt;neo-card-footer&gt;</span>
           <span class="code-text">&lt;neo-card-actions align="end"&gt;</span>
-            <span class="code-text">&lt;button neo-button&gt;</span>Confirm<span class="code-text">&lt;/button&gt;</span>
-            <span class="code-text">&lt;button neo-button color="warn"&gt;</span>Decline<span class="code-text">&lt;/button&gt;</span>
+            <span class="code-text">&lt;button neo-button&gt;</span>Like<span class="code-text">&lt;/button&gt;</span>
+            <span class="code-text">&lt;button neo-button &gt;</span>Share<span class="code-text">&lt;/button&gt;</span>
           <span class="code-text">&lt;/neo-card-actions&gt;</span>
         <span class="code-text">&lt;/neo-card-footer&gt;</span>
       <span class="code-text">&lt;/neo-card&gt;</span></pre>

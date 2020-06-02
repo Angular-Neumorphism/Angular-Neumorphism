@@ -42,6 +42,7 @@ import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
 import { NeoCardModule } from './components/neo-card/neo-card.module';
+import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { NeoCardModule } from './components/neo-card/neo-card.module';
     RouterModule,
     NeoDividerModule,
     NeoCardModule,
+    NeoToolbarModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],

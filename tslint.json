@@ -74,7 +74,7 @@
       ]
     },
     "variable-name": {
-      "options": ["ban-keywords", "check-format", "allow-pascal-case"]
+      "options": ["ban-keywords", "check-format", "allow-pascal-case", "allow-leading-underscore"]
     },
     "whitespace": {
       "options": [
@@ -89,7 +89,7 @@
     "no-conflicting-lifecycle": true,
     "no-host-metadata-property": false,
     "no-input-rename": true,
-    "no-inputs-metadata-property": true,
+    "no-inputs-metadata-property": false,
     "no-output-native": true,
     "no-output-on-prefix": true,
     "no-output-rename": true,

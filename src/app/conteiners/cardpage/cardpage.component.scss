@@ -45,6 +45,10 @@
   }
 }
 
+.example-header-image {
+  background-image: url('../../../assets/img/labrador-ava.jpg');
+  background-size: cover;
+}
 
 .text {
   width: 90%;
@@ -54,7 +58,7 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
-  margin: 0 0 4rem 0;
+  margin: 0 0 2rem 0;
 }
 
 .divider {

@@ -1,0 +1,79 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin _neo-toolbar-form-field-overrides {
+  .mat-form-field-underline,
+  .mat-form-field-ripple,
+  .mat-focused .mat-form-field-ripple,
+  .neo-form-field-underline,
+  .neo-form-field-ripple,
+  .neo-focused .neo-form-field-ripple {
+    background-color: currentColor;
+  }
+
+  .mat-form-field-label,
+  .mat-focused .mat-form-field-label,
+  .mat-select-value,
+  .mat-select-arrow,
+  .mat-form-field.mat-focused .mat-select-arrow,
+  .mat-form-field-label,
+  .neo-focused .neo-form-field-label,
+  .neo-select-value,
+  .neo-select-arrow,
+  .neo-form-field.neo-focused .neo-select-arrow {
+    color: inherit;
+  }
+
+  .mat-input-element,
+  .neo-input-element {
+    caret-color: currentColor;
+  }
+}
+
+@mixin neo-toolbar-color() {
+  $primary: mat-color($neo-light-theme, primary);
+  $accent: mat-color($neo-light-theme, accent);
+  $warn: mat-color($neo-light-theme, warn);
+
+  .neo-toolbar {
+    background: mat-color($neo-light-theme-background, app-bar);
+    color: mat-color($neo-light-theme-foreground, text);
+    position: relative;
+
+    &::before,
+    &::after {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+    }
+
+    &::before {
+      mix-blend-mode: soft-light;
+      box-shadow: inset 0px -5px 10px mat-color($neo-light-theme-foreground, dark-shadow, 0.3);
+    }
+    
+    &::after {
+      mix-blend-mode: color-burn;
+      box-shadow: 0px 5px 15px mat-color($neo-light-theme-foreground, dark-shadow, 0.5);
+    }
+
+    &.neo-primary {
+      background: $primary;
+    }
+
+    &.neo-accent {
+      background: $accent;
+    }
+
+    &.neo-warn {
+      background: $warn;
+    }
+
+    @include _mat-toolbar-form-field-overrides;
+  }
+}

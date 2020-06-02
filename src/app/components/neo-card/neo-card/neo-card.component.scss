@@ -17,17 +17,17 @@ $neo-card-header-size: 40px !default;
   .neo-divider-horizontal {
     --divider-offset: $neo-divider-inset-margin;
     position: absolute;
-    left: 1%;
-    width: 98%;
+    left: 0;
+    width: 100%;
 
     [dir="rtl"] & {
       left: auto;
-      right: 1%;
+      right: 0;
     }
 
     &.neo-divider-inset {
       position: static;
-      width: calc(99% - #{$neo-divider-inset-margin});
+      margin: 0;
 
       [dir="rtl"] & {
         margin-right: 0;
@@ -47,7 +47,7 @@ $neo-card-header-size: 40px !default;
   margin-bottom: 8px;
 }
 
-.neo-card-content {
+.neo-card-subtitle, .neo-card-content {
   @extend %neo-card-section-base;
 }
 
@@ -61,6 +61,16 @@ $neo-card-header-size: 40px !default;
 .neo-card-actions-align-end {
   display: flex;
   justify-content: flex-end;
+}
+
+.neo-card-actions-align-cenyet {
+  display: flex;
+  justify-content: center;
+}
+
+.neo-card-image {
+  width: calc(100% + #{$neo-card-padding * 2});
+  margin: 0 (-$neo-card-padding) 16px (-$neo-card-padding);
 }
 
 .neo-card-footer {
@@ -96,10 +106,55 @@ $neo-card-header-size: 40px !default;
   margin: 0 $neo-card-padding;
 }
 
+.neo-card-avatar {
+  height: $neo-card-header-size;
+  width: $neo-card-header-size;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  // Makes `<img>` tags behave like `background-size: cover`. Not supported
+  // in IE, but we're using it as a progressive enhancement.
+  object-fit: cover;
+}
+
 .neo-card-title-group {
   display: flex;
   justify-content: space-between;
 }
+
+.neo-card-sm-image {
+  width: 80px;
+  height: 80px;
+}
+
+.neo-card-md-image {
+  width: 112px;
+  height: 112px;
+}
+
+.neo-card-lg-image {
+  width: 152px;
+  height: 152px;
+}
+
+// This should normally also extend the `%mat-card-title-img`, but in order to avoid breaking
+// changes, we need to keep the horizontal margin reversion for now.
+// See: https://github.com/angular/components/issues/12203
+.neo-card-xl-image {
+  width: 240px;
+  height: 240px;
+  margin: -8px;
+
+  // Special treatment inside title group in order to fix the media areas inside of a title-group.
+  // This can be removed once #12203 has been addressed.
+  .neo-card-title-group > & {
+    // As per Material Design specifications, the images exceed the *top* content-box and take
+    // up some space. The margin below is necessary because otherwise space of the actual card
+    // content will be overlapped.
+    margin: -8px 0 8px;
+  }
+}
+
 
 // MEDIA QUERIES
 

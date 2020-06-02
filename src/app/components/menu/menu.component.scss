@@ -1,37 +1,18 @@
+:host {
+  height: 70px;
+  width: fit-content;
+  border-radius: 0 0 20px 20px;
+}
 .menu {
   position: relative;
   display: flex;
-  height: 80px;
   flex: 1;
   align-items: center;
-  border-radius: 0px 0px 20px 20px;
   padding: 0 68px;
-  background: #2086ed;
   box-sizing: border-box;
   justify-self: flex-end;
 }
 
-.menu::before,
-.menu::after {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-}
-
-.menu::before {
-  mix-blend-mode: soft-light;
-  box-shadow: inset 0px -5px 10px rgba(34, 34, 34, 0.5);
-}
-
-.menu::after {
-  mix-blend-mode: color-burn;
-  box-shadow: 0px 5px 15px rgba(34, 34, 34, 0.5);
-}
 
 .menu-logo {
   width: 40px;

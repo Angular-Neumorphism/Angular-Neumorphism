@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NeoCard } from './neo-card.component';
+import { NeoToolbarComponent } from './neo-toolbar.component';
 
-describe('NeoCardComponent', () => {
-  let component: NeoCard;
-  let fixture: ComponentFixture<NeoCard>;
+describe('NeoToolbarComponent', () => {
+  let component: NeoToolbarComponent;
+  let fixture: ComponentFixture<NeoToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NeoCard ]
+      declarations: [ NeoToolbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NeoCard);
+    fixture = TestBed.createComponent(NeoToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
