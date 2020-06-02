@@ -15,7 +15,6 @@ $neo-card-header-size: 40px !default;
   border-radius: $neo-card-border-radius;
 
   .neo-divider-horizontal {
-    --divider-offset: $neo-divider-inset-margin;
     position: absolute;
     left: 0;
     width: 100%;
