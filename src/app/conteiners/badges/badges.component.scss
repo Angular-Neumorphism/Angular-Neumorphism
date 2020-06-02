@@ -3,12 +3,12 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: baseline;
   flex-direction: column;
 }
 
 .card {
-  width: 90%;
+  width: 400px;
   height: 50%;
 }
 
@@ -28,7 +28,6 @@
 }
 
 .wrapper {
-
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -36,10 +35,11 @@
 }
 
 .badge-wrapper{
+  width: auto;
   display: flex;
   justify-content: flex-end;
   white-space:nowrap;
- position: relative;
+  position: relative;
 }
 .text-with-badge{
     padding: .2rem .5rem;

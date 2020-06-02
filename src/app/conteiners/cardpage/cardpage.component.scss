@@ -7,10 +7,47 @@
   flex-direction: column;
 }
 
+.card-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.card-wrapper:last-of-type {
+  margin-bottom: 30px;
+}
+
 .card {
   width: 400px;
   min-height: 150px;
-  margin-bottom: 20px;
+  height: fit-content;
+  margin-right: 20px;
+}
+
+.width {
+  width: 100%;
+}
+
+.code {
+  display: flex;
+  flex: 1;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  overflow: auto;
+  .code-text {
+    color: #2086ed;
+  }
+}
+
+.example-header-image {
+  background-image: url('../../../assets/img/labrador-ava.jpg');
+  background-size: cover;
 }
 
 .text {
@@ -21,5 +58,21 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
-  margin: 0 0 4rem 0;
+  margin: 0 0 2rem 0;
+}
+
+.divider {
+  width: 100%;
+  margin: 20px 0;
+}
+
+@media (max-width: 420px) {
+  .card {
+    width: calc(100% - 43px);
+    margin: 0 5px 20px 5px;
+  }
+
+  .card-wrapper {
+    flex-direction: column;
+  }
 }

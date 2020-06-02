@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 // import { ButtonComponent } from './components/button/button.component';
 import { NeoButtonComponent } from './components/neo-button/neo-button.component';
-import { CardComponent } from './components/card/card.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -43,6 +42,7 @@ import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
 import { NeoCardModule } from './components/neo-card/neo-card.module';
+import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
 
 @NgModule({
   declarations: [
@@ -50,7 +50,6 @@ import { NeoCardModule } from './components/neo-card/neo-card.module';
     MenuComponent,
     // ButtonComponent,
     NeoButtonComponent,
-    CardComponent,
     ExpansionPanelComponent,
     LandingComponent,
     SidenavComponent,
@@ -91,6 +90,7 @@ import { NeoCardModule } from './components/neo-card/neo-card.module';
     RouterModule,
     NeoDividerModule,
     NeoCardModule,
+    NeoToolbarModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],

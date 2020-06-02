@@ -24,15 +24,76 @@ export class NeoCardContent {}
 export class NeoCardTitle {}
 
 @Directive({
+  selector: `neo-card-subtitle, [neo-card-subtitle], [neoCardSubtitle]`,
+  host: {
+    class: 'neo-card-subtitle'
+  }
+})
+export class NeoCardSubtitle {}
+
+
+/**
+ * Image used in a card, needed to add the mat- CSS styling.
+ * @docs-private
+ */
+@Directive({
+  selector: '[neo-card-sm-image], [neoCardImageSmall]',
+  host: {class: 'neo-card-sm-image'}
+})
+export class NeoCardSmImage {}
+
+/**
+ * Image used in a card, needed to add the mat- CSS styling.
+ * @docs-private
+ */
+@Directive({
+  selector: '[neo-card-md-image], [neoCardImageMedium]',
+  host: {class: 'neo-card-md-image'}
+})
+export class NeoCardMdImage {}
+
+/**
+ * Image used in a card, needed to add the mat- CSS styling.
+ * @docs-private
+ */
+@Directive({
+  selector: '[neo-card-lg-image], [neoCardImageLarge]',
+  host: {class: 'neo-card-lg-image'}
+})
+export class MatCardLgImage {}
+
+/**
+ * Large image used in a card, needed to add the mat- CSS styling.
+ * @docs-private
+ */
+@Directive({
+  selector: '[neo-card-xl-image], [neoCardImageXLarge]',
+  host: {class: 'neo-card-xl-image'}
+})
+export class NeoCardXlImage {}
+
+/**
+ * Avatar image used in a card, needed to add the mat- CSS styling.
+ * @docs-private
+ */
+@Directive({
+  selector: '[neo-card-avatar], [neoCardAvatar]',
+  host: {class: 'neo-card-avatar'}
+})
+export class NeoCardAvatar {}
+
+
+@Directive({
   selector: 'neo-card-actions',
   exportAs: 'neoCardActions',
   host: {
     class: 'neo-card-actions',
     '[class.neo-card-actions-align-end]': 'align === "end"',
+    '[class.neo-card-actions-align-center]': 'align === "center"',
   },
 })
 export class NeoCardActions  {
-  @Input() align: 'start' | 'end' = 'start';
+  @Input() align: 'start' | 'end' | 'center' = 'start';
 }
 
 @Directive({
@@ -45,7 +106,7 @@ export class NeoCardFooter {}
   selector: '[neo-card-image], [neoCardImage]',
   host: {class: 'neo-card-image'}
 })
-export class MatCardImage {}
+export class NeoCardImage {}
 
 @Component({
   selector: 'neo-card',

@@ -1,54 +1,86 @@
 <div class="text">
   A simple line separator
 </div>
-<app-card class="card"
-  ><span title>Didiver</span>
-  <span text>List of items</span>
-  <div class="wrapper">
-    <div class="text-item">Item 1</div>
-    <neo-divider></neo-divider>
-    <div class="text-item">Item 2</div>
-    <neo-divider></neo-divider>
-    <div class="text-item">Item 3</div>
-    <neo-divider></neo-divider>
-    <div class="text-item">Item 4</div>
-    <neo-divider></neo-divider>
-  </div>
-</app-card>
+<code class="code width">
+  <pre>
+    import &#123; NeoCardModule &#125;  from '~@Neomorph/neo-divider/neo-divider.module';    </pre
+  >
+</code>
+<neo-divider class="divider"></neo-divider>
+<div class="card-wrapper">
+  <neo-card class="card">
+    <neo-card-header>
+      <neo-card-title>Horizontal didiver</neo-card-title>
+    </neo-card-header>
+    <neo-card-content>
+      <div class="wrapper">
+        <div class="text-item">Item 1</div>
+      </div>
+      <div class="wrapper">
+        <div class="text-item">Item 2</div>
+        <neo-divider></neo-divider>
+      </div>
+    </neo-card-content>
+  </neo-card>
 
-<app-card class="card"
-  ><span title>Didiver</span>
-  <span text>Vertical</span>
-  <div class="wrapper">
-    <div class="wrapper vertical">
-      <neo-divider [vertical]="true"></neo-divider>
-      <div class="text-item">Item 1</div>
-      <neo-divider [vertical]="true"></neo-divider>
-      <div class="text-item">Item 2</div>
-      <neo-divider [vertical]="true"></neo-divider>
-      <div class="text-item">Item 3</div>
-      <neo-divider [vertical]="true"></neo-divider>
-      <div class="text-item">Item 4</div>
-      <neo-divider [vertical]="true"></neo-divider>
-    </div>
-  </div>
-</app-card>
+  <code class="code">
+    <pre>
+    <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
+      <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
+    <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span> </pre>
+  </code>
+</div>
+<neo-divider class="divider"></neo-divider>
+<div class="card-wrapper">
+  <neo-card class="card">
+    <neo-card-header>
+      <neo-card-title>Vertical didiver</neo-card-title>
+    </neo-card-header>
+    <neo-card-content>
+      <div class="wrapper">
+        <div class="wrapper vertical">
+          <neo-divider [vertical]="true"></neo-divider>
+          <div class="text-item">Item 1</div>
+          <neo-divider [vertical]="true"></neo-divider>
+          <div class="text-item">Item 2</div>
+          <neo-divider [vertical]="true"></neo-divider>
+        </div>
+      </div>
+    </neo-card-content>
+  </neo-card>
 
-<app-card class="card"
-  ><span title>Didiver</span>
-  <span text>Inset</span>
-  <div class="wrapper">
-    <div class="wrapper">
-      <div class="text-item">Item 1</div>
-      <neo-divider [inset]="true"></neo-divider>
-      <div class="text-item">Item 2</div>
-      <neo-divider [inset]="true"></neo-divider>
-      <div class="text-item">Item 3</div>
-      <neo-divider [inset]="true"></neo-divider>
-      <div class="text-item">Item 4</div>
-      <neo-divider [inset]="true"></neo-divider>
-    </div>
-  </div>
-</app-card>
+  <code class="code">
+    <pre>
+    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
+      <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
+    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
+      <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span>
+    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span> </pre>
+  </code>
+</div>
+<neo-divider class="divider"></neo-divider>
+<div class="card-wrapper">
+  <neo-card class="card"
+    ><neo-card-header>
+      <neo-card-title>Inset didiver</neo-card-title>
+    </neo-card-header>
+    <neo-card-content>
+      <div class="wrapper">
+        <div class="wrapper">
+          <div class="text-item">Item 1</div>
+        </div>
+        <div class="wrapper">
+          <neo-divider [inset]="true"></neo-divider>
+          <div class="text-item">Item 2</div>
+        </div>
+      </div>
+    </neo-card-content>
+  </neo-card>
 
-
+  <code class="code">
+    <pre>
+    <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
+      <span class="code-text">&lt;neo-divider [inset]="true"&gt;&lt;/neo-divider&gt;</span>
+    <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span> </pre>
+  </code>
+</div>

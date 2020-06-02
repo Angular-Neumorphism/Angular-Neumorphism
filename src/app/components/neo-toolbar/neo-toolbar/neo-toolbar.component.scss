@@ -1,0 +1,33 @@
+@import './toolbar.theme';
+
+$neo-toolbar-row-padding: 16px !default;
+$neo-toolbar-height-desctop: 80px !default;
+
+@include neo-toolbar-color();
+
+$neo-toolbar-height-mobile-portrait: 56px !default; //add later different displays
+
+.neo-toolbar {
+  height: $neo-toolbar-height-desctop;
+  border-radius: 0px 0px 20px 20px;
+}
+
+.neo-toolbar-row, .neo-toolbar-single-row {
+  display: flex;
+  box-sizing: border-box;
+
+  padding: 0 $neo-toolbar-row-padding;
+  width: 100%;
+
+  flex-direction: row;
+  align-items: center;
+
+  white-space: nowrap;
+}
+
+.neo-toolbar-multiple-rows {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  width: 100%;
+}

@@ -1,9 +1,9 @@
 @import "./divider_theme";
 
 $neo-divider-width: 2px;
-$mat-divider-inset-margin: 80px;
+$neo-divider-inset-margin: 80px;
 
-@include neo-divider-theme();   
+@include neo-divider-theme();
 
 .neo-divider {
   border-top-width: 0;
@@ -23,11 +23,11 @@ $mat-divider-inset-margin: 80px;
     border-right-width: 0;
   }
 
-  &.mat-divider-inset {
-    margin-left: $mat-divider-inset-margin;
+  &.neo-divider-inset {
+    margin-left: $neo-divider-inset-margin;
     [dir="rtl"] & {
       margin-left: auto;
-      margin-right: $mat-divider-inset-margin;
+      margin-right: $neo-divider-inset-margin;
     }
   }
 }

@@ -1,7 +1,9 @@
-<app-card class="card"
-  ><span title>About</span>
-  <span text
-    ><p>
+<neo-card class="card">
+  <neo-card-header>
+    <neo-card-title>About</neo-card-title>
+  </neo-card-header>
+  <neo-card-content>
+    <p>
       Neomorphism is a quite a new UI trend. It's kind of 'soft design' that
       mostly uses shadows to do things. Using a Neomorphism in real projects is
       quite challenging because of not very clear rules and accessibility
@@ -23,9 +25,10 @@
 
     If you have any trouble, questions, suggestions, or want to contribute
     Angular Neomorphism framework, don't hesitate to
-    <a class="link" href="mailto:neumorphism@gmail.com">contact</a> us.</span
+    <a class="link" href="mailto:neumorphism@gmail.com">contact</a>
+    us.</neo-card-content
   >
-</app-card>
+</neo-card>
 
 <div class="share-links">
   <button neo-button (click)="shareFacebook()" class="button">

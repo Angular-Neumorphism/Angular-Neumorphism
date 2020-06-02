@@ -1,4 +1,5 @@
 @import "./card.theme";
+@import "../../neo-divider/neo-divider/neo-divider.component.scss";
 
 @include neo-card-color();
 @include neo-card-typography();
@@ -15,8 +16,8 @@ $neo-card-header-size: 40px !default;
 
   .neo-divider-horizontal {
     position: absolute;
-    left: 1%;
-    width: 98%;
+    left: 0;
+    width: 100%;
 
     [dir="rtl"] & {
       left: auto;
@@ -45,7 +46,7 @@ $neo-card-header-size: 40px !default;
   margin-bottom: 8px;
 }
 
-.neo-card-content {
+.neo-card-subtitle, .neo-card-content {
   @extend %neo-card-section-base;
 }
 
@@ -56,23 +57,28 @@ $neo-card-header-size: 40px !default;
   padding: 8px 0;
 }
 
-.neo-card-image {
-  width: calc(100% + #{$neo-card-padding * 2});
-  margin: 0 (-$neo-card-padding) 16px (-$neo-card-padding);
-}
-
 .neo-card-actions-align-end {
   display: flex;
   justify-content: flex-end;
 }
 
-.mat-card-footer {
+.neo-card-actions-align-cenyet {
+  display: flex;
+  justify-content: center;
+}
+
+.neo-card-image {
+  width: calc(100% + #{$neo-card-padding * 2});
+  margin: 0 (-$neo-card-padding) 16px (-$neo-card-padding);
+}
+
+.neo-card-footer {
   // The negative margins pulls out the element, countering the padding
   // to get the footer to be flush against the side of the card.
   $margin: -$neo-card-padding;
 
   display: block;
-  margin: 0 $margin $margin $margin;
+  margin: 0 0 $margin 0;
 }
 
 .neo-card-actions {
@@ -99,10 +105,55 @@ $neo-card-header-size: 40px !default;
   margin: 0 $neo-card-padding;
 }
 
+.neo-card-avatar {
+  height: $neo-card-header-size;
+  width: $neo-card-header-size;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  // Makes `<img>` tags behave like `background-size: cover`. Not supported
+  // in IE, but we're using it as a progressive enhancement.
+  object-fit: cover;
+}
+
 .neo-card-title-group {
   display: flex;
   justify-content: space-between;
 }
+
+.neo-card-sm-image {
+  width: 80px;
+  height: 80px;
+}
+
+.neo-card-md-image {
+  width: 112px;
+  height: 112px;
+}
+
+.neo-card-lg-image {
+  width: 152px;
+  height: 152px;
+}
+
+// This should normally also extend the `%mat-card-title-img`, but in order to avoid breaking
+// changes, we need to keep the horizontal margin reversion for now.
+// See: https://github.com/angular/components/issues/12203
+.neo-card-xl-image {
+  width: 240px;
+  height: 240px;
+  margin: -8px;
+
+  // Special treatment inside title group in order to fix the media areas inside of a title-group.
+  // This can be removed once #12203 has been addressed.
+  .neo-card-title-group > & {
+    // As per Material Design specifications, the images exceed the *top* content-box and take
+    // up some space. The margin below is necessary because otherwise space of the actual card
+    // content will be overlapped.
+    margin: -8px 0 8px;
+  }
+}
+
 
 // MEDIA QUERIES
 

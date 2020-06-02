@@ -1,8 +1,11 @@
 <div class="text">
   Menu is a floating panel containing list of options.
 </div>
-<app-card class="card"
-  ><span title>Basic menu</span>
+<neo-card class="card"
+  ><neo-card-header>
+    <neo-card-title>Basic Menu</neo-card-title>
+  </neo-card-header>
+  <neo-card-content class="card-content">
   <div class="wrapper">
     <button neo-button (click)="menuClickHandler($event)" class="button">
       Menu
@@ -13,4 +16,5 @@
       </div>
     </button>
   </div>
-</app-card>
+  </neo-card-content>
+</neo-card>

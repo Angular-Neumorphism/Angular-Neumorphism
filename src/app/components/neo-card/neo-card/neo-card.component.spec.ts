@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NeoCardComponent } from './neo-card.component';
+import { NeoCard } from './neo-card.component';
 
 describe('NeoCardComponent', () => {
-  let component: NeoCardComponent;
-  let fixture: ComponentFixture<NeoCardComponent>;
+  let component: NeoCard;
+  let fixture: ComponentFixture<NeoCard>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NeoCardComponent ]
+      declarations: [ NeoCard ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NeoCardComponent);
+    fixture = TestBed.createComponent(NeoCard);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,12 +2,19 @@
   Snackbar is a service for displaying snack-bar notifications.A snack-bar can
   contain either a string message or a given component.
 </div>
-<app-card class="card"
-  ><span title>Snackbar</span>
-
-  <div class="wrapper">
-    <button neo-button (mousedown)="openSnackBar()" class="button">
-      Show snackbar
-    </button>
-  </div>
-</app-card>
+<neo-card class="card"
+  ><neo-card-header>
+    <neo-card-title>Snackbar</neo-card-title>
+  </neo-card-header>
+  <neo-card-content class="card-content">
+  </neo-card-content>
+  <neo-card-footer>
+    <neo-card-actions>
+      <div class="wrapper">
+        <button neo-button (mousedown)="openSnackBar()" class="button">
+          Show snackbar
+        </button>
+      </div>
+    </neo-card-actions>
+  </neo-card-footer>
+</neo-card>

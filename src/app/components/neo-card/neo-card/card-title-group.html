@@ -1,8 +1,8 @@
 <div>
-    <ng-content
-        select="neo-card-title, 
-        [neo-card-title], [neo-card-subtitle],
-        [neoCardTitle]"></ng-content>
-  </div>
-  <ng-content></ng-content>
-  
+  <ng-content
+      select="neo-card-title, neo-card-subtitle,
+      [neo-card-title], [neo-card-subtitle],
+      [neoCardTitle], [neoCardSubtitle]"></ng-content>
+</div>
+<ng-content select="img"></ng-content>
+<ng-content></ng-content>

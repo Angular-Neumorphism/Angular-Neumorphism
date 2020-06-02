@@ -2,13 +2,15 @@
   height: 100%;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: baseline;
   flex-direction: column;
 }
 
 .card {
-  width: 90%;
-  height: 50%;
+  width: 400px;
+  min-height: 150px;
+  height: fit-content;
+  margin-right: 20px;
 }
 
 .text {
@@ -32,6 +34,7 @@
 
 .wrapper {
   height: 100%;
+  margin-top: 25%;
   display: flex;
   flex: 1;
 }
