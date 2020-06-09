@@ -380,24 +380,24 @@ export class NeoInput extends MatInputModule.MatInput
   }
 
   /** Make sure the input is a supported type. */
-  // protected _validateType() {
-  //   if (NEO_INPUT_INVALID_TYPES.indexOf(this._type) > -1) {
-  //     throw getMatInputUnsupportedTypeError(this._type);
-  //   }
-  // }
+  protected _validateType() {
+    if (NEO_INPUT_INVALID_TYPES.indexOf(this._type) > -1) {
+      throw getMatInputUnsupportedTypeError(this._type);
+    }
+  }
 
   /** Checks whether the input type is one of the types that are never empty. */
-  // protected _isNeverEmpty() {
-  //   return this._neverEmptyInputTypes.indexOf(this._type) > -1;
-  // }
+  protected _isNeverEmpty() {
+    return this._neverEmptyInputTypes.indexOf(this._type) > -1;
+  }
 
   /** Checks whether the input is invalid based on the native validation. */
-  // protected _isBadInput() {
-  //   // The `validity` property won't be present on platform-server.
-  //   let validity = (this._elementRef.nativeElement as HTMLInputElement)
-  //     .validity;
-  //   return validity && validity.badInput;
-  // }
+  protected _isBadInput() {
+    // The `validity` property won't be present on platform-server.
+    let validity = (this._elementRef.nativeElement as HTMLInputElement)
+      .validity;
+    return validity && validity.badInput;
+  }
 
   /**
    * Implemented as part of MatFormFieldControl.
