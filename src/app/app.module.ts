@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,6 +44,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
 import { NeoCardModule } from './components/neo-card/neo-card.module';
 import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
+import { NeoInputModule } from './components/neo-input/neo-input.module';
+import { NeoFormFieldModule } from './components/neo-form-field/neo-form-field.module';
+import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component';
 
 @NgModule({
   declarations: [
@@ -76,10 +80,13 @@ import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
     ContactsComponent,
     ComponentsComponent,
     SnackbarComponent,
+    CodeEmbedComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatExpansionModule,
     MatIconModule,
@@ -91,6 +98,8 @@ import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
     NeoDividerModule,
     NeoCardModule,
     NeoToolbarModule,
+    NeoInputModule,
+    NeoFormFieldModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],

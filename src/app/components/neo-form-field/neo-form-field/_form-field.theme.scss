@@ -1,0 +1,43 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+@import "../../neo-input/neo-input/input.theme";
+
+@mixin neo-form-field-fill-color() {
+  $error-color: mat-color($neo-light-theme, error);
+  .neo-form-field-label {
+    color: mat-color($neo-light-theme-foreground, secondary-text);
+  }
+
+  .neo-form-field-invalid {
+    .neo-form-field-label {
+      color: $error-color;
+    }
+    .neo-input-element {
+      border: 1px solid $error-color;
+    }
+  }
+
+  .neo-error {
+    color: $error-color;
+  }
+}
+
+@mixin neo-form-field-background($color) {
+  $input-color: darken($color, 5%);
+
+  &.neo-form-field {
+    @include neo-input-background-with-form-field($input-color);
+    background-color: $color;
+  }
+}
+
+@mixin neo-form-field-typography() {
+  $font-size: 12px;
+  $line-height: 16px;
+  .neo-form-field-label,
+  .neo-error {
+    font: inherit;
+    line-height: $line-height;
+    font-size: $font-size;
+  }
+}

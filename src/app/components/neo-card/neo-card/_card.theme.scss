@@ -4,11 +4,7 @@
 
 @mixin neo-card-color() {
   .neo-card {
-    background: linear-gradient(
-      143.97deg,
-      mat-color($neo-light-theme-background, card-gradient-start) 0%,
-      mat-color($neo-light-theme-background, card-gradient-end) 100%
-    );
+    background: mat-color($neo-light-theme-background, card-gradient-start); //changed from a gradient because a gradient doesn't overrides
     color: mat-color($neo-light-theme-foreground, text);
     box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow, 0.8);
 

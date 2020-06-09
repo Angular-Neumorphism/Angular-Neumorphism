@@ -1,0 +1,40 @@
+<div class="neo-form-field-wrapper">
+  <div #connectionContainer>
+    <div class="neo-form-field-label-wrapper">
+      <label
+        class="neo-form-field-label"
+        [id]="_labelId"
+        [attr.for]="_control.id"
+        [attr.aria-owns]="_control.id"
+        [class.neo-empty]="_control.empty"
+        [class.neo-form-field-empty]="_control.empty"
+        [class.neo-accent]="color == 'accent'"
+        [class.neo-warn]="color == 'warn'"
+        #label
+      >
+        <ng-content select="neo-label"></ng-content>
+        <span
+          class="neo-placeholder-required neo-form-field-required-marker"
+          aria-hidden="true"
+          *ngIf="!hideRequiredMarker && _control.required && !_control.disabled"
+          >&#32;*</span
+        >
+      </label>
+    </div>
+
+    <div class="neo-form-field-infix" #inputContainer>
+      <ng-content></ng-content>
+    </div>
+  </div>
+
+  <div
+    class="neo-form-field-subscript-wrapper"
+    [ngSwitch]="_getDisplayedMessages()"
+  >
+    <div
+      *ngSwitchCase="'error'"
+    >
+      <ng-content select="neo-error"></ng-content>
+    </div>
+  </div>
+</div>

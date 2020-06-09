@@ -1,0 +1,132 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-input-color() {
+  $primary: mat-color($neo-light-theme, primary);
+  $accent: mat-color($neo-light-theme, accent);
+  $warn: mat-color($neo-light-theme, warn);
+
+  .neo-form-field-type-neo-native-select .neo-form-field-infix::after {
+    color: mat-color($neo-light-theme-foreground, text);
+  }
+  .neo-input-element {
+    caret-color: mat-color($neo-light-theme-foreground, text);
+    background-color: inherit;
+    color: mat-color($neo-light-theme-foreground, title);
+    box-shadow: inset 1px 1px 2px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.4),
+      inset -1px -1px 2px mat-color($neo-light-theme-foreground, light-shadow);
+
+    @include input-placeholder {
+      color: mat-color($neo-light-theme-foreground, secondary-text);
+    }
+    transition: box-shadow 0.1s ease-out;
+
+    &:hover {
+      box-shadow: inset 2px 2px 5px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.4),
+        inset -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: inset 4px 4px 8px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.4),
+        inset -4px -4px 8px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:disabled {
+      color: mat-color($neo-light-theme-foreground, disabled-text);
+      background: linear-gradient(
+          0deg,
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.3)
+        ),
+        inherit;
+      box-shadow: inset 1px 1px 2px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.2),
+        inset -1px -1px 2px mat-color($neo-light-theme-foreground, light-shadow);
+
+      @include input-placeholder {
+        color: mat-color($neo-light-theme-foreground, disabled-text);
+      }
+    }
+  }
+  .neo-accent .neo-input-element {
+    caret-color: $accent;
+  }
+
+  .neo-warn .neo-input-element,
+  .neo-form-field-invalid .neo-input-element {
+    caret-color: $warn;
+  }
+
+  .neo-form-field-type-neo-native-select.neo-form-field-invalid
+    .neo-form-field-infix::after {
+    color: $warn;
+  }
+}
+
+@mixin neo-input-background-with-form-field($color) {
+  .neo-input-element {
+    background-color: $color;
+    box-shadow: inset 1px 1px 2px darken($color, 15%),
+      inset -1px -1px 2px lighten($color, 15%);
+  }
+
+  .neo-input-element:hover:not([disabled]) {
+    box-shadow: inset 2px 2px 5px darken($color, 15%),
+      inset -2px -2px 5px lighten($color, 15%);
+  }
+
+  .neo-input-element:focus:not([disabled]),
+  .neo-input-element:active:not([disabled]) {
+    box-shadow: inset 4px 4px 8px darken($color, 15%),
+      inset -4px -4px 8px lighten($color, 15%);
+  }
+
+  .neo-input-element:disabled {
+    background-color: lighten($color, 10%);
+    box-shadow: inset 2px 2px 5px darken($color, 12%),
+      inset -2px -2px 5px lighten($color, 12%);
+  }
+}
+
+@mixin neo-input-background($color) {
+  &.neo-input.mat-input-element.neo-input-element {
+    background-color: $color;
+    box-shadow: inset 1px 1px 2px darken($color, 15%),
+      inset -1px -1px 2px lighten($color, 15%);
+  }
+
+  &.neo-input.mat-input-element.neo-input-element:hover:not([disabled]) {
+    box-shadow: inset 2px 2px 5px darken($color, 15%),
+      inset -2px -2px 5px lighten($color, 15%);
+  }
+
+  &.neo-input.mat-input-element.neo-input-element:focus:not([disabled]),
+  &.neo-input.mat-input-element.neo-input-element:active:not([disabled]) {
+    box-shadow: inset 4px 4px 8px darken($color, 15%),
+      inset -4px -4px 8px lighten($color, 15%);
+  }
+
+  &.neo-input.mat-input-element.neo-input-element:disabled {
+    background-color: lighten($color, 10%);
+    box-shadow: inset 2px 2px 5px darken($color, 12%),
+      inset -2px -2px 5px lighten($color, 12%);
+  }
+}
+
+@mixin neo-input-typography() {
+  $font-size: 14px;
+  $line-height: 22px;
+  input.mat-input-element {
+    line-height: $line-height;
+    font-size: $font-size;
+    // User agent stylesheets set the text-align of inputs explicitly to "start". Those can be
+    // easily overwritten by targeting the input element using a simple CSS selector, but since
+    // the text-align will be applied most of the time on the `neo-form-field` to also align the
+    // placeholder, the alignment should be inherited here.
+    text-align: inherit;
+  }
+}

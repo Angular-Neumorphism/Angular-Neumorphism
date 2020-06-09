@@ -1,0 +1,124 @@
+@import "./form-field.theme";
+@import "../../neo-input/neo-input/input.theme";
+
+@include neo-form-field-fill-color();
+@include neo-form-field-typography();
+@include neo-input-color();
+@include neo-input-typography();
+
+$neo-form-field-default-infix-width: 180px !default;
+
+.neo-form-field {
+  display: inline-block;
+  position: relative;
+
+  // To avoid problems with text-align.
+  text-align: left;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+// Global wrapper. We need to apply margin to the element for spacing, but
+// cannot apply it to the host element directly.
+.neo-form-field-wrapper {
+  position: relative;
+}
+
+.neo-form-field-infix {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: $neo-form-field-default-infix-width;
+}
+
+.neo-error{
+  margin-top: 5px;
+}
+
+// Used to hide the label overflow on IE, since IE doesn't take transform into account when
+// determining overflow.
+.neo-form-field-label-wrapper {
+  position: relative;
+  margin-bottom: 5px;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none; // We shouldn't catch mouse events (let them through).
+
+  [dir="rtl"] & {
+    // Usually this isn't necessary since the element is 100% wide, but
+    // when we've got a `select` node, we need to set a `max-width` on it.
+    left: auto;
+    right: 0;
+  }
+}
+
+
+.neo-form-field-label {
+  // The label is after the form field control, but needs to be aligned top-left of the infix <div>.
+  position: relative;
+  pointer-events: none; // We shouldn't catch mouse events (let them through).
+
+  // Put ellipsis text overflow.
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+
+  [dir="rtl"] & {
+    transform-origin: 100% 0;
+    left: auto;
+    right: 0;
+  }
+}
+
+.neo-form-field-label {
+  display: block;
+}
+
+
+// Server-side rendered neoInput with focus or a placeholder attribute but placeholder not shown
+// (used as a pure CSS stand-in for mat-form-field-should-float).
+.neo-input-server:focus + .neo-form-field-label-wrapper .neo-form-field-label,
+.neo-input-server[placeholder]:not(:placeholder-shown)
+  + .neo-form-field-label-wrapper
+  .neo-form-field-label {
+  display: none;
+
+}
+
+// Wrapper for the hints and error messages.
+.neo-form-field-subscript-wrapper {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden; // prevents multi-line errors from overlapping the control
+}
+
+// Scale down icons in the label and hint to be the same size as the text.
+.neo-form-field-subscript-wrapper,
+.neo-form-field-label-wrapper {
+  .mat-icon {
+    width: 1em;
+    height: 1em;
+    font-size: inherit;
+    vertical-align: baseline;
+  }
+}
+
+//Single error message displayed beneath the form field underline.
+.neo-error {
+  display: block;
+}
+
+// Element that can used to reliably align content in relation to the form field control.
+.neo-form-field-control-wrapper {
+  position: relative;
+}
+
+

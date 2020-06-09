@@ -1,3 +1,6 @@
+@import "../../components/neo-form-field/neo-form-field/form-field.theme";
+@import "../../components/neo-input/neo-input/input.theme";
+
 :host {
   height: 100%;
   display: flex;
@@ -6,11 +9,17 @@
   flex-direction: column;
   width: 100%;
   box-sizing: border-box;
+  padding-bottom: 100px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
 }
 
 .card {
-  width: 400px;
-  min-height: 150px;
+  width: 40%;
+  min-height: 370px;
   height: fit-content;
   margin-right: 20px;
 }
@@ -19,119 +28,141 @@
   width: 90%;
   font-family: Open Sans;
   font-style: normal;
-  font-weight: 600;
+  font-weight: normal;
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
   margin: 0 0 4rem 0;
 }
 
-.example-form {
-  display: flex;
-  flex-direction: column;
-  height: 40%;
-  margin: 1rem;
-}
 
-.form-wrapper {
+.form {
   height: 100%;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
 }
-//**************input text*************//@extend
 
-input[type="text"] {
-  padding: 0 12px;
-  outline: none;
-  border: none;
-  -webkit-tap-highlight-color: transparent;
-  &::-moz-focus-inner {
-    border: 0;
+.divider {
+  width: 100%;
+  margin: 20px 0;
+}
+
+
+.width {
+  width: 100%;
+}
+
+.styled-formfield {
+  @include neo-form-field-background(#f84f5a);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 200px;
+}
+
+.single-input{
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  height: 200px;
+}
+
+
+.styled-input {
+  @include neo-input-background(#459af0);
+  color: #fff;
+  &::placeholder{
+    color: #fff
   }
+}
+
+.form-field {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+
+//tabs
+
+.tab-group {
+  width: 60%;
+  height: 400px;
+  overflow-y: auto;
+}
+
+:host ::ng-deep .tab-group .mat-ink-bar {
+  display: none;
+}
+
+:host ::ng-deep .tab-group .mat-tab-header {
+  border: none !important;
+}
+
+:host ::ng-deep .tab-group .mat-tab-header::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 98%;
+  width: 100%;
+  height: 2px;
+  width: 100%;
   background: #f3f3f3;
-  box-shadow: inset 1px 1px 2px rgba(34, 34, 34, 0.3),
-    inset -1px -1px 2px #ffffff;
-  border-radius: 10px;
-  width: 180px;
-  height: 40px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-  color: rgba(71, 71, 71);
+  box-shadow: inset 1px 1px 1px rgba(174, 174, 192, 0.3),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
 }
 
-input[type="text"]:hover {
-  box-shadow: inset 2px 2px 4px rgba(34, 34, 34, 0.3),
+:host ::ng-deep .tab-group .mat-tab-label-content {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label {
+  margin: 0 0.4rem 0.5rem 0.4rem;
+}
+
+:host ::ng-deep .tab-group .mat-tab-body-wrapper {
+  height: 100%;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label:hover .mat-tab-label-content {
+  color: #2086ed;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label:focus .mat-tab-label-content {
+  color: #2086ed;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label:focus {
+  background: #f3f3f3;
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.4),
     inset -2px -2px 5px #ffffff;
+  border-radius: 8px;
 }
 
-input[type="text"]:focus {
-  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
-    inset -4px -4px 8px #ffffff;
-}
-
-input[type="text"]::placeholder {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: capitalize;
-  color: rgba(71, 71, 71, 0.6);
-}
-
-textarea#neoMorph {
-  padding: 12px;
-  outline: none;
-  border: none;
-  -webkit-tap-highlight-color: transparent;
-  &::-moz-focus-inner {
-    border: 0;
+@media (max-width: 870px) {
+  .wrapper {
+   flex-direction: column;
+   justify-content: center;
   }
-  background: #f3f3f3;
-  box-shadow: inset 1px 1px 2px rgba(34, 34, 34, 0.4),
-    inset -1px -1px 2px #ffffff;
-  border-radius: 10px;
-  width: 180px;
-  height: 80px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-  color: rgba(71, 71, 71);
-}
-
-textarea#neoMorph::placeholder {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 16px;
-  text-transform: capitalize;
-  color: rgba(71, 71, 71, 0.6);
-}
-
-textarea#neoMorph:hover {
-  box-shadow: inset 2px 2px 4px rgba(34, 34, 34, 0.3),
-    inset -2px -2px 5px #ffffff;
-}
-
-textarea#neoMorph:focus {
-  box-shadow: inset 4px 4px 8px rgba(34, 34, 34, 0.3),
-    inset -4px -4px 8px #ffffff;
-}
-
-.label {
-  margin: 0 0 0.5rem 0.5rem;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
-  color: #474747;
+  .card {
+    width: 98%;
+  }
+  .tab-group{
+    margin: 20px 0;
+    width: 98%;
+  }
 }
