@@ -92,6 +92,7 @@ export class NeoInput extends MatInputModule.MatInput
    * Implemented as part of MatFormFieldControl.
    * @docs-private
    */
+  // tslint:disable-next-line:no-inferrable-types
   focused: boolean = false;
 
   /**
@@ -104,6 +105,7 @@ export class NeoInput extends MatInputModule.MatInput
    * Implemented as part of MatFormFieldControl.
    * @docs-private
    */
+  // tslint:disable-next-line:no-inferrable-types
   controlType: string = 'neo-input';
 
   /**
@@ -394,7 +396,7 @@ export class NeoInput extends MatInputModule.MatInput
   /** Checks whether the input is invalid based on the native validation. */
   protected _isBadInput() {
     // The `validity` property won't be present on platform-server.
-    let validity = (this._elementRef.nativeElement as HTMLInputElement)
+    const validity = (this._elementRef.nativeElement as HTMLInputElement)
       .validity;
     return validity && validity.badInput;
   }
@@ -412,7 +414,7 @@ export class NeoInput extends MatInputModule.MatInput
     );
   }
 
-  
+
   /**
    * Implemented as part of MatFormFieldControl.
    * @docs-private
@@ -422,11 +424,16 @@ export class NeoInput extends MatInputModule.MatInput
   }
 
 
+
+  // tslint:disable-next-line:member-ordering
   static ngAcceptInputType_disabled: BooleanInput;
+  // tslint:disable-next-line:member-ordering
   static ngAcceptInputType_readonly: BooleanInput;
+  // tslint:disable-next-line:member-ordering
   static ngAcceptInputType_required: BooleanInput;
 
   // Accept `any` to avoid conflicts with other directives on `<input>` that may
   // accept different types.
-  // static ngAcceptInputType_value: any;
+   // tslint:disable-next-line:member-ordering
+   static ngAcceptInputType_value: any;
 }
