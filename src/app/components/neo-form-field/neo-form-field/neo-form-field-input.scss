@@ -1,0 +1,205 @@
+@import "../../neo-input/neo-input/input.theme";
+$neo-input-default-width: 180px !default;
+$neo-input-default-height: 40px !default;
+// The Input element proper.
+.neo-input-element {
+  width: $neo-input-default-width;
+  height: $neo-input-default-height;
+  // By default, <input> has a padding, border, outline and a default width.
+  padding: 0 12px;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  &::-moz-focus-inner {
+    border: 0;
+  }
+  border-radius: 10px;
+  // Prevent textareas from being resized outside the form field.
+  max-width: 100%;
+  // Needed to make last line of the textarea line up with the baseline.
+  vertical-align: bottom;
+
+  // Undo the red box-shadow glow added by Firefox on invalid inputs.
+  // See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-ui-invalid
+  &:-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  // Remove IE's default clear and reveal icons.
+  &::-ms-clear,
+  &::-ms-reveal {
+    display: none;
+  }
+
+  // Clear Safari's decorations for search fields.
+  &,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+
+  // Also clear Safari's autofill icons. Note that this can't be in the
+  // same selector as the IE ones, otherwise Safari will ignore it.
+  &::-webkit-contacts-auto-fill-button,
+  &::-webkit-caps-lock-indicator,
+  &::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+  }
+
+  &[type="date"],
+  &[type="datetime"],
+  &[type="datetime-local"],
+  &[type="month"],
+  &[type="week"],
+  &[type="time"] {
+    // Due to the native input masking these inputs can be slightly taller than
+    // the plain text inputs. We normalize it by resetting the line height.
+    line-height: 1;
+
+    // Fixes an issue on iOS where the following input types will collapse to 1px,
+    // if they're empty, because we've overridden their background color.
+    // See: https://stackoverflow.com/questions/18381594/input-type-date-appearance-in-safari-on-ios
+    &::after {
+      content: " ";
+      white-space: pre;
+      width: 1px;
+    }
+  }
+
+
+  @include input-placeholder {
+    // Prevent users from being able to select the placeholder text. Most of the time this can't
+    // happen, however it's possible to do it when clicking on a disabled input (see #13479).
+    @include user-select(none);
+
+    &:-ms-input-placeholder {
+      // fix IE11 not able to focus programmatically with css style -ms-user-select: none
+      // see https://github.com/angular/components/issues/15093
+      -ms-user-select: text;
+    }
+  }
+
+  // Prevents IE from always adding a scrollbar by default.
+  textarea.neo-input-element {
+    // Only allow resizing along the Y axis.
+    resize: vertical;
+    overflow: auto;
+
+    &.cdk-textarea-autosize {
+      resize: none;
+    }
+  }
+
+  textarea.neo-input-element {
+    // The 2px padding prevents scrollbars from appearing on Chrome even when they aren't needed.
+    // We also add a negative margin to negate the effect of the padding on the layout.
+    padding: 2px 12px;
+    margin: -2px 0;
+  }
+
+  //********************select styles****************************//
+
+  // // Remove the native select down arrow and replace it with material design arrow
+  // select.mat-input-element {
+  //   -moz-appearance: none;
+  //   -webkit-appearance: none;
+  //   position: relative;
+  //   background-color: transparent;
+  //   display: inline-flex;
+  //   box-sizing: border-box;
+  //   padding-top: 1em;
+  //   top: -1em;
+  //   margin-bottom: -1em;
+
+  //   &::-ms-expand {
+  //     display: none;
+  //   }
+
+  //   // The `outline: none` from `.mat-input-element` works on all browsers, however Firefox also
+  //   // adds a special `focus-inner` which we have to disable explicitly. See:
+  //   // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Firefox
+  //   &::-moz-focus-inner {
+  //     border: 0;
+  //   }
+
+  //   &:not(:disabled) {
+  //     cursor: pointer;
+  //   }
+
+  //   // As a part of its user agent styling, IE11 has a blue box inside each focused
+  //   // `select` element which we have to reset. Note that this needs to be in its own
+  //   // selector, because having it together with another one will cause other browsers
+  //   // to ignore it.
+  //   &::-ms-value {
+  //     // We need to reset the `color` as well, because IE sets it to white.
+  //     color: inherit;
+  //     background: none;
+
+  //     // IE and Edge in high contrast mode reset the color for a focused select to the same color
+  //     // as the background, however this causes it blend in because we've reset the `background`
+  //     // above. We have to add a more specific selector in order to ensure that it gets the
+  //     // `color` from our theme instead.
+  //     @include cdk-high-contrast(active, off) {
+  //       .mat-focused & {
+  //         color: inherit;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // .mat-form-field-type-mat-native-select {
+  //   $arrow-size: 5px;
+
+  //   .mat-form-field-infix::after {
+  //     content: "";
+  //     width: 0;
+  //     height: 0;
+  //     border-left: $arrow-size solid transparent;
+  //     border-right: $arrow-size solid transparent;
+  //     border-top: $arrow-size solid;
+  //     position: absolute;
+  //     top: 50%;
+  //     right: 0;
+  //     margin-top: -$arrow-size / 2;
+
+  //     // Make the arrow non-clickable so the user can click on the form control under it.
+  //     pointer-events: none;
+
+  //     [dir="rtl"] & {
+  //       right: auto;
+  //       left: 0;
+  //     }
+  //   }
+
+  //   .mat-input-element {
+  //     // The arrow is 2 * $arrow-size wide and we add one more width for some spacing.
+  //     $padding: $arrow-size * 3;
+  //     padding-right: $padding;
+
+  //     [dir="rtl"] & {
+  //       padding-right: 0;
+  //       padding-left: $padding;
+  //     }
+  //   }
+
+  //   // Ensure that long labels don't collide with the select arrow.
+  //   .mat-form-field-label-wrapper {
+  //     max-width: calc(100% - #{$arrow-size * 2});
+  //   }
+
+  //   &.mat-form-field-appearance-outline .mat-form-field-infix::after {
+  //     margin-top: -$arrow-size;
+  //   }
+
+  //   &.mat-form-field-appearance-fill .mat-form-field-infix::after {
+  //     margin-top: -$arrow-size * 2;
+  //   }
+}
+
+textarea.neo-input-element {
+ height: calc(#{$neo-input-default-height} * 1.5);
+ padding: 10px 12px;
+}

@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 
+
 @import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
@@ -8,6 +9,8 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
+
+
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -54,16 +57,19 @@ body {
   overflow: hidden;
   &::-webkit-scrollbar {
     width: 1rem;
+    height: 1rem;
   }
 }
 
 ::-webkit-scrollbar {
   width: 0.8rem;
+  height: 0.8rem;
 }
 
 @media (max-width: 870px) {
   ::-webkit-scrollbar {
     width: 0.5rem;
+    height: 0.5rem;
   }
 }
 
@@ -74,6 +80,8 @@ body {
     inset -1px -1px 2px rgba(34, 34, 34, 0.4), inset 1px 1px 2px #ffffff;
   border-radius: 50px;
   background-clip: content-box;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 .custom-dialog-container {

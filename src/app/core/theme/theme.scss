@@ -3,6 +3,8 @@ $neo-light-theme-foreground: (
   light-shadow: rgba(255, 255, 255),
   dark-shadow: rgba(34, 34, 34),
   text: rgba(71, 71, 71, 0.75),
+  secondary-text: rgba(71, 71, 71, 0.6),
+  disabled-text: rgba(71, 71, 71, 0.3),
   title: #474747
 );
 
@@ -15,5 +17,6 @@ $neo-light-theme-background: (
 $neo-light-theme: (
   primary:#2086ed,
   accent: red, //add accent color
-  warn:#f84f5a
+  warn:#f84f5a,
+  error: #D53A43
 );

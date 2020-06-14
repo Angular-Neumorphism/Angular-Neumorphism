@@ -1,21 +1,266 @@
 <div class="text">
-  Neomorph styled input and textarea.
+  Neomorph styled input and textarea. Be aware that neo-input works inside neo-form-field only.
 </div>
-<neo-card class="card"
-  ><neo-card-header>
-    <neo-card-title>Basic Input</neo-card-title>
-  </neo-card-header>
-  <neo-card-content class="card-content">
-  <span text>Controls that collect and validate user input.</span>
-  <div class="form-wrapper">
-    <form class="example-form">
-      <label class="label">Favorite food</label>
-      <input type="text" placeholder="Sushi" />
-    </form>
-    <form class="example-form">
-      <label class="label">Leave a comment</label>
-      <textarea id="neoMorph" placeholder="Ex. It makes me feel..."></textarea>
-    </form>
-  </div>
-  </neo-card-content>
-</neo-card>
+<code class="code width">
+  <pre>
+    import &#123; NeoCardModule &#125;  from '~@Neomorph/neo-input/neo-input.module';    </pre
+  >
+</code>
+<neo-divider class="divider"></neo-divider>
+<div class="wrapper">
+  <neo-card class="card"
+    ><neo-card-header>
+      <neo-card-title>Basic Input</neo-card-title>
+    </neo-card-header>
+    <neo-card-content class="card-content">
+      <span text>Controls that collect and validate user input.</span>
+      <form class="form" [formGroup]="exampleForm">
+        <neo-form-field class="form-field">
+          <neo-label class="label">Input with validation</neo-label>
+          <input
+            neoInput
+            formControlName="requiredInput"
+            required
+            autocomplete="off"
+            placeholder="name@company.com"
+          />
+          <neo-error *ngIf="exampleForm.invalid">Email is not valid</neo-error>
+        </neo-form-field>
+        <neo-form-field class="form-field">
+          <neo-label>Disabled input</neo-label>
+          <input
+            formControlName="disabledInput"
+            neoInput
+            placeholder="It's a placeholder"
+          />
+        </neo-form-field>
+
+        <neo-form-field class="form-field">
+          <neo-label>Textarea</neo-label>
+          <textarea
+            formControlName="textInput"
+            neoInput
+            placeholder="It's a placeholder"
+          ></textarea>
+        </neo-form-field>
+      </form>
+    </neo-card-content>
+  </neo-card>
+<!---------------------code snippet----------------------------------->
+  <mat-tab-group disableRipple class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component, AfterViewInit&#125; from '@angular/core'</span>
+    <span class="code-text">import &#123;FormControl, FormGroup, Validators&#125; from '@angular/forms'</span>
+
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-inputs',</span>
+      <span class="code-text">templateUrl: './inputs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./inputs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class InputsComponent implements AfterViewInit  &#123;</span>
+    <span class="code-text">public textInput = '';
+
+      exampleForm = new FormGroup(&#123;
+      requiredInput: new FormControl('', [Validators.email]),
+      disabledInput: new FormControl(&#123;value: 'Value from formcontrol', 
+                                    disabled: true&#125;),
+      textInput: new FormControl(''),
+      &#125;);
+      constructor() &#123;&#125;
+      &#125;
+    </span> 
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+  <app-code-embed>
+    <pre>
+    <span class="code-text">&lt;form [formGroup]="exampleForm"&gt;</span> 
+        <span class="code-text">&lt;neo-form-field class="form-field"&gt;</span>
+          <span class="code-text">&lt;neo-label&gt;</span> Input with validation<span class="code-text">&lt;/neo-label&gt;</span> 
+          <span class="code-text">&lt;input
+            neoInput
+            formControlName="requiredInput"
+            autocomplete="off"
+            placeholder="name@company.com" /&gt;</span> 
+          <span class="code-text">&lt;neo-error *ngIf="exampleForm.invalid"&gt;</span> Email is not valid<span class="code-text">&lt;/neo-error&gt;</span>
+        <span class="code-text">&lt;/neo-form-field&gt;</span>
+
+        <span class="code-text">&lt;neo-form-field class="form-field"&gt;</span>
+          <span class="code-text">&lt;neo-label&gt;</span> Disabled input<span class="code-text">&lt;/neo-label&gt;</span> 
+          <span class="code-text">&lt;input
+            neoInput
+            formControlName="disabledInput"
+            autocomplete="off"
+            disabled
+            placeholder="It's a placeholder" /&gt;</span> 
+        <span class="code-text">&lt;/neo-form-field&gt;</span>
+
+        <span class="code-text">&lt;neo-form-field class="form-field"&gt;</span>
+          <span class="code-text">&lt;neo-label&gt;</span> Textarea<span class="code-text">&lt;/neo-label&gt;</span> 
+          <span class="code-text">&lt;textarea
+            neoInput
+            formControlName="disabledInput"
+            autocomplete="off"
+            placeholder="It's a placeholder" &gt;</span><span class="code-text">&lt;/textarea&gt;</span>  
+        <span class="code-text">&lt;/neo-form-field&gt;</span>
+    <span class="code-text">&lt;/form&gt;</span>
+    </pre>
+  </app-code-embed>
+    </mat-tab>
+    <mat-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text">
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<!---------------------second paragraph----------------------------------->
+<neo-divider class="divider"></neo-divider>
+<div class="text">
+  <p>
+    Additional to Material API we provide some scss mixins to manage form-field
+    and input background.
+  </p>
+  <p><strong>@include neo-form-field-background($color)</strong></p>
+  <span>
+    Using at form-field element. It set backgroung-color of form-field and set
+    input color to 5% darker
+    Also it set input shadows denending on provided background color</span>
+</div>
+<div class="wrapper">
+  <neo-card class="card"
+    ><neo-card-header>
+      <neo-card-title>Styled formfield</neo-card-title>
+    </neo-card-header>
+    <neo-card-content class="card-content">
+      <span
+        >Input styled with neo-form-field-background($color) mixin</span
+      >
+      <neo-form-field class="form-field styled-formfield">
+        <input
+          neoInput
+          autocomplete="off"
+          placeholder="It's a placeholder"
+        />
+      </neo-form-field>
+    </neo-card-content>
+  </neo-card>
+<!----------------second paragraph code snippet---------------->
+  <mat-tab-group disableRipple class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+        <span class="code-text">&lt;neo-form-field class="form-field styled-formfield"&gt;</span>
+          <span class="code-text">&lt;input
+            neoInput
+            autocomplete="off"
+            placeholder="It's a placeholder" /&gt;</span> 
+        <span class="code-text">&lt;/neo-form-field&gt;</span>
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+    <mat-tab class="mat-tab" tabindex="1" label="SCSS">
+        <code class="code">
+          <pre>
+        <span class="code-text">@import "../../components/neo-form-field/neo-form-field/form-field.theme";</span> 
+        <span class="code-text">
+          .styled-formfield &#123;</span> 
+          <span class="code-text">  @include neo-form-field-background(#f84f5a);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            height: 200px;
+             &#125;</span>
+              </pre>
+        </code>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<!----------------third paragraph ---------------->
+<neo-divider class="divider"></neo-divider>
+<div class="text">
+  <p>Uses at input element. It set backgroung-color of input</p>
+  <p><strong>@include neo-input-background($color);</strong></p>
+  <span>
+    When using with neo-form-field-background($color) it's override input
+    background-color
+  </span>
+</div>
+<div class="wrapper">
+  <neo-card class="card"
+    ><neo-card-header>
+      <neo-card-title>Styled Input</neo-card-title>
+    </neo-card-header>
+    <neo-card-content class="card-content">
+      <span>Input styled with neo-input-background($color) mixin</span>
+      <neo-form-field class="form-field single-input">
+        <input
+          neoInput
+          class="styled-input"
+          autocomplete="off"
+          placeholder="It's a placeholder"
+        />
+      </neo-form-field>
+      <neo-form-field class="form-field styled-formfield">
+        <input
+          neoInput
+          class="styled-input"
+          autocomplete="off"
+          placeholder="It's a placeholder"
+        />
+      </neo-form-field>
+    </neo-card-content>
+  </neo-card>
+<!----------------third paragraph code snippet---------------->
+  <mat-tab-group disableRipple class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+        <span class="code-text">&lt;neo-form-field class="form-field"&gt;</span>
+          <span class="code-text">&lt;input
+            neoInput
+            class="styled-input"
+            autocomplete="off"
+            placeholder="It's a placeholder" /&gt;</span> 
+        <span class="code-text">&lt;/neo-form-field&gt;</span>
+
+        <span class="code-text">&lt;neo-form-field class="form-field styled-formfield"&gt;</span>
+          <span class="code-text">&lt;input
+            neoInput
+            class="styled-input"
+            autocomplete="off"
+            placeholder="It's a placeholder" /&gt;</span> 
+        <span class="code-text">&lt;/neo-form-field&gt;</span>
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+    <mat-tab class="mat-tab" tabindex="1" label="SCSS">
+        <code class="code">
+          <pre>
+        <span class="code-text">@import "../../components/neo-form-field/neo-form-field/form-field.theme";</span>
+        <span class="code-text">@import "../../components/neo-input/neo-input/input.theme";</span>
+        <span class="code-text">
+          .styled-formfield &#123;</span> 
+          <span class="code-text">  @include neo-form-field-background(#f84f5a);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            height: 200px;
+             &#125;</span> 
+        <span class="code-text">
+          .styled-input &#123;</span> 
+          <span class="code-text">  @include neo-input-background(#459af0);
+            color: #fff;
+            &::placeholder&#123;
+              color: #fff
+              &#125;
+             &#125;</span>
+              </pre>
+        </code>
+    </mat-tab>
+  </mat-tab-group>
+</div>

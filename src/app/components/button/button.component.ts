@@ -17,15 +17,15 @@ enum ButtonTypes {
 }
 
 const BUTTON_HOST_ATTRIBUTES = [
-  'basic',
+  'basic-1',
   'primary',
   'disabled',
   'warn',
-  'neo-button',
+  'neo-button-1',
 ];
 @Component({
   // tslint:disable-next-line:component-selector
-  selector: 'button[neo-button]',
+  selector: 'button[neo-button-1]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   encapsulation: ViewEncapsulation.None,
