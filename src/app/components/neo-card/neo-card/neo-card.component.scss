@@ -4,14 +4,15 @@
 @include neo-card-color();
 @include neo-card-typography();
 
-$neo-card-padding: 16px !default;
+$neo-card-padding-vertical: 24px !default;
+$neo-card-padding-horizontal: 32px !default;
 $neo-card-border-radius: 8px !default;
-$neo-card-header-size: 40px !default;
+$neo-card-header-size: 48px !default;
 
 .neo-card {
   display: block;
   position: relative;
-  padding: $neo-card-padding;
+  padding: $neo-card-padding-vertical $neo-card-padding-horizontal;
   border-radius: $neo-card-border-radius;
 
   .neo-divider-horizontal {
@@ -38,11 +39,12 @@ $neo-card-header-size: 40px !default;
 // base styles for each card section preset (neo-card-content, etc)
 %neo-card-section-base {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .neo-card-title {
   display: block;
+  margin-top: 3px;
   margin-bottom: 8px;
 }
 
@@ -50,10 +52,13 @@ $neo-card-header-size: 40px !default;
   @extend %neo-card-section-base;
 }
 
+.neo-card-subtitle {
+  margin-bottom: 24px;
+}
 .neo-card-actions {
   @extend %neo-card-section-base;
-  margin-left: -$neo-card-padding / 2;
-  margin-right: -$neo-card-padding / 2;
+  margin-left: -$neo-card-padding-horizontal / 2;
+  margin-right: -$neo-card-padding-horizontal  / 2;
   padding: 8px 0;
 }
 
@@ -68,14 +73,14 @@ $neo-card-header-size: 40px !default;
 }
 
 .neo-card-image {
-  width: calc(100% + #{$neo-card-padding * 2});
-  margin: 0 (-$neo-card-padding) 16px (-$neo-card-padding);
+  width: calc(100% + #{$neo-card-padding-horizontal * 2});
+  margin: 0 (-$neo-card-padding-horizontal) 16px (-$neo-card-padding-horizontal);
 }
 
 .neo-card-footer {
   // The negative margins pulls out the element, countering the padding
   // to get the footer to be flush against the side of the card.
-  $margin: -$neo-card-padding;
+  $margin: -$neo-card-padding-vertical;
 
   display: block;
   margin: 0 0 $margin 0;
@@ -102,7 +107,7 @@ $neo-card-header-size: 40px !default;
 }
 
 .neo-card-header-text {
-  margin: 0 $neo-card-padding;
+  margin: 0 18px;
 }
 
 .neo-card-avatar {
@@ -202,6 +207,6 @@ $neo-card-header-size: 40px !default;
 
 // should be 12px space between titles and subtitles generally
 // default margin-bottom is 16px, so need to move lower title up 4px
-.neo-card-title:not(:first-child) {
-  margin-top: -4px;
+.neo-card-subtitle:not(:first-child) {
+  margin-top: -8px;
 }
