@@ -26,7 +26,7 @@ import {
 } from '@angular/material/core';
 import {  Subject } from 'rxjs';
 import { startWith, take, takeUntil } from 'rxjs/operators';
-import * as MatFormFieldModule from '@angular/material/form-field';
+import { MatFormField} from '@angular/material/form-field';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import {
   getNeoFormFieldMissingControlError,
@@ -72,7 +72,6 @@ export const NEO_FORM_FIELD_DEFAULT_OPTIONS = new InjectionToken<
     class: 'neo-form-field',
     '[class.neo-form-field-invalid]': '_control.errorState',
     '[class.neo-form-field-disabled]': '_control.disabled',
-    '[class.neo-form-field-autofilled]': '_control.autofilled',
     '[class.neo-focused]': '_control.focused',
     '[class.neo-accent]': 'color == "accent"',
     '[class.neo-warn]': 'color == "warn"',
@@ -90,7 +89,7 @@ export const NEO_FORM_FIELD_DEFAULT_OPTIONS = new InjectionToken<
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [{ provide: MAT_FORM_FIELD, useExisting: NeoFormField }],
 })
-export class NeoFormField extends MatFormFieldModule.MatFormField
+export class NeoFormField extends MatFormField
   implements AfterContentInit, AfterContentChecked, AfterViewInit, OnDestroy {
   private _neoDestroyed = new Subject<void>();
 
@@ -217,20 +216,12 @@ export class NeoFormField extends MatFormFieldModule.MatFormField
   }
 
   ngAfterViewInit() {
-    // Avoid animations on load.
-    // this._subscriptAnimationState = 'enter';
-    // this._neoChangeDetectorRef.detectChanges();
+     this._neoChangeDetectorRef.detectChanges();
   }
 
   ngOnDestroy() {
     this._neoDestroyed.next();
     this._neoDestroyed.complete();
-  }
-
-  /** Determines whether a class from the NgControl should be forwarded to the host element. */
-  _shouldForward(prop: keyof NgControl): boolean {
-    const ngControl = this._control ? this._control.ngControl : null;
-    return ngControl && ngControl[prop];
   }
 
   _hasPlaceholder() {

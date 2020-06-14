@@ -12,7 +12,7 @@ export class InputsComponent implements AfterViewInit {
   exampleForm = new FormGroup({
     requiredInput: new FormControl('', [Validators.email]),
     disabledInput: new FormControl({value: 'Value from formcontrol', disabled: true}),
-    textInput: new FormControl(''),
+    textInput: new FormControl('')
   });
 
   constructor() {}

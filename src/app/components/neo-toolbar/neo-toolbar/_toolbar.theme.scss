@@ -2,27 +2,27 @@
 @import "../../../core/theme/theme.scss";
 
 @mixin _neo-toolbar-form-field-overrides {
-  .mat-form-field-underline,
-  .mat-form-field-ripple,
-  .mat-focused .mat-form-field-ripple,
-  .neo-form-field-underline,
-  .neo-form-field-ripple,
-  .neo-focused .neo-form-field-ripple {
-    background-color: currentColor;
-  }
+  // .mat-form-field-underline,
+  // .mat-form-field-ripple,
+  // .mat-focused .mat-form-field-ripple,
+  // .neo-form-field-underline,
+  // .neo-form-field-ripple,
+  // .neo-focused .neo-form-field-ripple {
+  //   background-color: currentColor;
+  // }
 
-  .mat-form-field-label,
-  .mat-focused .mat-form-field-label,
-  .mat-select-value,
-  .mat-select-arrow,
-  .mat-form-field.mat-focused .mat-select-arrow,
-  .mat-form-field-label,
-  .neo-focused .neo-form-field-label,
-  .neo-select-value,
-  .neo-select-arrow,
-  .neo-form-field.neo-focused .neo-select-arrow {
-    color: inherit;
-  }
+  // .mat-form-field-label,
+  // .mat-focused .mat-form-field-label,
+  // .mat-select-value,
+  // .mat-select-arrow,
+  // .mat-form-field.mat-focused .mat-select-arrow,
+  // .mat-form-field-label,
+  // .neo-focused .neo-form-field-label,
+  // .neo-select-value,
+  // .neo-select-arrow,
+  // .neo-form-field.neo-focused .neo-select-arrow {
+  //   color: inherit;
+  // }
 
   .mat-input-element,
   .neo-input-element {

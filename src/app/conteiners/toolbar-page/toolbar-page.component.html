@@ -2,7 +2,9 @@
   Toolbar is a container for headers, titles, or actions.
 </div>
 <code class="code width">
-  <pre>    import &#123; NeoToolbarModule &#125;  from '~@Neomorph/neo-toolbar/neo-toolbar.module';    </pre>
+  <pre>
+    import &#123; NeoToolbarModule &#125;  from '~@Neomorph/neo-toolbar/neo-toolbar.module';    </pre
+  >
 </code>
 <neo-card class="card"
   ><neo-card-header>
@@ -12,6 +14,14 @@
     <div class="wrapper">
       <neo-toolbar class="menu">
         <div class="menu-text-black">my application</div>
+        <neo-form-field class="form-field">
+          <input
+            neoInput
+            type="search"
+            autocomplete="off"
+            placeholder="Search"
+          />
+        </neo-form-field>
       </neo-toolbar>
 
       <neo-toolbar color="primary" class="menu">
@@ -29,6 +39,16 @@
   <pre>
   <span class="code-text">&lt;neo-toolbar&gt;</span> 
       <span class="code-text">&lt;div&gt;</span>  my application  <span class="code-text">&lt;/div&gt;</span>
+      <span class="code-text">
+      &lt;neo-form-field class="form-field"&gt;
+      &lt;input
+          neoInput
+          type="search"
+          style = 'margin-left: auto'
+          autocomplete="off"
+          placeholder="Search"
+        /&gt;
+        &lt;/neo-form-field&gt;</span>
   <span class="code-text">&lt;/neo-toolbar&gt;</span>
 
   <span class="code-text">&lt;neo-toolbar class="primary"&gt;</span> 
