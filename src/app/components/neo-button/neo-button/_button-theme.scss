@@ -1,0 +1,143 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-button-theme() {
+  $default: mat-color($neo-light-theme-foreground, title);
+  $primary: mat-color($neo-light-theme-foreground, primary);
+  $warn: mat-color($neo-light-theme-foreground, warn);
+
+  $background-primary: mat-color($neo-light-theme, primary);
+  $background-warn: mat-color($neo-light-theme, warn);
+
+  $light-shadow: mat-color($neo-light-theme-foreground, button-light-shadow);
+  $dark-shadow: mat-color($neo-light-theme-foreground, button-dark-shadow);
+
+  $light-shadow-primary: mat-color(
+    $neo-light-theme-foreground,
+    button-light-shadow-primary
+  );
+  $dark-shadow-primary: mat-color(
+    $neo-light-theme-foreground,
+    button-dark-shadow-primary
+  );
+
+  $light-shadow-warn: mat-color(
+    $neo-light-theme-foreground,
+    button-light-shadow-warn
+  );
+  $dark-shadow-warn: mat-color(
+    $neo-light-theme-foreground,
+    button-dark-shadow-warn
+  );
+
+  .neo-button,
+  .neo-icon-button {
+    color: $default;
+    background: linear-gradient(
+      117.15deg,
+      mat-color($neo-light-theme-background, button-gradient-start) 0%,
+      mat-color($neo-light-theme-background, button-gradient-end) 100%
+    );
+
+    &::before {
+      mix-blend-mode: soft-light;
+      box-shadow: -1px -1px 3px $light-shadow;
+    }
+    &::after {
+      mix-blend-mode: color-burn;
+      box-shadow: 4px 4px 8px $dark-shadow;
+    }
+
+    &:hover {
+      &::before {
+        box-shadow: -2px -2px 6px $light-shadow;
+      }
+      &::after {
+        box-shadow: 2px 2px 6px $dark-shadow;
+      }
+    }
+
+    &.mat-primary {
+      color: $primary;
+      background: $background-primary;
+
+      &::before {
+        mix-blend-mode: soft-light;
+        box-shadow: -5px -5px 10px $light-shadow-primary;
+      }
+      &::after {
+        mix-blend-mode: color-burn;
+        box-shadow: 5px 5px 10px $dark-shadow-primary;
+      }
+
+      &:hover {
+        &::before {
+          box-shadow: -2px -2px 6px $light-shadow-primary;
+        }
+        &::after {
+          box-shadow: 2px 2px 6px $dark-shadow-primary;
+        }
+      }
+
+      &[disabled] {
+        &[disabled] {
+          color: $primary;
+          background-color: $background-primary;
+        }
+      }
+    }
+
+    &.mat-warn {
+      color: $warn;
+      background: $background-warn;
+
+      &::before {
+        mix-blend-mode: soft-light;
+        box-shadow: -5px -5px 10px $light-shadow-warn;
+      }
+      &::after {
+        mix-blend-mode: color-burn;
+        box-shadow: 5px 5px 10px $dark-shadow-warn;
+      }
+
+      &:hover {
+        &::before {
+          box-shadow: -2px -2px 6px $light-shadow-warn;
+        }
+        &::after {
+          box-shadow: 2px 2px 6px $dark-shadow-warn;
+        }
+      }
+
+      &[disabled] {
+        &[disabled] {
+          color: $warn;
+          background-color: $background-warn;
+        }
+      }
+    }
+
+    &[disabled] {
+      &[disabled] {
+        color: $default;
+      }
+
+      &::before {
+        mix-blend-mode: soft-light;
+        box-shadow: -2px -2px 5px $light-shadow;
+      }
+      &::after {
+        mix-blend-mode: color-burn;
+        box-shadow: 2px 2px 5px $dark-shadow;
+      }
+      &:hover {
+        &::before {
+          box-shadow: -2px -2px 5px $light-shadow;
+        }
+        &::after {
+          box-shadow: 2px 2px 5px $dark-shadow;
+        }
+      }
+    }
+  }
+}

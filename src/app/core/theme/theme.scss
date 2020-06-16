@@ -2,21 +2,31 @@ $neo-light-theme-foreground: (
   divider-shadow: rgba(34, 34, 34, 0.3),
   light-shadow: rgba(255, 255, 255),
   dark-shadow: rgba(34, 34, 34),
+  button-light-shadow: rgba(255, 255, 255, 1),
+  button-dark-shadow: rgba(34, 34, 34, 0.4),
+  button-light-shadow-primary: rgba(255, 255, 255, 0.3),
+  button-dark-shadow-primary: rgba(34, 34, 34, 0.2),
+  button-light-shadow-warn: rgba(255, 255, 255, 0.3),
+  button-dark-shadow-warn: rgba(34, 34, 34, 0.2),
   text: rgba(71, 71, 71, 0.75),
   secondary-text: rgba(71, 71, 71, 0.6),
   disabled-text: rgba(71, 71, 71, 0.3),
-  title: #474747
+  title: #474747,
+  primary: #ffffff,
+  warn: #ffffff,
 );
 
 $neo-light-theme-background: (
   card-gradient-end: #f7f7f7,
   card-gradient-start: #f0f0f0,
-  app-bar: #e4e4e4
+  app-bar: #e4e4e4,
+  button-gradient-end: #f3f3f3,
+  button-gradient-start: #f5f5f5,
 );
 
 $neo-light-theme: (
-  primary:#2086ed,
-  accent: red, //add accent color
-  warn:#f84f5a,
-  error: #D53A43
+  primary: #2086ed,
+  accent: red,
+  warn: #f84f5a,
+  error: #d53a43,
 );
