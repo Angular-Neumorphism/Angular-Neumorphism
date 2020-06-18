@@ -1,0 +1,13 @@
+@import "./button-base";
+@import "./button-theme";
+
+@include neo-button-theme();
+
+.neo-button,
+.neo-icon-button {
+  @include neo-button-base;
+}
+
+.neo-icon-button {
+  padding: 0;
+}

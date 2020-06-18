@@ -6,8 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
-// import { ButtonComponent } from './components/button/button.component';
-import { NeoButtonComponent } from './components/neo-button/neo-button.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { LandingComponent } from './conteiners/landing/landing.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -41,6 +39,7 @@ import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
 import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NeoButtonModule } from './components/neo-button/neo-button.module';
 import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
 import { NeoCardModule } from './components/neo-card/neo-card.module';
 import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
@@ -52,8 +51,6 @@ import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component
   declarations: [
     AppComponent,
     MenuComponent,
-    // ButtonComponent,
-    NeoButtonComponent,
     ExpansionPanelComponent,
     LandingComponent,
     SidenavComponent,
@@ -95,6 +92,7 @@ import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component
     MatTabsModule,
     MatDialogModule,
     RouterModule,
+    NeoButtonModule,
     NeoDividerModule,
     NeoCardModule,
     NeoToolbarModule,
