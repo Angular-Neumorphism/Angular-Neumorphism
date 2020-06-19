@@ -6,8 +6,17 @@
   $primary: mat-color($neo-light-theme-foreground, primary);
   $warn: mat-color($neo-light-theme-foreground, warn);
 
+  $background-default: mat-color(
+    $neo-light-theme-background,
+    button-background
+  );
   $background-primary: mat-color($neo-light-theme, primary);
   $background-warn: mat-color($neo-light-theme, warn);
+
+  $background-hover: mat-color(
+    $neo-light-theme-background,
+    button-background-hover
+  );
 
   $light-shadow: mat-color($neo-light-theme-foreground, button-light-shadow);
   $dark-shadow: mat-color($neo-light-theme-foreground, button-dark-shadow);
@@ -33,27 +42,27 @@
   .neo-button,
   .neo-icon-button {
     color: $default;
-    background: linear-gradient(
-      117.15deg,
-      mat-color($neo-light-theme-background, button-gradient-start) 0%,
-      mat-color($neo-light-theme-background, button-gradient-end) 100%
-    );
+    background: $background-default;
 
     &::before {
       mix-blend-mode: soft-light;
-      box-shadow: -1px -1px 3px $light-shadow;
+      box-shadow: -2px -2px 5px $light-shadow;
     }
     &::after {
       mix-blend-mode: color-burn;
-      box-shadow: 4px 4px 8px $dark-shadow;
+      box-shadow: 2px 2px 5px $dark-shadow;
     }
 
     &:hover {
+      background: linear-gradient(0deg, $background-hover, $background-hover),
+        $background-default;
+      background-blend-mode: color-burn, normal;
+
       &::before {
-        box-shadow: -2px -2px 6px $light-shadow;
+        box-shadow: -1px -1px 3px $light-shadow;
       }
       &::after {
-        box-shadow: 2px 2px 6px $dark-shadow;
+        box-shadow: 1px 1px 3px $dark-shadow;
       }
     }
 
@@ -63,26 +72,30 @@
 
       &::before {
         mix-blend-mode: soft-light;
-        box-shadow: -5px -5px 10px $light-shadow-primary;
+        box-shadow: -2px -2px 5px $light-shadow-primary;
       }
       &::after {
         mix-blend-mode: color-burn;
-        box-shadow: 5px 5px 10px $dark-shadow-primary;
+        box-shadow: 2px 2px 5px $dark-shadow-primary;
       }
 
       &:hover {
+        background: linear-gradient(0deg, $background-hover, $background-hover),
+          $background-primary;
+        background-blend-mode: color-burn, normal;
+
         &::before {
-          box-shadow: -2px -2px 6px $light-shadow-primary;
+          box-shadow: -1px -1px 3px $light-shadow-primary;
         }
         &::after {
-          box-shadow: 2px 2px 6px $dark-shadow-primary;
+          box-shadow: 1px 1px 3px $dark-shadow-primary;
         }
       }
 
       &[disabled] {
         &[disabled] {
           color: $primary;
-          background-color: $background-primary;
+          background: $background-primary;
         }
       }
     }
@@ -93,19 +106,23 @@
 
       &::before {
         mix-blend-mode: soft-light;
-        box-shadow: -5px -5px 10px $light-shadow-warn;
+        box-shadow: -2px -2px 5px $light-shadow-warn;
       }
       &::after {
         mix-blend-mode: color-burn;
-        box-shadow: 5px 5px 10px $dark-shadow-warn;
+        box-shadow: 2px 2px 5px $dark-shadow-warn;
       }
 
       &:hover {
+        background: linear-gradient(0deg, $background-hover, $background-hover),
+          $background-warn;
+        background-blend-mode: color-burn, normal;
+
         &::before {
-          box-shadow: -2px -2px 6px $light-shadow-warn;
+          box-shadow: -1px -1px 3px $light-shadow-warn;
         }
         &::after {
-          box-shadow: 2px 2px 6px $dark-shadow-warn;
+          box-shadow: 1px 1px 3px $dark-shadow-warn;
         }
       }
 
@@ -120,6 +137,7 @@
     &[disabled] {
       &[disabled] {
         color: $default;
+        background: $background-default;
       }
 
       &::before {
