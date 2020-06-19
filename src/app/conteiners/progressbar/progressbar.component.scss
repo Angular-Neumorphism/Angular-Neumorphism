@@ -1,3 +1,6 @@
+
+@import "../../components/neo-progressbar/neo-progressbar/progress-bar-theme";
+
 :host {
   height: 100%;
   width: 100%;
@@ -27,25 +30,26 @@
 
 .wrapper {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   margin: 2rem 0;
 }
 
-.progressbar {
-  width: 24rem;
-  height: 0.4rem;
-  background: #ebebeb;
-  box-shadow: inset 1px 1px 1px rgba(34, 34, 34, 0.3),
-    inset -1px -1px 1px #ffffff;
-  border-radius: 2px;
+.input-container {
+  padding: 20px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
 
-.progressbar-indicator {
-  height: 100%;
-  width: 65%;
-  background: #2086ed;
-  border-radius: 2px;
+.container {
+  padding: 20px;
+}
+
+.violet {
+  @include neo-container-progress-bar-background(#6b3df5);
+}
+
+.red {
+  @include neo-progress-bar-background(#f84f5a);
 }

@@ -1,3 +1,4 @@
+import { NeoProgressBarModule } from './components/neo-progressbar/neo-progressbar/neo-progress-bar.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -98,6 +99,7 @@ import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component
     NeoToolbarModule,
     NeoInputModule,
     NeoFormFieldModule,
+    NeoProgressBarModule
   ],
   entryComponents: [DialogComponent],
   providers: [],

@@ -8,9 +8,38 @@
   <neo-card-content class="card-content">
   <div class="content">
     <div class="wrapper">
-      <div class="progressbar">
-        <div class="progressbar-indicator"></div>
-      </div>
+      <button color="primary" neo-button (click)="mode = 'determinate'"> determinate</button>
+      <button color="primary" neo-button (click)="mode = 'indeterminate'"> indeterminate</button>
+      <button color="primary" neo-button (click)="mode = 'query'">query</button>
+    </div>
+    <div class="input-container">
+      <input neoInput name="value" (input)="onValueChange($event)" [value]="value" type="number">
+    </div>
+
+    <div class="container">
+      <neo-progress-bar
+        class="progress-bar"
+        [mode]="mode"
+        [value]="value"
+      ></neo-progress-bar>
+    </div>
+
+    <div class="container violet">
+      <neo-progress-bar
+        class="progress-bar"
+        [mode]="mode"
+        [value]="value"
+
+      ></neo-progress-bar>
+    </div>
+
+    <div class="container violet">
+      <neo-progress-bar
+        class="progress-bar red"
+        [mode]="mode"
+        [value]="value"
+
+      ></neo-progress-bar>
     </div>
   </div>
   </neo-card-content>
