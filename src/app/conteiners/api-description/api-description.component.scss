@@ -1,0 +1,84 @@
+:host {
+  width: 100%;
+}
+.discription_card {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.discription_header {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: rgba(71, 71, 71, 0.6);
+  height: 50px;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+  background-color: #ebebeb;
+  display: flex;
+}
+
+.header_name {
+  flex: 2;
+  display: flex;
+  padding-left: 25px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.header_description {
+  flex: 3;
+  display: flex;
+  padding-left: 25px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.discription_body {
+  height: fit-content;
+  width: 100%;
+  background-color: #ebebeb;
+}
+
+.api_item {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  flex: 1;
+}
+
+.api_name {
+  display: flex;
+  padding-left: 25px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  flex: 2;
+}
+.api_description {
+  padding-left: 25px;
+  align-items: center;
+  display: flex;
+  flex: 3;
+}
+:host ::ng-deep .discription_card.neo-card {
+  padding: 0;
+}
+
+.text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+}
+
+.divider-vertical {
+  margin: 2px 0 1px 0;
+}

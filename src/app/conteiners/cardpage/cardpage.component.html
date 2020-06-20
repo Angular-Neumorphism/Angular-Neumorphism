@@ -1,14 +1,60 @@
-<div class="text">
-  Just a content container.
+<div class="title">
+  Neomorph card
 </div>
-<code class="code width">
+
+<code class="module-snippet code width">
   <pre>
-    import &#123; NeoCardModule &#125;  from '~@Neomorph/neo-card/neo-card.module';    </pre
+    import &#123; NeoCardModule &#125;  from '~@Neomorphism/neo-card/neo-card.module';    </pre
   >
 </code>
-<neo-divider class="divider"></neo-divider>
-<div class="card-wrapper">
-  <neo-card class="card">
+
+<div class="text module-description">
+  <strong>&lt;neo-card&gt;</strong>is a content container.While this component
+  can be used alone, it also provides a number of preset styles for common card
+  sections, including:
+  <ul>
+    <li>&lt;neo-card-header&gt;</li>
+    <li>&lt;neo-card-title&gt;</li>
+    <li>&lt;neo-card-subtitle&gt;</li>
+    <li>neo-card-avatar (directive)&gt;</li>
+    <li>&lt;neo-card-content&gt;</li>
+    <li>&lt;neo-card-actions&gt;</li>
+    <li>neo-card-image (directive)&gt;</li>
+    <li>&lt;neo-card-footer&gt;</li>
+  </ul>
+</div>
+
+<app-element-example class="styled-example">
+  <span title>Card example</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+          <span class="code-text">&lt;neo-card&gt;</span>
+            <span class="code-text">&lt;neo-card-header&gt;</span>
+              <span class="code-text">&lt;div neo-card-avatar class="example-header-image"&gt;</span><span class="code-text">&lt;/div&gt;</span>
+              <span class="code-text">&lt;neo-card-title&gt;</span>Card with buttons<span class="code-text">&lt;/neo-card-title&gt;</span>
+              <span class="code-text">&lt;neo-card-subtitle&gt;</span>Dog Breed<span class="code-text">&lt;/neo-card-title&gt;</span>
+            <span class="code-text">&lt;/neo-card-header&gt;</span>
+            <span class="code-text">&lt;img neo-card-image src="../../assets/img/labrador.jpg" alt="Labrador"&gt;</span><span class="code-text"></span>
+            <span class="code-text">&lt;neo-card-content&gt;</span>
+                The Labrador Retriever was bred to be both a 
+              friendly companion and a useful working dog 
+              breed. Historically, they earned their keep as 
+              fishermen’s helpers.
+            <span class="code-text">&lt;/neo-card-content&gt;</span>
+            <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
+            <span class="code-text">&lt;neo-card-footer&gt;</span>
+              <span class="code-text">&lt;neo-card-actions align="end"&gt;</span>
+                <span class="code-text">&lt;button neo-button&gt;</span>Like<span class="code-text">&lt;/button&gt;</span>
+                <span class="code-text">&lt;button neo-button &gt;</span>Share<span class="code-text">&lt;/button&gt;</span>
+              <span class="code-text">&lt;/neo-card-actions&gt;</span>
+            <span class="code-text">&lt;/neo-card-footer&gt;</span>
+          <span class="code-text">&lt;/neo-card&gt;</span></pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <neo-card class="card" example>
     <neo-card-header>
       <div neo-card-avatar class="example-header-image"></div>
       <neo-card-title>Card with buttons</neo-card-title>
@@ -20,58 +66,36 @@
       alt="Photo of a Labrador"
     />
     <neo-card-content>
-      The Labrador Retriever was bred to be both a 
-      friendly companion and a useful working dog 
-      breed. Historically, they earned their keep as 
+      The Labrador Retriever was bred to be both a friendly companion and a
+      useful working dog breed. Historically, they earned their keep as
       fishermen’s helpers.
     </neo-card-content>
     <neo-card-footer>
       <neo-card-actions align="center"
-        ><button neo-button>Like</button
-        ><button neo-button>Share</button></neo-card-actions
+        ><button neo-button class="button">Like</button
+        ><button neo-button class="button">Share</button></neo-card-actions
       >
     </neo-card-footer>
   </neo-card>
+</app-element-example>
 
-  <code class="code">
-    <pre>
-      <span class="code-text">&lt;neo-card&gt;</span>
-        <span class="code-text">&lt;neo-card-header&gt;</span>
-          <span class="code-text">&lt;div neo-card-avatar class="example-header-image"&gt;</span><span class="code-text">&lt;/div&gt;</span>
-          <span class="code-text">&lt;neo-card-title&gt;</span>Card with buttons<span class="code-text">&lt;/neo-card-title&gt;</span>
-          <span class="code-text">&lt;neo-card-subtitle&gt;</span>Dog Breed<span class="code-text">&lt;/neo-card-title&gt;</span>
-        <span class="code-text">&lt;/neo-card-header&gt;</span>
-        <span class="code-text">&lt;img neo-card-image src="../../assets/img/labrador.jpg" alt="Labrador"&gt;</span><span class="code-text"></span>
-        <span class="code-text">&lt;neo-card-content&gt;</span>
-            The Labrador Retriever was bred to be both a 
-          friendly companion and a useful working dog 
-          breed. Historically, they earned their keep as 
-          fishermen’s helpers.
-        <span class="code-text">&lt;/neo-card-content&gt;</span>
-        <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
-        <span class="code-text">&lt;neo-card-footer&gt;</span>
-          <span class="code-text">&lt;neo-card-actions align="end"&gt;</span>
-            <span class="code-text">&lt;button neo-button&gt;</span>Like<span class="code-text">&lt;/button&gt;</span>
-            <span class="code-text">&lt;button neo-button &gt;</span>Share<span class="code-text">&lt;/button&gt;</span>
-          <span class="code-text">&lt;/neo-card-actions&gt;</span>
-        <span class="code-text">&lt;/neo-card-footer&gt;</span>
-      <span class="code-text">&lt;/neo-card&gt;</span></pre>
-  </code>
-</div>
-<neo-divider class="divider"></neo-divider>
-<div class="card-wrapper">
-  <neo-card class="card">
+<app-element-example class="styled-example">
+  <span title>Card example</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+          <span class="code-text">&lt;neo-card&gt;</span>
+            <span class="code-text">&lt;neo-card-header&gt;</span>  
+              <span class="code-text">&lt;neo-card-title&gt;</span>Basic card<span class="code-text">&lt;/neo-card-title&gt;</span>
+            <span class="code-text">&lt;/neo-card-header&gt;</span>
+          <span class="code-text">&lt;/neo-card&gt;</span></pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <neo-card class="card" example>
     <neo-card-header>
       <neo-card-title>Basic card</neo-card-title>
     </neo-card-header>
   </neo-card>
-
-  <code class="code">
-    <pre>
-    <span class="code-text">&lt;neo-card&gt;</span>
-      <span class="code-text">&lt;neo-card-header&gt;</span>  
-        <span class="code-text">&lt;neo-card-title&gt;</span>Basic card<span class="code-text">&lt;/neo-card-title&gt;</span>
-      <span class="code-text">&lt;/neo-card-header&gt;</span>
-    <span class="code-text">&lt;/neo-card&gt;</span></pre>
-  </code>
-</div>
+</app-element-example>

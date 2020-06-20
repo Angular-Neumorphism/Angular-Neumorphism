@@ -1,0 +1,114 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-checkbox-color() {
+  .neo-checkbox {
+    &:not(.neo-checkbox-disabled)::before {
+      box-shadow: inset 1px 1px 2px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+    &:not(.neo-checkbox-disabled)::after {
+      box-shadow: inset -1px -1px 2px
+        mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:not(.neo-checkbox-disabled):hover::before {
+      box-shadow: inset 2px 2px 4px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+    &:not(.neo-checkbox-disabled):hover::after {
+      box-shadow: inset -2px -2px 4px
+        mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:not(.neo-checkbox-disabled):active::before {
+      box-shadow: inset 2px 2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+
+    &:not(.neo-checkbox-disabled):active::after {
+      box-shadow: inset -3px -3px 5px
+        mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &.neo-checkbox-disabled {
+      .neo-checkbox-label {
+        color: inherit;
+        opacity: 0.7;
+      }
+
+      &::before {
+        box-shadow: inset 1px 1px 2px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.2);
+      }
+
+      &::after {
+        box-shadow: inset -1px -1px 2px
+          mat-color($neo-light-theme-foreground, light-shadow);
+      }
+    }
+
+     .neo-checkbox-checkmark {
+      -webkit-filter: drop-shadow(
+        1px 1px 1px mat-color($neo-light-theme-foreground, dark-shadow, 0.4)
+      );
+      filter: drop-shadow(
+        1px 1px 1px mat-color($neo-light-theme-foreground, dark-shadow, 0.4)
+      );
+    }
+  }
+
+  .neo-checkbox-label {
+    color: inherit;
+  }
+}
+
+@mixin neo-checkbox-background($color) {
+  &.neo-checkbox {
+    &:not(.neo-checkbox-disabled)::before {
+      background-color: $color;
+      box-shadow: inset 1px 1px 2px darken($color, 25%);
+    }
+    &:not(.neo-checkbox-disabled)::after {
+      box-shadow: inset -1px -1px 2px lighten($color, 15%);
+    }
+
+    &:not(.neo-checkbox-disabled):hover::before {
+      box-shadow: inset 2px 2px 4px darken($color, 25%);
+    }
+    &:not(.neo-checkbox-disabled):hover::after {
+      box-shadow: inset -2px -2px 4px lighten($color, 15%);
+    }
+
+    &:not(.neo-checkbox-disabled):active::before {
+      box-shadow: inset 2px 2px 5px darken($color, 25%);
+    }
+
+    &:not(.neo-checkbox-disabled):active::after {
+      box-shadow: inset -3px -3px 5px lighten($color, 15%);
+    }
+  }
+
+  &.neo-checkbox-disabled {
+    &::before {
+      background-color: lighten($color, 10%);
+      box-shadow: inset 1px 1px 2px darken($color, 1%);
+    }
+
+    &::after {
+      box-shadow: inset -3px -3px 5px lighten($color, 12%);
+    }
+  }
+}
+
+@mixin neo-checkbox-typography() {
+  $font-size: 14px;
+  $line-height: 24px;
+  .neo-checkbox {
+    font-family: inherit;
+  }
+  .neo-checkbox-label {
+    line-height: $line-height;
+    font-size: $font-size;
+  }
+}

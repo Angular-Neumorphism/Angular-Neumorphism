@@ -1,0 +1,163 @@
+@import "~@angular/material/theming";
+@import "./neo-checkbox.theme";
+
+@include neo-checkbox-color();
+@include neo-checkbox-typography();
+
+@mixin mat-fill {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+// The width/height of the checkbox element.
+$neo-checkbox-size: 24px !default;
+
+$neo-checkbox-border-radius: 5px!default;
+
+// The amount of spacing between the checkbox and its label.
+$_mat-checkbox-item-spacing: 10px;
+
+
+.neo-checkbox {
+  width: fit-content;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  &:not(.neo-checkbox-disabled):active {
+    .neo-checkbox-checkmark {
+      transform: scale(0.95);
+    }
+  }
+  &::before,
+  &::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: $neo-checkbox-size;
+    height: $neo-checkbox-size;
+    top: 0;
+    border-radius: $neo-checkbox-border-radius;
+  }
+
+  &:not(.neo-checkbox-label-before)::before,
+  &:not(.neo-checkbox-label-before)::after {
+    left: 0;
+  }
+
+  &.neo-checkbox-label-before::before,
+  &.neo-checkbox-label-before::after {
+    right: 0;
+  }
+  -webkit-tap-highlight-color: transparent;
+
+  &.neo-checkbox-disabled{
+    .neo-checkbox-checkmark{
+      opacity: 0.4;
+    }
+  }
+}
+
+.neo-checkbox-layout {
+  // Disable text selection on the label itself, because having text selected
+  // will prevent focus from reaching the label. Below we'll re-enable it only
+  // for the label's content so that people can still select the text.
+  @include user-select(none);
+
+  // `cursor: inherit` ensures that the wrapper element gets the same cursor as the mat-checkbox
+  // (e.g. pointer by default, regular when disabled), instead of the browser default.
+  cursor: inherit;
+  align-items: baseline;
+  vertical-align: middle;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.neo-checkbox-label {
+  // Re-enable text selection for the checkbox's content since
+  // we disabled it above in the `.mat-checkbox-layout`.
+  @include user-select(auto);
+}
+
+.neo-checkbox-inner-container {
+  display: inline-block;
+  height: $neo-checkbox-size;
+  line-height: 0;
+  margin: auto;
+  margin-right: $_mat-checkbox-item-spacing;
+  order: 0;
+  position: relative;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: $neo-checkbox-size;
+  flex-shrink: 0;
+
+  [dir="rtl"] & {
+    margin: {
+      left: $_mat-checkbox-item-spacing;
+      right: auto;
+    }
+  }
+}
+
+.neo-checkbox-inner-container-no-side-margin {
+  margin: {
+    left: 0;
+    right: 0;
+  }
+}
+
+.neo-checkbox-frame {
+  border-radius: 5px;
+}
+
+.neo-checkbox-background {
+
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.neo-checkbox-checkmark {
+  position: relative;
+  @include mat-fill;
+  width: 100%;
+  opacity: 0;
+}
+
+.neo-checkbox-label-before {
+  .neo-checkbox-inner-container {
+    order: 1;
+    margin: {
+      left: $_mat-checkbox-item-spacing;
+      right: auto;
+    }
+
+    [dir="rtl"] & {
+      margin: {
+        left: auto;
+        right: $_mat-checkbox-item-spacing;
+      }
+    }
+  }
+}
+
+.neo-checkbox-checked {
+  .neo-checkbox-checkmark {
+    opacity: 1;
+  }
+}
+
+
+.neo-checkbox-disabled {
+  cursor: default;
+}
+
+.mat-checkbox-input {
+  // Move the input to the bottom and in the middle.
+  // Visual improvement to properly show browser popups when being required.
+  bottom: 0;
+  left: 50%;
+}

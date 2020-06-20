@@ -56,10 +56,11 @@
       mix-blend-mode: soft-light;
       box-shadow: inset 0px -5px 10px mat-color($neo-light-theme-foreground, dark-shadow, 0.3);
     }
-    
+
     &::after {
       mix-blend-mode: color-burn;
-      box-shadow: 0px 5px 15px mat-color($neo-light-theme-foreground, dark-shadow, 0.5);
+      box-shadow: 0px 5px 15px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.5);
     }
 
     &.neo-primary {

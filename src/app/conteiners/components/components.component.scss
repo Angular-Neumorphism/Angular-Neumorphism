@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   padding-top: 2rem;
+  background-color: #f3f3f3;
 }
 
 .sidenav,
@@ -12,15 +13,29 @@
   padding-top: 2rem;
 }
 
+.content {
+  z-index: 1;
+}
+
+.sidenav {
+  min-width: 17%;
+  z-index: 1;
+}
+
+.content {
+  padding-left: 30px;
+}
+
 .mat-drawer-side {
   border-right: 0;
 }
 .mat-drawer {
-  background-color: transparent;
+  background-color: #f3f3f3;
 }
 
 .mat-drawer-content {
   overflow-x: hidden;
+  background-color: #f3f3f3;
 }
 
 .components-wrapper {
@@ -35,25 +50,33 @@
   display: flex;
   flex: 1;
   box-sizing: border-box;
-  margin: 0 5rem;
+  margin: 3rem 0;
 }
 
 .button {
+  position: absolute;
   width: 4rem;
   height: 4rem;
   z-index: 999;
+  top: 20px;
+  left: 0px
 }
 
-.components-button-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 80%;
-  box-sizing: border-box;
-  padding-left: 0.8rem;
-}
+// .components-button-wrapper {
+
+//   z-index: 999;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   width: 100%;
+//   height: 4rem;
+//   box-sizing: border-box;
+// }
 
 @media (max-width: 870px) {
+  .button {
+    display: block;
+  }
   .closed {
     display: none;
   }

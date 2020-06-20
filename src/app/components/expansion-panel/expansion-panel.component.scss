@@ -10,8 +10,8 @@
   margin-top: 0 !important;
 }
 
-.header{
-  padding: 0 10px 0 10px!important;
+.header {
+  padding: 0 10px 0 10px !important;
 }
 
 .panel {
@@ -98,7 +98,9 @@
 
   color: #474747;
 }
-
+.item:hover {
+  color: #2086ed;
+}
 
 .divider {
   height: 2px;

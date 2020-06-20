@@ -1,102 +1,181 @@
+@import "../../components/neo-checkbox/neo-checkbox/neo-checkbox.theme";
 :host {
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
+  padding: 0 5% 100px 2%;
+  box-sizing: border-box;
 }
 
 .card {
-  width: 400px;
+  margin-top: 50px;
+  width: 100%;
   min-height: 150px;
   height: fit-content;
-  margin-right: 20px;
+}
+
+.card-flex {
+  display: flex;
+}
+
+.styled-example {
+  border-radius: 16px;
+  border: 2px solid #ebebeb;
+}
+
+.dark-back {
+  background-color: #474747;
+  border: 2px solid #474747;
+}
+
+.dark-back-title {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.module-snippet {
+  border-radius: 16px;
+  background-color: #ebebeb;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
 }
 
 .text {
-  width: 90%;
   font-family: Open Sans;
   font-style: normal;
-  font-weight: 600;
+  font-weight: normal;
   font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+}
+
+.title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
   line-height: 2.2rem;
   color: #474747;
   margin: 0 0 4rem 0;
 }
 
-.checkbox-text {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 22px;
+.card-description {
+  margin: 20px 0;
 }
 
-.wrapper {
-  margin-top: 25%;
-  height: 100%;
-  display: flex;
-  flex: 1;
-  align-items: center;
+.code-text {
+  color: #2086ed;
 }
 
-/* Customize the label (the container) */
-.container {
-  height: 30px;
-  margin: 0 3rem;
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.module-description {
+  margin: 20px 0;
 }
 
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+.divider {
+  width: 100%;
+  margin: 20px 0;
 }
 
-/* Create a custom checkbox */
-.fakeCheckbox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 24px;
-  width: 24px;
-  background: #f3f3f3;
-  box-shadow: inset 1px 1px 2px rgba(34, 34, 34, 0.4),
-    inset -1px -1px 2px #ffffff;
-  border-radius: 5px;
+.divider-vertical {
+  min-height: 98px;
+  margin-top: 1.5px;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .fakeCheckbox {
-  box-shadow: inset 2px 2px 4px rgba(34, 34, 34, 0.4),
-    inset -2px -2px 4px #ffffff;
+.checkbox {
+  margin: 10px 20px;
+  color: #474747;
 }
 
-.container input:checked ~ .fakeCheckbox {
-  box-shadow: inset 2px 2px 4px rgba(34, 34, 34, 0.4),
-    inset -2px -2px 4px #ffffff;
+.grey {
+  @include neo-checkbox-background(#474747);
+  color: white;
 }
 
-.checkmark {
-  -webkit-filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0.4))
-    drop-shadow(-1px -1px 1px #ffffff);
-  filter: drop-shadow(1px 1px 1px rgba(34, 34, 34, 0.4))
-    drop-shadow(-1px -1px 1px #ffffff);
+.green {
+  @include neo-checkbox-background(#5fda92);
+  color: white;
+}
+
+//****************************tabs*******************************//
+
+.tab-group {
+  overflow-y: auto;
+}
+
+:host ::ng-deep .tab-group .mat-ink-bar {
   display: none;
 }
 
-.container input:checked ~ .fakeCheckbox .checkmark {
-  display: block;
+:host ::ng-deep .tab-group .mat-tab-header {
+  border: none !important;
+}
+
+:host ::ng-deep .tab-group .mat-tab-header::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 98%;
+  width: 100%;
+  height: 2px;
+  width: 100%;
+  background: #f3f3f3;
+  box-shadow: inset 1px 1px 1px rgba(174, 174, 192, 0.3),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label-content {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 18px;
+  /* identical to box height, or 150% */
+
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label {
+  margin: 0 0.4rem 0.5rem 0.4rem;
+}
+
+:host ::ng-deep .tab-group .mat-tab-body-wrapper {
+  height: 100%;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label:hover .mat-tab-label-content {
+  color: #2086ed;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label:focus .mat-tab-label-content {
+  color: #2086ed;
+}
+
+:host ::ng-deep .tab-group .mat-tab-label:focus {
+  background: #f3f3f3;
+  box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.4),
+    inset -2px -2px 5px #ffffff;
+  border-radius: 8px;
+}
+
+@media (max-width: 870px) {
+  .wrapper {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .card {
+    width: 100%;
+  }
+  .tab-group {
+    margin: 20px 0;
+    width: 98%;
+  }
 }

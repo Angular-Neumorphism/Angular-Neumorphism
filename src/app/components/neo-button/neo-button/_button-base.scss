@@ -1,6 +1,6 @@
 @mixin neo-button-base {
   $icon-size: 20px;
-  $button-size: 40px !important;
+  $button-size: 40px;
 
   box-sizing: border-box;
   position: relative;
@@ -21,14 +21,13 @@
   cursor: pointer;
   line-height: $button-size;
   text-transform: uppercase;
-  background-color: inherit;
   display: inline-block;
   margin: 0;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
   font-size: 1.2rem;
-  transition: all 0.2s ease-in-out;
+  transition: none;
   mix-blend-mode: normal;
 
   &.cdk-keyboard-focused,

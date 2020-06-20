@@ -13,7 +13,6 @@
   justify-self: flex-end;
 }
 
-
 .menu-logo {
   width: 40px;
   height: 40px;
@@ -102,6 +101,15 @@ a:visited {
 }
 
 button.router-link-active {
+  background: linear-gradient(
+      0deg,
+      rgba(34, 34, 34, 0.1),
+      rgba(34, 34, 34, 0.1)
+    ),
+    #2086ed;
+
+  background-blend-mode: color-burn, normal;
+
   &::before {
     box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.5);
   }

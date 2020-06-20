@@ -1,60 +1,130 @@
-<div class="text">
-  Provides the same functionality as a native checkbox
+<div class="title">
+  Neomorph checkbox
 </div>
-<neo-card class="card"
-  ><neo-card-header>
-    <neo-card-title>Buttons</neo-card-title>
-  </neo-card-header>
-  <neo-card-content>
-  <span text>Check some items</span>
-  <div class="wrapper">
-    <label class="container"
-      ><div class="checkbox-text">Option one</div>
-      <input type="checkbox" checked="checked" />
-      <span class="fakeCheckbox">
-        <svg
-          class="checkmark"
-          style="enable-background: new 0 0 20 20;"
-          version="1.1"
-          viewBox="-3 -3 28 28"
-          xml:space="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#2086ED"
-              d="M10,18c-0.5,0-1-0.2-1.4-0.6l-4-4c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2.1-0.8,2.8,0l2.6,2.6l6.6-6.6   c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-8,8C11,17.8,10.5,18,10,18z"
-              id="check"
-            />
-          </g></svg
-      ></span>
-    </label>
-
-    <label class="container"
-      ><div class="checkbox-text">Option two</div>
-      <input type="checkbox" />
-      <span class="fakeCheckbox">
-        <svg
-          class="checkmark"
-          style="enable-background: new 0 0 20 20;"
-          version="1.1"
-          viewBox="-3 -3 28 28"
-          xml:space="preserve"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-        >
-          <g id="info" />
-          <g id="icons">
-            <path
-              fill="#2086ED"
-              d="M10,18c-0.5,0-1-0.2-1.4-0.6l-4-4c-0.8-0.8-0.8-2,0-2.8c0.8-0.8,2.1-0.8,2.8,0l2.6,2.6l6.6-6.6   c0.8-0.8,2-0.8,2.8,0c0.8,0.8,0.8,2,0,2.8l-8,8C11,17.8,10.5,18,10,18z"
-              id="check"
-            />
-          </g></svg
-      ></span>
-    </label>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoCheckboxModule &#125;  from '~@Neomorphism/neo-checkbox/neo-checkbox.module';    </pre
+  >
+</code>
+<div class="text module-description">
+  <strong>&lt;neo-checkbox&gt;</strong> provides the same functionality as a
+  HTML5 native checkbox except indeterminate behavior. It could work with
+  template-driven and reactive forms. Have the same API as Material checkbox and
+  additional mixins for styling.
+</div>
+<app-element-example class="styled-example">
+  <span title>Basic checkbox</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+        <span class="code-text">&lt;neo-checkbox checked="true"&gt;</span>Option checked<span class="code-text">&lt;/neo-checkbox&gt;</span>
+        <span class="code-text">&lt;neo-checkbox &gt;</span>Option two<span class="code-text">&lt;/neo-checkbox&gt;</span>
+        <span class="code-text">&lt;neo-checkbox disabled&gt;</span>Option disabled<span class="code-text">&lt;/neo-checkbox&gt;</span>
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="card" example>
+    <div class="card-content">
+      <neo-checkbox class="checkbox" checked="true"
+        >Option checked
+      </neo-checkbox>
+      <neo-checkbox class="checkbox" required>Option two </neo-checkbox>
+      <neo-checkbox disabled class="checkbox">Option disabled </neo-checkbox>
+    </div>
   </div>
-  </neo-card-content>
-</neo-card>
+</app-element-example>
+
+<div class="text">
+  <p><strong>API proterties</strong></p>
+</div>
+<app-api-description [apiDescriprionData] = "commonApi"></app-api-description>
+
+<div class="text">
+  <p><strong>Styling</strong></p>
+</div>
+<div class="text module-description">
+  Because Neomorphism uses additional shadows, changing background color will
+  cause mismatching between the background color and basic shadows. So we
+  provide additional API to solve this issue. Use
+  neo-checkbox-background($color) mixin to establish shadow colors automatically
+  according to background. Just pass your current background color to this
+  mixin.
+</div>
+<app-element-example class="dark-back">
+  <span class="dark-back-title" title>Checkbox with custom background, shadows and check mark</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group dark-back">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+      <span class="code-text">
+      &lt;neo-checkbox 
+        checkMarkColor="#f3f3f3" 
+        class="checkbox red" 
+        checked="true"&gt;</span>Option checked<span class="code-text">&lt;/neo-checkbox&gt;</span>
+      <span class="code-text">
+      &lt;neo-checkbox 
+        checkMarkColor="#f3f3f3" 
+        class="checkbox red" &gt;</span>Option two<span class="code-text">&lt;/neo-checkbox&gt;</span>
+      <span class="code-text">
+      &lt;neo-checkbox 
+        checkMarkColor="#f3f3f3" 
+        class="checkbox red" 
+        disabled&gt;</span>Option disabled<span class="code-text">&lt;/neo-checkbox&gt;</span>
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+    <mat-tab class="mat-tab" tabindex="1" label="SCSS">
+      <code class="code">
+        <pre>
+        <span class="code-text">@import "../../components/neo-checkbox/neo-checkbox/neo-checkbox.theme";</span> 
+        <span class="code-text">
+          .checkbox &#123;</span> 
+              <span class="code-text">&.red &#123;
+              @include neo-checkbox-background(#f84f5a);
+              &#125;
+          &#125;</span>
+              </pre>
+      </code>
+    </mat-tab>
+  </mat-tab-group>
+  <div example class="card card-flex dark-back">
+    <div class="card-content">
+      <neo-checkbox
+        checkMarkColor="#f3f3f3"
+        class="checkbox grey"
+        checked="true"
+        >Option checked
+      </neo-checkbox>
+      <neo-checkbox checkMarkColor="#f3f3f3" class="checkbox grey" required
+        >Option two
+      </neo-checkbox>
+      <neo-checkbox checkMarkColor="#f3f3f3" disabled class="checkbox grey"
+        >Option disabled
+      </neo-checkbox>
+    </div>
+
+    <div class="card-content">
+      <neo-checkbox
+        checkMarkColor="#f3f3f3"
+        class="checkbox green"
+        checked="true"
+        >Option checked
+      </neo-checkbox>
+      <neo-checkbox checkMarkColor="#f3f3f3" class="checkbox green" required
+        >Option two
+      </neo-checkbox>
+      <neo-checkbox checkMarkColor="#f3f3f3" disabled class="checkbox green"
+        >Option disabled
+      </neo-checkbox>
+    </div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>Checkbox styling API properties</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData] = "styleApi"></app-api-description>
+

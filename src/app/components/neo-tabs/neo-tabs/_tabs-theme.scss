@@ -1,0 +1,137 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-tabs-color() {
+  // $primary: map-get($config, primary);
+  // $accent: map-get($config, accent);
+  // $warn: map-get($config, warn);
+  // $background: map-get($config, background);
+  // $foreground: map-get($config, foreground);
+  // $header-border: 1px solid mat-color($foreground, divider);
+
+  // .mat-tab-nav-bar,
+  // .mat-tab-header {
+  //   border-bottom: $header-border;
+  // }
+
+  // .mat-tab-group-inverted-header {
+  //   .mat-tab-nav-bar,
+  //   .mat-tab-header {
+  //     border-top: $header-border;
+  //     border-bottom: none;
+  //   }
+  // }
+
+  .neo-tab-label,
+  .neo-tab-link {
+    color: mat-color($neo-light-theme-foreground, text);
+
+    &.neo-tab-disabled {
+      color: mat-color($neo-light-theme-foreground, disabled-text);
+    }
+  }
+
+  .neo-tab-header-pagination-chevron {
+    color: mat-color($neo-light-theme-foreground, text);
+  }
+
+  .neo-tab-header-pagination-disabled .neo-tab-header-pagination-chevron {
+    color: mat-color($neo-light-theme-foreground, disabled-text);
+  }
+
+  .neo-tab-label {
+    border-radius: 8px;
+
+    &:not(.neo-tab-disabled):hover {
+      color: mat-color($neo-light-theme, primary);
+    }
+
+    &:not(.neo-tab-disabled):focus {
+      color: mat-color($neo-light-theme, primary);
+    }
+
+    &:not(.neo-tab-disabled):focus::before {
+      box-shadow: inset 2px 2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+
+    &:not(.neo-tab-disabled):focus::after {
+      box-shadow: inset -3px -3px 5px
+        mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &.neo-tab-disabled {
+      .neo-tab-label {
+        color: mat-color($neo-light-theme-foreground, disabled-text);
+      }
+
+      &::before {
+        box-shadow: inset 1px 1px 2px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.2);
+      }
+
+      &::after {
+        box-shadow: inset -1px -1px 2px
+          mat-color($neo-light-theme-foreground, light-shadow);
+      }
+    }
+  }
+
+  //@mixin _mat-tab-label-focus($tab-focus-color) {
+  //   .mat-tab-label,
+  //   .mat-tab-link {
+  //     &.cdk-keyboard-focused,
+  //     &.cdk-program-focused {
+  //       &:not(.mat-tab-disabled) {
+  //         background-color: mat-color($tab-focus-color, lighter, 0.3);
+  //       }
+  //     }
+  //   }
+  // }
+
+  // @mixin _mat-tabs-background($background-color) {
+  //   // Set background color for the tab group
+  //   .mat-tab-header, .mat-tab-links, .mat-tab-header-pagination {
+  //     background-color: mat-color($background-color);
+  //   }
+
+  //   // Set labels to contrast against background
+  //   .mat-tab-label, .mat-tab-link {
+  //     color: mat-color($background-color, default-contrast);
+
+  //     &.mat-tab-disabled {
+  //       color: mat-color($background-color, default-contrast, 0.4);
+  //     }
+  //   }
+
+  //   // Set pagination chevrons to contrast background
+  //   .mat-tab-header-pagination-chevron {
+  //     border-color: mat-color($background-color, default-contrast);
+  //   }
+
+  //   .mat-tab-header-pagination-disabled .mat-tab-header-pagination-chevron {
+  //     border-color: mat-color($background-color, default-contrast, 0.4);
+  //   }
+
+  //   // Set ripples color to be the contrast color of the new background. Otherwise the ripple
+  //   // color will be based on the app background color.
+  //   // .mat-ripple-element {
+  //   //   background-color: mat-color($background-color, default-contrast, 0.12);
+  //   // }
+  // }
+
+  // @mixin mat-tabs-typography($config-or-theme) {
+  //   $config: mat-get-typography-config($config-or-theme);
+  //   .mat-tab-group {
+  //     font-family: mat-font-family($config);
+  //   }
+
+  //   .mat-tab-label, .mat-tab-link {
+  //     font: {
+  //       family: mat-font-family($config, button);
+  //       size: mat-font-size($config, button);
+  //       weight: mat-font-weight($config, button);
+  //     }
+  //   }
+  // }
+}

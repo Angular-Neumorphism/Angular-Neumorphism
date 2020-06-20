@@ -1,0 +1,66 @@
+@import "./tabs-common";
+
+.neo-tab-group {
+  display: flex;
+  flex-direction: column;
+
+  &.neo-tab-group-inverted-header {
+    flex-direction: column-reverse;
+  }
+}
+
+// // Wraps each tab label
+.neo-tab-label {
+  @include tab-label;
+  position: relative;
+}
+
+@media ($mat-xsmall) {
+  .neo-tab-label {
+    padding: 0 12px;
+  }
+}
+
+@media ($mat-small) {
+  .neo-tab-label {
+    padding: 0 12px;
+  }
+}
+
+// Note that we only want to target direct descendant tabs.
+.neo-tab-group[neo-stretch-tabs] > .neo-tab-header .neo-tab-label {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
+// // The bottom section of the view; contains the tab bodies
+.neo-tab-body-wrapper {
+  // @include _noop-animation();
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  transition: height $mat-tab-animation-duration $ease-in-out-curve-function;
+}
+
+// // Wraps each tab body
+.neo-tab-body {
+  @include mat-fill;
+  display: block;
+  overflow: hidden;
+
+
+  // Fix for auto content wrapping in IE11
+  flex-basis: 100%;
+
+  &.neo-tab-body-active {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    flex-grow: 1;
+  }
+
+  .neo-tab-group.neo-tab-group-dynamic-height &.neo-tab-body-active {
+    overflow-y: hidden;
+  }
+}

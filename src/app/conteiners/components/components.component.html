@@ -4,14 +4,11 @@
   </mat-sidenav>
 
   <mat-sidenav-content class="content">
-    <div class="components-button-wrapper">
-      <button neo-icon-button (mousedown)="menuToggle($event)" class="button">
-        <span class="material-icons">
-          {{ opened ? "close" : "menu" }}
-        </span>
-      </button>
-    </div>
-
+    <button neo-icon-button (mousedown)="menuToggle($event)" class="button">
+      <span class="material-icons">
+        {{ opened ? "close" : "menu" }}
+      </span>
+    </button>
     <div class="components-content-wrapper" [class.closed]="opened">
       <router-outlet></router-outlet>
     </div>
