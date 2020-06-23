@@ -1,0 +1,21 @@
+<neo-card class="discription_card">
+    <div class="discription_header">
+      <div class="header_name">Name</div>
+      <div class="header_description">Description</div>
+    </div>
+    <div class="discription_boby">
+      <ng-container
+        *ngFor="let descriptionItem of apiDescriprionData; let i = index"
+      >
+        <div class="api_item text">
+          <div class="api_name">
+            <span>{{ descriptionItem.apiName }}</span>
+            <span>{{ descriptionItem.apiType }}</span>
+          </div>
+          <neo-divider vertical class="divider-vertical"></neo-divider>
+          <div class="api_description">{{ descriptionItem.description }}</div>
+        </div>
+        <neo-divider *ngIf="i !== apiDescriprionData.length - 1"></neo-divider>
+      </ng-container>
+    </div>
+  </neo-card>

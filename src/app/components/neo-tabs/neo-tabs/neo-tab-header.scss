@@ -1,0 +1,48 @@
+@import "./tabs-common";
+
+@include paginated-tab-header;
+
+$neo-tab-label-border-radius: 8px;
+
+.mat-ink-bar {
+  // @include ink-bar;
+}
+
+.neo-tab-labels {
+  @include paginated-tab-header-item-wrapper(".neo-tab-header");
+}
+
+.neo-tab-label {
+  position: relative;
+  border-radius: 8px;
+  &::before,
+  &::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: $neo-tab-label-border-radius;
+  }
+}
+
+.neo-tab-label-container {
+  @include paginated-tab-header-container;
+}
+
+.neo-tab-list {
+  //@include _noop-animation();
+}
+
+// Wraps each tab label
+.neo-tab-label {
+  @include tab-label;
+  position: relative;
+}
+
+@media ($mat-xsmall) {
+  .neo-tab-label {
+    min-width: 72px;
+  }
+}

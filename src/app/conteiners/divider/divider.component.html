@@ -1,42 +1,68 @@
-<div class="text">
-  A simple line separator
+<div class="title">
+  Neomorph divider
 </div>
-<code class="code width">
+
+<code class="module-snippet code width">
   <pre>
-    import &#123; NeoCardModule &#125;  from '~@Neomorph/neo-divider/neo-divider.module';    </pre
+    import &#123; NeoCardModule &#125;  from '~@Neomorphism/neo-divider/neo-divider.module';     </pre
   >
 </code>
-<neo-divider class="divider"></neo-divider>
-<div class="card-wrapper">
-  <neo-card class="card">
-    <neo-card-header>
-      <neo-card-title>Horizontal didiver</neo-card-title>
-    </neo-card-header>
-    <neo-card-content>
+
+<div class="text module-description">
+  <strong>&lt;neo-toolbar&gt;</strong> is a simple line separator
+</div>
+
+<app-element-example class="styled-example">
+  <span title>Horizontal divider</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+          <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
+            <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
+          <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span> 
+          <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
+          <span class="code-text">&lt;div&gt;</span> Item 3 <span class="code-text">&lt;/div&gt;</span> 
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="card" example>
+    <div class="card-content">
       <div class="wrapper">
         <div class="text-item">Item 1</div>
+        <neo-divider></neo-divider>
       </div>
       <div class="wrapper">
         <div class="text-item">Item 2</div>
         <neo-divider></neo-divider>
       </div>
-    </neo-card-content>
-  </neo-card>
+      <div class="wrapper">
+        <div class="text-item">Item 3</div>
+      </div>
+    </div>
+  </div>
+</app-element-example>
 
-  <code class="code">
-    <pre>
-    <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
-      <span class="code-text">&lt;neo-divider&gt;&lt;/neo-divider&gt;</span>
-    <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span> </pre>
-  </code>
-</div>
-<neo-divider class="divider"></neo-divider>
-<div class="card-wrapper">
-  <neo-card class="card">
-    <neo-card-header>
-      <neo-card-title>Vertical didiver</neo-card-title>
-    </neo-card-header>
-    <neo-card-content>
+<app-element-example class="styled-example">
+  <span title>Vertical divider</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+        <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
+      <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
+    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
+      <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span>
+    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span> 
+    <span class="code-text">&lt;div&gt;</span> Item 3 <span class="code-text">&lt;/div&gt;</span>
+    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
+  </pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="card" example>
+    <div class="card-content">
       <div class="wrapper">
         <div class="wrapper vertical">
           <neo-divider [vertical]="true"></neo-divider>
@@ -44,27 +70,28 @@
           <neo-divider [vertical]="true"></neo-divider>
           <div class="text-item">Item 2</div>
           <neo-divider [vertical]="true"></neo-divider>
+          <div class="text-item">Item 3</div>
+          <neo-divider [vertical]="true"></neo-divider>
         </div>
       </div>
-    </neo-card-content>
-  </neo-card>
+    </div>
+  </div>
+</app-element-example>
 
-  <code class="code">
-    <pre>
-    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
-      <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
-    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span>
-      <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span>
-    <span class="code-text">&lt;neo-divider [vertical]="true"&gt;&lt;/neo-divider&gt;</span> </pre>
-  </code>
-</div>
-<neo-divider class="divider"></neo-divider>
-<div class="card-wrapper">
-  <neo-card class="card"
-    ><neo-card-header>
-      <neo-card-title>Inset didiver</neo-card-title>
-    </neo-card-header>
-    <neo-card-content>
+<app-element-example class="styled-example">
+  <span title>Inset divider</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+          <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
+            <span class="code-text">&lt;neo-divider [inset]="true"&gt;&lt;/neo-divider&gt;</span>
+          <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span> </pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="card" example>
+    <div class="card-content">
       <div class="wrapper">
         <div class="wrapper">
           <div class="text-item">Item 1</div>
@@ -74,13 +101,8 @@
           <div class="text-item">Item 2</div>
         </div>
       </div>
-    </neo-card-content>
-  </neo-card>
+    </div>
+  </div>
+</app-element-example>
 
-  <code class="code">
-    <pre>
-    <span class="code-text">&lt;div&gt;</span> Item 1 <span class="code-text">&lt;/div&gt;</span> 
-      <span class="code-text">&lt;neo-divider [inset]="true"&gt;&lt;/neo-divider&gt;</span>
-    <span class="code-text">&lt;div&gt;</span> Item 2 <span class="code-text">&lt;/div&gt;</span> </pre>
-  </code>
-</div>
+<app-api-description [apiDescriprionData] = "commonApi"></app-api-description>

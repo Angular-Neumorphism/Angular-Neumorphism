@@ -1,0 +1,58 @@
+<neo-tab-header
+  #neoTabHeader
+  [selectedIndex]="selectedIndex || 0"
+  [disableRipple]="disableRipple"
+  [disablePagination]="disablePagination"
+  (indexFocused)="_focusChanged($event)"
+  (selectFocusedIndex)="selectedIndex = $event"
+>
+  <div
+    class="neo-tab-label mat-focus-indicator"
+    role="tab"
+    neoTabLabelWrapper
+    cdkMonitorElementFocus
+    *ngFor="let tab of _tabs; let i = index"
+    [id]="_getTabLabelId(i)"
+    [attr.tabIndex]="_getTabIndex(tab, i)"
+    [attr.aria-posinset]="i + 1"
+    [attr.aria-setsize]="_tabs.length"
+    [attr.aria-controls]="_getTabContentId(i)"
+    [attr.aria-selected]="selectedIndex == i"
+    [attr.aria-label]="tab.ariaLabel || null"
+    [attr.aria-labelledby]="(!tab.ariaLabel && tab.ariaLabelledby) ? tab.ariaLabelledby : null"
+    [class.mat-tab-label-active]="selectedIndex == i"
+    [disabled]="tab.disabled"
+    (click)="_handleClick(tab, neoTabHeader, i)"
+  >
+    <div class="neo-tab-label-content">
+      <!-- If there is a label template, use it. -->
+      <ng-template [ngIf]="tab.templateLabel">
+        <ng-template [cdkPortalOutlet]="tab.templateLabel"></ng-template>
+      </ng-template>
+
+      <!-- If there is not a label template, fall back to the text label. -->
+      <ng-template [ngIf]="!tab.templateLabel">{{tab.textLabel}}</ng-template>
+    </div>
+  </div>
+</neo-tab-header>
+<div
+  class="neo-tab-body-wrapper"
+  [class._mat-animation-noopable]="_animationMode === 'NoopAnimations'"
+  #tabBodyWrapper
+>
+  <neo-divider></neo-divider>
+  <neo-tab-body
+    role="tabpanel"
+    *ngFor="let tab of _tabs; let i = index"
+    [id]="_getTabContentId(i)"
+    [attr.aria-labelledby]="_getTabLabelId(i)"
+    [class.neo-tab-body-active]="selectedIndex == i"
+    [content]="tab.content!"
+    [position]="tab.position!"
+    [origin]="tab.origin"
+    [animationDuration]="animationDuration"
+    (_onCentered)="_removeTabBodyWrapperHeight()"
+    (_onCentering)="_setTabBodyWrapperHeight($event)"
+  >
+  </neo-tab-body>
+</div>

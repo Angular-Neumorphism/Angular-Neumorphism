@@ -20,13 +20,13 @@ $neo-light-theme-background: (
   card-gradient-end: #f7f7f7,
   card-gradient-start: #f0f0f0,
   app-bar: #e4e4e4,
-  button-gradient-end: #f3f3f3,
-  button-gradient-start: #f5f5f5,
+  button-background: #f3f3f3,
+  button-background-hover: rgba(34, 34, 34, 0.1),
 );
 
 $neo-light-theme: (
   primary: #2086ed,
   accent: red,
-  warn: #f84f5a,
+  warn: #ea565e,
   error: #d53a43,
 );

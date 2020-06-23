@@ -1,12 +1,17 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { DescriptionItem } from '../models/index';
+import { INPUT_COMMON_API, INPUT_STYLE_API, TEXTAREA_COMMON_API } from '../api-data/index';
 
 @Component({
   selector: 'app-inputs',
   templateUrl: './inputs.component.html',
   styleUrls: ['./inputs.component.scss'],
 })
-export class InputsComponent implements AfterViewInit {
+export class InputsComponent {
+  public inputCommonApi: DescriptionItem[] = INPUT_COMMON_API;
+  public inputStyleApi: DescriptionItem[] = INPUT_STYLE_API;
+  public textareaCommonApi: DescriptionItem[] = TEXTAREA_COMMON_API;
   public textInput = '';
 
   exampleForm = new FormGroup({
@@ -17,10 +22,5 @@ export class InputsComponent implements AfterViewInit {
 
   constructor() {}
 
-  ngAfterViewInit(): void {
-    const tabs = document.getElementsByClassName('mat-tab-label');
-    const tab: HTMLElement = tabs[0] as HTMLElement;
-    tab.focus();
-  }
 
 }

@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { NeoToolbar } from './neo-toolbar/neo-toolbar.component';
+import { NeoToolbar, NeoToolbarRow } from './neo-toolbar/neo-toolbar.component';
 
 
 
 @NgModule({
-  declarations: [NeoToolbar],
+  declarations: [NeoToolbar, NeoToolbarRow],
   imports: [
     CommonModule,
     MatToolbarModule
   ],
-  exports:[NeoToolbar]
+  exports:[NeoToolbar, NeoToolbarRow]
 })
 export class NeoToolbarModule { }

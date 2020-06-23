@@ -1,0 +1,9 @@
+
+.neo-tab-body-content {
+  height: 100%;
+  overflow: hidden;
+
+  .mat-tab-group-dynamic-height & {
+    overflow: hidden;
+  }
+}

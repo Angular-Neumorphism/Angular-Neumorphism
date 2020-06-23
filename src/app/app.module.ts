@@ -1,3 +1,4 @@
+import { NeoProgressBarModule } from './components/neo-progressbar/neo-progressbar/neo-progress-bar.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -26,7 +27,6 @@ import { NeomorphSelectComponent } from './components/neomorph-select/neomorph-s
 import { MenuPageComponent } from './conteiners/menu-page/menu-page.component';
 import { ToolbarPageComponent } from './conteiners/toolbar-page/toolbar-page.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTabsModule } from '@angular/material/tabs';
 import { TubsComponent } from './conteiners/tubs/tubs.component';
 import { DialogComponent } from './conteiners/dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -46,6 +46,12 @@ import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
 import { NeoInputModule } from './components/neo-input/neo-input.module';
 import { NeoFormFieldModule } from './components/neo-form-field/neo-form-field.module';
 import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component';
+import { NeoCheckboxModule } from './components/neo-checkbox/neo-checkbox.module';
+import { NeoTabsModule } from './components/neo-tabs/neo-tabs.module';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
+import { ElementExampleComponent } from './conteiners/element-example/element-example.component';
+import { ApiDescriptionComponent } from './conteiners/api-description/api-description.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +84,8 @@ import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component
     ComponentsComponent,
     SnackbarComponent,
     CodeEmbedComponent,
+    ElementExampleComponent,
+    ApiDescriptionComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -89,7 +97,6 @@ import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component
     MatIconModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatTabsModule,
     MatDialogModule,
     RouterModule,
     NeoButtonModule,
@@ -98,6 +105,11 @@ import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component
     NeoToolbarModule,
     NeoInputModule,
     NeoFormFieldModule,
+    NeoProgressBarModule,
+    NeoCheckboxModule,
+    MatTabsModule,
+    NeoTabsModule,
+    MatDividerModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],

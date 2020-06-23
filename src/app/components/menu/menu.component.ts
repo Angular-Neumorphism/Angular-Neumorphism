@@ -17,4 +17,11 @@ export class MenuComponent implements OnInit {
     );
   }
 
+  goToPatrionUrl(){
+    window.open(
+      'https://www.patreon.com/neomorphism',
+      '_blank'
+    );
+  }
+
 }
