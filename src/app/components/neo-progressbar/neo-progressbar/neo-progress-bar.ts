@@ -8,7 +8,6 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { MatProgressBar } from '@angular/material/progress-bar';
-import * as style from '@angular/material/progress-bar';
 import { NumberInput } from '@angular/cdk/coercion';
 
 @Component({
@@ -18,7 +17,7 @@ import { NumberInput } from '@angular/cdk/coercion';
   encapsulation: ViewEncapsulation.None,
   host: {
     class: 'neo-progress-bar',
-  }
+  },
 })
 export class NeoProgressBar extends MatProgressBar
   implements AfterViewInit, OnDestroy {
