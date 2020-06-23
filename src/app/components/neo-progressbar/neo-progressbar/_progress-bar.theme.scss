@@ -5,8 +5,8 @@
 
     .neo-progress-bar {
         background-color: #ebebeb;
-        box-shadow: inset 1px 1px 1px rgba(34, 34, 34, 0.3),
-          inset -1px -1px 1px #ffffff;
+        box-shadow: inset 1px 1px 1px mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+          inset -1px -1px 1px mat-color($neo-light-theme-foreground, light-shadow);;
     }
 
 

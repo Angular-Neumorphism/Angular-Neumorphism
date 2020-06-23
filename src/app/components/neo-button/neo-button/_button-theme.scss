@@ -42,7 +42,7 @@
   .neo-button,
   .neo-icon-button {
     color: $default;
-   background-color: $background-default;
+    background-color: $background-default;
 
     &::before {
       mix-blend-mode: soft-light;
@@ -54,9 +54,9 @@
     }
 
     &:hover {
-      // background: linear-gradient(0deg, $background-hover, $background-hover),
-      //   $background-default;
-      // background-blend-mode: color-burn, normal;
+      background: linear-gradient(0deg, $background-hover, $background-hover),
+        $background-default;
+      background-blend-mode: color-burn, normal;
 
       &::before {
         box-shadow: -1px -1px 3px $light-shadow;

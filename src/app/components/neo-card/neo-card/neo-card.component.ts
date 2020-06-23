@@ -117,7 +117,7 @@ export class NeoCardImage {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     class: 'neo-card mat-focus-indicator',
-    '[class._mat-animation-noopable]': '_animationMode === "NoopAnimations"',
+    '[class._mat-animation-noopable]': 'animationMode === "NoopAnimations"',
   },
 })
 export class NeoCard  {
