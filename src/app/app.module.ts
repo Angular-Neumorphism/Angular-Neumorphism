@@ -1,4 +1,4 @@
-import { NeoProgressBarModule } from './components/neo-progressbar/neo-progressbar/neo-progress-bar.module';
+import { NeoProgressBarModule } from './components/neo-progressbar/neo-progress-bar.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -39,19 +39,20 @@ import { ContactsComponent } from './conteiners/contacts/contacts.component';
 import { ComponentsComponent } from './conteiners/components/components.component';
 import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { NeoButtonModule } from './components/neo-button/neo-button.module';
-import { NeoDividerModule } from './components/neo-divider/neo-divider.module';
-import { NeoCardModule } from './components/neo-card/neo-card.module';
-import { NeoToolbarModule } from './components/neo-toolbar/neo-toolbar.module';
-import { NeoInputModule } from './components/neo-input/neo-input.module';
-import { NeoFormFieldModule } from './components/neo-form-field/neo-form-field.module';
 import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component';
-import { NeoCheckboxModule } from './components/neo-checkbox/neo-checkbox.module';
 import { NeoTabsModule } from './components/neo-tabs/neo-tabs.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { ElementExampleComponent } from './conteiners/element-example/element-example.component';
 import { ApiDescriptionComponent } from './conteiners/api-description/api-description.component';
+
+import { NeoFormFieldModule } from '@neomorphism/ng-neomorphism/neo-form-field';
+import { NeoCheckboxModule } from '@neomorphism/ng-neomorphism/neo-checkbox';
+import { NeoButtonModule } from '@neomorphism/ng-neomorphism/neo-button';
+import { NeoDividerModule } from '@neomorphism/ng-neomorphism/neo-divider';
+import { NeoCardModule } from '@neomorphism/ng-neomorphism/neo-card';
+import { NeoToolbarModule } from '@neomorphism/ng-neomorphism/neo-toolbar';
+import { NeoInputModule } from '@neomorphism/ng-neomorphism/neo-input';
 
 @NgModule({
   declarations: [

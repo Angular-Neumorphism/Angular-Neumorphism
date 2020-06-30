@@ -3,7 +3,13 @@
 </div>
 <code class="module-snippet code width">
   <pre>
-    import &#123; NeoCardModule &#125;  from '~@Neomorphism/neo-input/neo-input.module';    </pre
+    import &#123; NeoFormFieldModule &#125;  from '@neomorphism/ng-neomorphism/neo-form-field'  </pre
+  >
+</code>
+
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoCardModule &#125;  from '@neomorphism/ng-neomorphism/neo-input'   </pre
   >
 </code>
 <div class="text module-description">
@@ -232,8 +238,8 @@
     <mat-tab class="mat-tab" tabindex="1" label="SCSS">
       <code class="code">
         <pre>
-        <span class="code-text">@import "../../components/neo-form-field/neo-form-field/form-field.theme";</span>
-        <span class="code-text">@import "../../components/neo-input/neo-input/input.theme";</span>
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/form-field.mixins";</span>
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/input.mixins";</span>
         <span class="code-text">
           .styled-formfield &#123;</span> 
           <span class="code-text">  @include neo-form-field-background(#f84f5a);
