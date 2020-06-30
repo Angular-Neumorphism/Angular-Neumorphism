@@ -15,6 +15,7 @@ import {
 import {
   AfterContentChecked,
   AfterContentInit,
+  ContentChild,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
@@ -30,14 +31,11 @@ import {
   QueryList,
   ViewChild,
   ViewEncapsulation,
+  AfterViewInit,
 } from '@angular/core';
 import {
   CanColor,
-  CanColorCtor,
   CanDisableRipple,
-  CanDisableRippleCtor,
-  mixinColor,
-  mixinDisableRipple,
   ThemePalette,
 } from '@angular/material/core';
 import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
@@ -46,6 +44,8 @@ import { startWith } from 'rxjs/operators';
 import { MAT_TAB_GROUP, NeoTab } from './neo-tabs.component';
 import { MAT_TABS_CONFIG, MatTabsConfig } from './neo-tab-config';
 import * as MatTabsModule from '@angular/material/tabs';
+
+import { NeoFocusPosition } from './neo-tab-focus';
 
 /** Used to generate unique ID's for each tab component */
 let nextId = 0;
@@ -60,18 +60,6 @@ export class NeoTabChangeEvent {
 
 /** Possible positions for the tab header. */
 export type NeoTabHeaderPosition = 'above' | 'below';
-
-// Boilerplate for applying mixins to MatTabGroup.
-/** @docs-private */
-class MatTabGroupMixinBase {
-  constructor(public _elementRef: ElementRef) {}
-}
-// const _MatTabGroupMixinBase: CanColorCtor &
-//   CanDisableRippleCtor &
-//   typeof MatTabGroupMixinBase = mixinColor(
-//   mixinDisableRipple(MatTabGroupMixinBase),
-//   'primary'
-// );
 
 interface NeoTabGroupBaseHeader {
   _alignInkBarToSelectedTab: () => void;
@@ -155,22 +143,22 @@ export abstract class _NeoTabGroupBase extends MatTabsModule._MatTabGroupBase
   disablePagination: boolean;
 
   /** Background color of the tab group. */
-  @Input()
-  get backgroundColor(): ThemePalette {
-    return this._neoBackgroundColor;
-  }
-  set backgroundColor(value: ThemePalette) {
-    const nativeElement: HTMLElement = this._elementRef.nativeElement;
+  // @Input()
+  // get backgroundColor(): ThemePalette {
+  //   return this._neoBackgroundColor;
+  // }
+  // set backgroundColor(value: ThemePalette) {
+  //   const nativeElement: HTMLElement = this._elementRef.nativeElement;
 
-    nativeElement.classList.remove(`mat-background-${this.backgroundColor}`);
+  //   nativeElement.classList.remove(`mat-background-${this.backgroundColor}`);
 
-    if (value) {
-      nativeElement.classList.add(`mat-background-${value}`);
-    }
+  //   if (value) {
+  //     nativeElement.classList.add(`mat-background-${value}`);
+  //   }
 
-    this._neoBackgroundColor = value;
-  }
-  private _neoBackgroundColor: ThemePalette;
+  //   this._neoBackgroundColor = value;
+  // }
+  // private _neoBackgroundColor: ThemePalette;
 
   /** Output to enable support for two-way binding on `[(selectedIndex)]` */
   @Output() readonly selectedIndexChange: EventEmitter<
@@ -321,7 +309,7 @@ export abstract class _NeoTabGroupBase extends MatTabsModule._MatTabGroupBase
   /** Re-aligns the ink bar to the selected tab element. */
   realignInkBar() {
     if (this._tabHeader) {
-     // this._tabHeader._alignInkBarToSelectedTab();
+      this._tabHeader._alignInkBarToSelectedTab();
     }
   }
 
@@ -364,12 +352,12 @@ export abstract class _NeoTabGroupBase extends MatTabsModule._MatTabGroupBase
 
   /** Returns a unique id for each tab label element */
   _getTabLabelId(i: number): string {
-    return `mat-tab-label-${this._neoGroupId}-${i}`;
+    return `neo-tab-label-${this._neoGroupId}-${i}`;
   }
 
   /** Returns a unique id for each tab content element */
   _getTabContentId(i: number): string {
-    return `mat-tab-content-${this._neoGroupId}-${i}`;
+    return `neo-tab-content-${this._neoGroupId}-${i}`;
   }
 
   /**
@@ -401,7 +389,11 @@ export abstract class _NeoTabGroupBase extends MatTabsModule._MatTabGroupBase
   }
 
   /** Handle click events, setting new selected index if appropriate. */
-  _handleClick(tab: NeoTab, neoTabHeader: NeoTabGroupBaseHeader, index: number) {
+  _handleClick(
+    tab: NeoTab,
+    neoTabHeader: NeoTabGroupBaseHeader,
+    index: number
+  ) {
     if (!tab.disabled) {
       this.selectedIndex = neoTabHeader.focusIndex = index;
     }
@@ -451,6 +443,8 @@ export class NeoTabGroup extends _NeoTabGroupBase {
   @ContentChildren(NeoTab, { descendants: true }) _allTabs: QueryList<NeoTab>;
   @ViewChild('tabBodyWrapper') _tabBodyWrapper: ElementRef;
   @ViewChild('neoTabHeader') _tabHeader: NeoTabGroupBaseHeader;
+
+  @ContentChild(NeoFocusPosition) focusedRef: NeoFocusPosition;
 
   constructor(
     elementRef: ElementRef,

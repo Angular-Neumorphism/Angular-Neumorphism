@@ -1,4 +1,3 @@
-import { NeoProgressBarModule } from './components/neo-progressbar/neo-progress-bar.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -53,6 +52,8 @@ import { NeoDividerModule } from '@neomorphism/ng-neomorphism/neo-divider';
 import { NeoCardModule } from '@neomorphism/ng-neomorphism/neo-card';
 import { NeoToolbarModule } from '@neomorphism/ng-neomorphism/neo-toolbar';
 import { NeoInputModule } from '@neomorphism/ng-neomorphism/neo-input';
+
+import { NeoProgressBarModule } from './components/neo-progressbar/neo-progress-bar.module';
 
 @NgModule({
   declarations: [

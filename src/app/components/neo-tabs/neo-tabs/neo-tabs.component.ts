@@ -24,7 +24,7 @@ import {
   InjectionToken,
   Inject,
   Optional,
-  AfterViewInit
+  AfterViewInit,
 } from '@angular/core';
 import {
   CanDisable,
@@ -149,7 +149,6 @@ export class NeoTab extends MatTab
     }
   }
 
-
   ngOnDestroy(): void {
     this._stateChanges.complete();
   }
@@ -159,22 +158,7 @@ export class NeoTab extends MatTab
       this._explicitContent || this._implicitContent,
       this._neoViewContainerRef
     );
-    
   }
 
   static ngAcceptInputType_disabled: BooleanInput;
 }
-
-// @Component({
-//   selector: 'app-neo-tabs',
-//   templateUrl: './neo-tabs.component.html',
-//   styleUrls: ['./neo-tabs.component.scss']
-// })
-// export class NeoTabsComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-//   }
-
-// }

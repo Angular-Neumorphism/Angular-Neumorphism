@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-element-example',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElementExampleComponent implements OnInit {
   public showCodeSnippet = false;
+  @Output() snippetShowing: EventEmitter<boolean> = new EventEmitter();
 
   constructor() {}
 
@@ -14,5 +15,6 @@ export class ElementExampleComponent implements OnInit {
 
   toggleCodeSnippet() {
     this.showCodeSnippet = !this.showCodeSnippet;
+    this.snippetShowing.emit(this.showCodeSnippet);
   }
 }

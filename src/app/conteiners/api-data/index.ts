@@ -4,3 +4,4 @@ export * from './neo-toolbar';
 export * from './neo-divider';
 export * from './neo-button';
 export * from './neo-progress-bar';
+export * from './neo-tabs';

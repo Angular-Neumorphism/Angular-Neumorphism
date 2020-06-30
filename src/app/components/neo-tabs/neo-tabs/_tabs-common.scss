@@ -1,18 +1,19 @@
 @import "~@angular/material/theming";
-@import './tabs-theme';
+@import "./tabs-theme";
 
 @include neo-tabs-color();
+@include neo-tabs-typography();
 
 $neo-tab-bar-height: 48px !default;
 $mat-tab-animation-duration: 500ms !default;
 
 @mixin mat-fill {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-  }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
 
 // Mixin styles for labels that are contained within the tab header.
 @mixin tab-label {
@@ -46,6 +47,10 @@ $mat-tab-animation-duration: 500ms !default;
     cursor: default;
   }
 
+  .neo-tab-label{
+    border-radius: 8px;
+  }
+
   .neo-tab-label-content {
     display: inline-flex;
     justify-content: center;
@@ -55,25 +60,23 @@ $mat-tab-animation-duration: 500ms !default;
 }
 
 // The ink bar that displays under the active tab label
-// @mixin ink-bar {
-//   $height: 2px;
+@mixin neo-focused {
+  z-index: -100;
+  $height: calc(100% - 10px);
+  margin-bottom: 5px;
+  border-radius: 8px;
 
-//   @include _noop-animation();
-//   position: absolute;
-//   bottom: 0;
-//   height: $height;
-//   transition: $mat-tab-animation-duration $ease-in-out-curve-function;
+  position: absolute;
+  bottom: 0;
+  height: $height;
+  transition: $mat-tab-animation-duration $ease-in-out-curve-function;
 
-//   .mat-tab-group-inverted-header & {
-//     bottom: auto;
-//     top: 0;
-//   }
+  .mat-tab-group-inverted-header & {
+    bottom: auto;
+    top: 0;
+  }
 
-//   @include cdk-high-contrast(active, off) {
-//     outline: solid $height;
-//     height: 0;
-//   }
-// }
+}
 
 // Structural styles for a tab header. Used by both `mat-tab-header` and `mat-tab-nav-bar`.
 @mixin paginated-tab-header {
@@ -102,7 +105,8 @@ $mat-tab-animation-duration: 500ms !default;
   }
 
   // The pagination control that is displayed on the left side of the tab header.
-  .neo-tab-header-pagination-before, .neo-tab-header-rtl .neo-tab-header-pagination-after {
+  .neo-tab-header-pagination-before,
+  .neo-tab-header-rtl .neo-tab-header-pagination-after {
     padding-left: 4px;
     .neo-tab-header-pagination-chevron {
       transform: rotate(-135deg);
@@ -110,7 +114,8 @@ $mat-tab-animation-duration: 500ms !default;
   }
 
   // The pagination control that is displayed on the right side of the tab header.
-  .neo-tab-header-rtl .neo-tab-header-pagination-before, .neo-tab-header-pagination-after {
+  .neo-tab-header-rtl .neo-tab-header-pagination-before,
+  .neo-tab-header-pagination-after {
     padding-right: 4px;
     .neo-tab-header-pagination-chevron {
       transform: rotate(45deg);
@@ -120,7 +125,7 @@ $mat-tab-animation-duration: 500ms !default;
   .neo-tab-header-pagination-chevron {
     border-style: solid;
     border-width: 2px 2px 0 0;
-    content: '';
+    content: "";
     height: 8px;
     width: 8px;
   }
@@ -143,11 +148,11 @@ $mat-tab-animation-duration: 500ms !default;
 
   // We need to set the parent here explicitly, in order to prevent the alignment
   // from any parent tab groups from propagating down to the children when nesting.
-  [neo-align-tabs='center'] > #{$parent} & {
+  [neo-align-tabs="center"] > #{$parent} & {
     justify-content: center;
   }
 
-  [neo-align-tabs='end'] > #{$parent} & {
+  [neo-align-tabs="end"] > #{$parent} & {
     justify-content: flex-end;
   }
 }

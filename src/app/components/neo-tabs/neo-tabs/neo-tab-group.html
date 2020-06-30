@@ -5,7 +5,13 @@
   [disablePagination]="disablePagination"
   (indexFocused)="_focusChanged($event)"
   (selectFocusedIndex)="selectedIndex = $event"
+  [focusTemplateRef]="focusTemplateRef"
+  [focusedRef]="focusedRef"
 >
+  <ng-template #focusTemplateRef
+    ><ng-content select="[data-label-highlight]"></ng-content
+  ></ng-template>
+
   <div
     class="neo-tab-label mat-focus-indicator"
     role="tab"
@@ -31,7 +37,9 @@
       </ng-template>
 
       <!-- If there is not a label template, fall back to the text label. -->
-      <ng-template [ngIf]="!tab.templateLabel">{{tab.textLabel}}</ng-template>
+      <ng-template template [ngIf]="!tab.templateLabel"
+        >{{tab.textLabel}}</ng-template
+      >
     </div>
   </div>
 </neo-tab-header>

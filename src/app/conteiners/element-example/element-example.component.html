@@ -2,7 +2,8 @@
   <div class="title-container">
     <ng-content select="[title]"></ng-content
     ><button neo-button class="toggleButton" (click)="toggleCodeSnippet()">
-      <mat-icon class="mat-icon arrow_left">chevron_left</mat-icon><mat-icon class="mat-icon arrow_right" >chevron_right</mat-icon>
+      <mat-icon class="mat-icon arrow_left">chevron_left</mat-icon
+      ><mat-icon class="mat-icon arrow_right">chevron_right</mat-icon>
     </button>
   </div>
   <div class="toggle-container" *ngIf="showCodeSnippet">
