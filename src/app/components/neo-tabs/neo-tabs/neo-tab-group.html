@@ -43,12 +43,13 @@
     </div>
   </div>
 </neo-tab-header>
+<div class="neo-tab-divider"></div>
 <div
   class="neo-tab-body-wrapper"
   [class._mat-animation-noopable]="_animationMode === 'NoopAnimations'"
   #tabBodyWrapper
 >
-  <neo-divider></neo-divider>
+ 
   <neo-tab-body
     role="tabpanel"
     *ngFor="let tab of _tabs; let i = index"
