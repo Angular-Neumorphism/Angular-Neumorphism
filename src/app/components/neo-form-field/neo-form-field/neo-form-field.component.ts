@@ -20,13 +20,10 @@ import {
   ViewEncapsulation,
   OnDestroy,
 } from '@angular/core';
-import {
-  LabelOptions,
-  MAT_LABEL_GLOBAL_OPTIONS,
-} from '@angular/material/core';
-import {  Subject } from 'rxjs';
+import { LabelOptions, MAT_LABEL_GLOBAL_OPTIONS } from '@angular/material/core';
+import { Subject } from 'rxjs';
 import { startWith, take, takeUntil } from 'rxjs/operators';
-import { MatFormField} from '@angular/material/form-field';
+import { MatFormField } from '@angular/material/form-field';
 import { MatFormFieldControl } from '@angular/material/form-field';
 import {
   getNeoFormFieldMissingControlError,
@@ -72,7 +69,7 @@ export const NEO_FORM_FIELD_DEFAULT_OPTIONS = new InjectionToken<
     class: 'neo-form-field',
     '[class.neo-form-field-invalid]': '_control.errorState',
     '[class.neo-form-field-disabled]': '_control.disabled',
-    '[class.neo-focused]': '_control.focused',
+    '[class.neo-focused-tab]': '_control.focused',
     '[class.neo-accent]': 'color == "accent"',
     '[class.neo-warn]': 'color == "warn"',
     '[class.ng-untouched]': '_shouldForward("untouched")',
@@ -102,7 +99,6 @@ export class NeoFormField extends MatFormField
     this._neoHideRequiredMarker = coerceBooleanProperty(value);
   }
   private _neoHideRequiredMarker: boolean;
-
 
   @ViewChild('connectionContainer', { static: true })
   _connectionContainerRef: ElementRef;
@@ -160,14 +156,12 @@ export class NeoFormField extends MatFormField
       _animationMode
     );
 
-
     // Set the default through here so we invoke the setter on the first run.
     this._neoHideRequiredMarker =
       this._neoDefaults && this._neoDefaults.hideRequiredMarker != null
         ? _neoDefaults.hideRequiredMarker
         : false;
   }
-
 
   ngAfterContentInit() {
     this._validateControlChild();
@@ -216,7 +210,7 @@ export class NeoFormField extends MatFormField
   }
 
   ngAfterViewInit() {
-     this._neoChangeDetectorRef.detectChanges();
+    this._neoChangeDetectorRef.detectChanges();
   }
 
   ngOnDestroy() {
@@ -241,7 +235,7 @@ export class NeoFormField extends MatFormField
    */
   private _neoValidatePlaceholders() {
     if (this._control.placeholder && this._placeholderChild) {
-       throw getNeoFormFieldPlaceholderConflictError();
+      throw getNeoFormFieldPlaceholderConflictError();
     }
   }
 

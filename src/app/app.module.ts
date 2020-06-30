@@ -39,7 +39,6 @@ import { ComponentsComponent } from './conteiners/components/components.componen
 import { SnackbarComponent } from './conteiners/snackbar/snackbar.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CodeEmbedComponent } from './conteiners/code-embed/code-embed.component';
-import { NeoTabsModule } from './components/neo-tabs/neo-tabs.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { ElementExampleComponent } from './conteiners/element-example/element-example.component';
@@ -50,9 +49,9 @@ import { NeoCheckboxModule } from '@neomorphism/ng-neomorphism/neo-checkbox';
 import { NeoButtonModule } from '@neomorphism/ng-neomorphism/neo-button';
 import { NeoDividerModule } from '@neomorphism/ng-neomorphism/neo-divider';
 import { NeoCardModule } from '@neomorphism/ng-neomorphism/neo-card';
-import { NeoToolbarModule } from '@neomorphism/ng-neomorphism/neo-toolbar';
 import { NeoInputModule } from '@neomorphism/ng-neomorphism/neo-input';
-
+import { NeoToolbarModule } from '@neomorphism/ng-neomorphism/neo-toolbar';
+import { NeoTabsModule } from '@neomorphism/ng-neomorphism/neo-tabs';
 import { NeoProgressBarModule } from './components/neo-progressbar/neo-progress-bar.module';
 
 @NgModule({

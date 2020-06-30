@@ -4,8 +4,8 @@
 
 $neo-tab-label-border-radius: 8px;
 
-.neo-focused {
-  @include neo-focused;
+.neo-focused-tab {
+  @include neo-focused-tab;
 }
 
 .neo-tab-labels {
@@ -26,7 +26,6 @@ $neo-tab-label-border-radius: 8px;
 //     border-radius: $neo-tab-label-border-radius;
 //   }
 // }
-
 
 .neo-tab-label-container {
   @include paginated-tab-header-container;

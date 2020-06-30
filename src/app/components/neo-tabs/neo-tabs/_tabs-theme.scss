@@ -46,7 +46,7 @@
     }
   }
 
-  .neo-focused {
+  .neo-focused-tab {
     box-shadow: inset 2px 2px 5px
         mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
       inset -3px -3px 5px mat-color($neo-light-theme-foreground, light-shadow);
@@ -75,7 +75,7 @@
   @include neo-tabs-header-background(darken($color, 5%));
 }
 @mixin neo-tabs-header-background($color) {
-  .neo-focused {
+  .neo-focused-tab {
     background-color: $color;
     box-shadow: inset 2px 2px 5px darken($color, 15%),
       inset -3px -3px 5px lighten($color, 20%);

@@ -55,7 +55,7 @@ export function _NEO_FOCUS_POSITIONER_FACTORY(): _NeoFocusPositioner {
 @Directive({
   selector: 'neo-focused',
   host: {
-    class: 'neo-focused',
+    class: 'neo-focused-tab',
     '[class._mat-animation-noopable]': `_animationMode === 'NoopAnimations'`,
   },
 })

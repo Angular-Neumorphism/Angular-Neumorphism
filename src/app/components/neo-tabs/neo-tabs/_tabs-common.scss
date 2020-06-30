@@ -47,7 +47,7 @@ $mat-tab-animation-duration: 500ms !default;
     cursor: default;
   }
 
-  .neo-tab-label{
+  .neo-tab-label {
     border-radius: 8px;
   }
 
@@ -60,7 +60,7 @@ $mat-tab-animation-duration: 500ms !default;
 }
 
 // The ink bar that displays under the active tab label
-@mixin neo-focused {
+@mixin neo-focused-tab{
   z-index: -100;
   $height: calc(100% - 10px);
   margin-bottom: 5px;
@@ -75,7 +75,6 @@ $mat-tab-animation-duration: 500ms !default;
     bottom: auto;
     top: 0;
   }
-
 }
 
 // Structural styles for a tab header. Used by both `mat-tab-header` and `mat-tab-nav-bar`.
