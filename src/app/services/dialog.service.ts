@@ -7,7 +7,7 @@ import {
 
 import { Observable } from 'rxjs';
 
-import { DialogPageComponent } from '../conteiners/dialog/dialog-page/dialog-page.component';
+import { DialogPageComponent } from '../containers/dialog/dialog-page/dialog-page.component';
 
 @Injectable({
   providedIn: 'root',

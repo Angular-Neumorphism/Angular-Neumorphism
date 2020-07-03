@@ -99,7 +99,7 @@
   </div>
 </app-element-example>
 <div class="text">
-  <p><strong>&lt;neo-tab&gt; API</strong></p>
+  <p><strong>&lt;neo-tab&gt; API proterties</strong></p>
 </div>
 
 <app-api-description [apiDescriprionData]="tabApi"></app-api-description>
@@ -189,7 +189,7 @@
 </app-element-example>
 
 <div class="text">
-  <p><strong>&lt;neo-tab-group&gt; API</strong></p>
+  <p><strong>&lt;neo-tab-group&gt; API proterties</strong></p>
 </div>
 
 <app-api-description [apiDescriprionData]="tabGroupApi"></app-api-description>
@@ -707,15 +707,19 @@
       </app-code-embed>
     </neo-tab>
     <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
       <div class="text">
         <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-tabs.mixins";</span> 
         <span class="code-text">
-          .styled-tab-group &#123;</span> 
-              <span class="code-text">&.green &#123;
+          .styled-tab-group &#123;
+              
               @include neo-tabs-background(#eaeaf1);
-              &#125;
+           
           &#125;</span>
       </div>
+    </pre>
+  </app-code-embed>
     </neo-tab>
   </neo-tab-group>
 
@@ -810,15 +814,17 @@
       </app-code-embed>
     </neo-tab>
     <neo-tab class="mat-tab" tabindex="1" label="SCSS">
-      <div class="text">
+    <app-code-embed>
+        <pre>
+         <div class="text">
         <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-tabs.mixins";</span> 
         <span class="code-text">
           .styled-tab-header &#123;</span> 
-              <span class="code-text">&.green &#123;
-              @include neo-tabs-header-background(#ea4c89);
-              &#125;
-          &#125;</span>
-      </div>
+           <span> @include neo-tabs-header-background(#ea4c89);</span> 
+           <span class="code-text"> &#125;</span>
+           </div>
+          </pre>
+        </app-code-embed>
     </neo-tab>
   </neo-tab-group>
 

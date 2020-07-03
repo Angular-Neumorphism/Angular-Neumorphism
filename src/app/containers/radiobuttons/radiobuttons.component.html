@@ -1,0 +1,285 @@
+<div class="title">
+  Neomorph radiobutton
+</div>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoRadioButtonModule &#125;  from '@neomorphism/ng-neomorphism/neo-radio';    </pre
+  >
+</code>
+
+<div class="text module-description">
+  <strong>&lt;neo-radio-button&gt;</strong> provides the same functionality as a
+  native &lt;input type="radio"&gt; enhanced with Neomorphism styling and
+  animations. Works inside <strong>&lt;neo-radio-group&gt;</strong>
+</div>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Basic radiobutton</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-radio-button',</span>
+      <span class="code-text">templateUrl: './app-radio-button.html',</span> 
+      <span class="code-text">styleUrls: ['./app-radio-button.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class RadioButtonComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-radio-group  aria-label="Select an option"&gt;</span> 
+          <span class="code-text">&lt;neo-radio-button class="radio" value="1"&gt;</span>
+          Option 1
+          <span class="code-text">&lt;/neo-radio-button &gt;</span> 
+          <span class="code-text">&lt;neo-radio-button class="radio" value="2"&gt;</span>
+          Option 2
+          <span class="code-text">&lt;/neo-radio-button &gt;</span> 
+         
+    <span class="code-text">&lt;/neo-radio-group &gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">
+          .radio &#123;    
+          margin: 0 10px;
+          font-family: Open Sans;
+          color: #474747;    
+          &#125;</span>
+      </div>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-radio-group aria-label="Select an option">
+        <neo-radio-button class="radio" value="1">Option 1</neo-radio-button>
+        <neo-radio-button class="radio" value="2">Option 2</neo-radio-button>
+      </neo-radio-group>
+    </div>
+  </div>
+</app-element-example>
+<div class="text">
+  <p><strong>&lt;neo-radio-group&gt; API proterties</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="radioGroupApi"></app-api-description>
+
+<div class="text">
+  <p><strong>&lt;neo-button-group&gt; API proterties</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="radioApi"></app-api-description>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Radiobutton with ngModel</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-radio-button',</span>
+      <span class="code-text">templateUrl: './app-radio-button.html',</span> 
+      <span class="code-text">styleUrls: ['./app-radio-button.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class RadioButtonComponent   &#123;</span>
+    favoriteSeason: string;
+    seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-radio-group 
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="favoriteSeason"&gt;</span> 
+          <span class="code-text">&lt; neo-radio-button
+            class="example-radio-button radio"
+            *ngFor="let season of seasons"
+            [value]="season"&gt;</span>
+            <span> &#123; &#123;season&#125; &#125;</span>
+          <span class="code-text">&lt;/neo-radio-button &gt;</span>    
+    <span class="code-text">&lt;/neo-radio-group &gt;</span>
+    <span class="code-text"> &lt;span&gt;Your favorite season is: &#123; &#123;favoriteSeason &#125; &#125;&lt;/span&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">
+          .example-radio-group- &#123;    
+          display: flex;
+          flex-direction: column;
+          margin: 15px 0;  
+          &#125;</span>
+      </div>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <div class="text">Pick your favorite season</div>
+      <neo-radio-group
+        aria-labelledby="example-radio-group-label"
+        class="example-radio-group"
+        [(ngModel)]="favoriteSeason"
+      >
+        <neo-radio-button
+          class="example-radio-button radio"
+          *ngFor="let season of seasons"
+          [value]="season"
+        >
+          {{ season }}
+        </neo-radio-button>
+      </neo-radio-group>
+      <div class="text">Your favorite season is: {{ favoriteSeason }}</div>
+    </div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>Styling</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="radioStyleApi"></app-api-description>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example dark-radio-group"
+>
+  <span class="card-title" title>Styled radiobutton</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" autofocus tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-radio-button',</span>
+      <span class="code-text">templateUrl: './app-radio-button.html',</span> 
+      <span class="code-text">styleUrls: ['./app-radio-button.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class RadioButtonComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-radio-group  aria-label="Select an option"&gt;</span> 
+          <span class="code-text">&lt;neo-radio-button checkMarkColor="#44B3F1" class="radio-dark" value="1"&gt;</span>
+          Option 1
+          <span class="code-text">&lt;/neo-radio-button &gt;</span> 
+          <span class="code-text">&lt;neo-radio-button checkMarkColor="#44B3F1" class="radio-dark" value="2"&gt;</span>
+          Option 2
+          <span class="code-text">&lt;/neo-radio-button &gt;</span> 
+    <span class="code-text">&lt;/neo-radio-group &gt;</span>
+
+    <span class="code-text">&lt;neo-radio-group  aria-label="Select an option"&gt;</span> 
+          <span class="code-text">&lt;neo-radio-button checkMarkColor="#58D38B" class="radio-dark radio-background" value="1"&gt;</span>
+          Option 1
+          <span class="code-text">&lt;/neo-radio-button &gt;</span> 
+          <span class="code-text">&lt;neo-radio-button checkMarkColor="#58D38B" class="radio-dark radio-background" value="2"&gt;</span>
+          Option 2
+    <span class="code-text">&lt;/neo-radio-button &gt;</span> 
+   
+<span class="code-text">&lt;/neo-radio-group &gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-radio.mixins";</span> 
+        <span class="code-text">
+          .radio-dark &#123; 
+            margin: 0 10px;
+            font-family: Open Sans;
+            color: #f3f3f3;
+            &#125;
+          .radio-background &#123;    
+          @include neo-radio-background(#373e5a);  
+          &#125;</span>
+      </div>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card dark-radio-group">
+    <div class="card-content dark-card">
+      <neo-radio-group aria-label="Select an option">
+        <neo-radio-button checkMarkColor="#44B3F1" class="radio-dark" value="1"
+          >Option 1</neo-radio-button
+        >
+        <neo-radio-button checkMarkColor="#44B3F1" class="radio-dark" value="2"
+          >Option 2</neo-radio-button
+        >
+      </neo-radio-group>
+    </div>
+
+    <div class="card-content dark-card">
+      <neo-radio-group aria-label="Select an option">
+        <neo-radio-button
+          checkMarkColor="#58D38B"
+          class="radio-dark radio-background"
+          value="1"
+          >Option 1</neo-radio-button
+        >
+        <neo-radio-button
+          checkMarkColor="#58D38B"
+          class="radio-dark radio-background"
+          value="2"
+          >Option 2</neo-radio-button
+        >
+      </neo-radio-group>
+    </div>
+  </div>
+</app-element-example>

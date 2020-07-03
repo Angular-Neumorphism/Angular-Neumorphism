@@ -1,4 +1,4 @@
-@import "../../components/neo-tabs/neo-tabs/tabs-theme";
+@import "~@neomorphism/ng-neomorphism/mixins/neo-tabs.mixins";
 
 :host {
   height: 100%;
@@ -106,4 +106,5 @@
   border-radius: 16px;
   border: 2px solid #ebebeb;
   margin: 10px 0;
+  color: rgba(71, 71, 71, 0.6);
 }
