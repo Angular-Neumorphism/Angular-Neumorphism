@@ -9,6 +9,7 @@ export class AboutComponent implements OnInit {
   constructor() {}
 
   modules = [
+    'Badge module',
     'Button module',
     'Card module',
     'Checkbox module',

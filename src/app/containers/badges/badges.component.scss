@@ -5,11 +5,21 @@
   justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
+  padding: 0 5% 100px 2%;
 }
 
-.card {
-  width: 400px;
-  height: 50%;
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 20px;
+}
+
+.module-snippet {
+  border-radius: 16px;
+  background-color: #ebebeb;
+  margin: 0 0 20px 0;
 }
 
 .text {
@@ -20,57 +30,27 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   color: #474747;
+  margin: 0 0 2rem 0;
+}
+
+.title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #474747;
   margin: 0 0 4rem 0;
 }
 
-.margin-bottom {
-    margin-bottom: 4rem;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 2rem 0;
-}
-
-.badge-wrapper{
-  width: auto;
-  display: flex;
-  justify-content: flex-end;
-  white-space:nowrap;
-  position: relative;
-}
-.text-with-badge{
-    padding: .2rem .5rem;
+.styled-example {
+  border-radius: 16px;
+  border: 2px solid #ebebeb;
+  margin: 10px 0;
+  color: rgba(71, 71, 71, 0.6);
 }
 
 .button {
- 
-  margin-left: 2.5rem;
+  width: 140px;
 }
-
-.badge {
-    background-blend-mode: exclusion;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  position: absolute;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  color: white;
-  top: calc(-1rem);
-  right: calc(-1rem);
-  background-color: #f84f5a;
-  z-index: 2;
-  box-shadow: -2px -2px 5px #ffffff, 2px 2px 5px rgba(34, 34, 34, 0.4),
-    inset -2px -2px 5px rgba(34, 34, 34, 0.4),
-    inset 2px 2px 5px rgba(255, 255, 255, 0.5);
-}
-
-.blue{
-    background-color: #2086ED;;
-}
-
 

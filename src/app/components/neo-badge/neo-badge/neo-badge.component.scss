@@ -1,0 +1,129 @@
+@import "./neo-badge.theme";
+
+@include neo-badge-color();
+@include neo-badge-typography();
+
+$neo-badge-font-weight: 600;
+$neo-badge-default-size: 20px !default;
+$neo-badge-small-size: $neo-badge-default-size - 6;
+$neo-badge-large-size: $neo-badge-default-size + 6;
+
+// Mixin for building offset given different sizes
+@mixin _neo-badge-size($size) {
+  .neo-badge-content {
+    width: $size;
+    height: $size;
+    line-height: $size;
+  }
+
+  &.neo-badge-above {
+    .neo-badge-content {
+      top: -$size / 2;
+    }
+  }
+
+  &.neo-badge-below {
+    .neo-badge-content {
+      bottom: -$size / 2;
+    }
+  }
+
+  &.neo-badge-before {
+    .neo-badge-content {
+      left: -$size;
+    }
+  }
+
+  [dir="rtl"] &.neo-badge-before {
+    .neo-badge-content {
+      left: auto;
+      right: -$size;
+    }
+  }
+
+  &.neo-badge-after {
+    .neo-badge-content {
+      right: -$size;
+    }
+  }
+
+  [dir="rtl"] &.neo-badge-after {
+    .neo-badge-content {
+      right: auto;
+      left: -$size;
+    }
+  }
+
+  &.neo-badge-overlap {
+    &.neo-badge-before {
+      .neo-badge-content {
+        left: -$size / 2;
+      }
+    }
+
+    [dir="rtl"] &.neo-badge-before {
+      .neo-badge-content {
+        left: auto;
+        right: -$size / 2;
+      }
+    }
+
+    &.neo-badge-after {
+      .neo-badge-content {
+        right: -$size / 2;
+      }
+    }
+
+    [dir="rtl"] &.neo-badge-after {
+      .neo-badge-content {
+        right: auto;
+        left: -$size / 2;
+      }
+    }
+  }
+}
+
+.neo-badge {
+  width: fit-content;
+  position: relative;
+}
+
+.neo-badge-hidden {
+  .neo-badge-content {
+    display: none;
+  }
+}
+
+.neo-badge-content {
+  position: absolute;
+  text-align: center;
+  display: inline-block;
+  border-radius: 50%;
+  transition: transform 200ms ease-in-out;
+  transform: scale(0.6);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  padding: 1px;
+}
+
+.neo-badge-content.neo-badge-active {
+  // Scale to `none` instead of `1` to avoid blurry text in some browsers.
+  transform: none;
+}
+
+.neo-badge-small {
+  @include _neo-badge-size($neo-badge-small-size);
+}
+.neo-badge-medium {
+  @include _neo-badge-size($neo-badge-default-size);
+}
+.neo-badge-large {
+  @include _neo-badge-size($neo-badge-large-size);
+}
+
+.ng-animate-disabled .neo-badge-content,
+.neo-badge-content._mat-animation-noopable {
+  transition: none;
+}

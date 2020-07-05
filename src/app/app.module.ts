@@ -54,6 +54,7 @@ import { NeoToolbarModule } from '@neomorphism/ng-neomorphism/neo-toolbar';
 import { NeoTabsModule } from '@neomorphism/ng-neomorphism/neo-tabs';
 import { NeoProgressBarModule } from '@neomorphism/ng-neomorphism/neo-progressbar';
 import { NeoRadioButtonModule } from '@neomorphism/ng-neomorphism/neo-radio';
+import { NeoBadgeModule } from '@neomorphism/ng-neomorphism/neo-badge';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { NeoRadioButtonModule } from '@neomorphism/ng-neomorphism/neo-radio';
     NeoTabsModule,
     MatDividerModule,
     NeoRadioButtonModule,
+    NeoBadgeModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],

@@ -1,5 +1,4 @@
 import { FocusMonitor } from '@angular/cdk/a11y';
-import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
 import {
   AfterContentInit,
@@ -15,25 +14,11 @@ import {
   Inject,
   InjectionToken,
   Input,
-  OnDestroy,
-  OnInit,
   Optional,
-  Output,
   QueryList,
-  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import {
-  CanDisableRipple,
-  CanDisableRippleCtor,
-  HasTabIndex,
-  HasTabIndexCtor,
-  mixinDisableRipple,
-  mixinTabIndex,
-  ThemePalette,
-} from '@angular/material/core';
-import { ANIMATION_MODULE_TYPE } from '@angular/platform-browser/animations';
+import {  NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as MatRadio from '@angular/material/radio';
 
 const nextUniqueId = 0;

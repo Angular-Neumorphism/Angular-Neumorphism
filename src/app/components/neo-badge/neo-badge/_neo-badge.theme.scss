@@ -1,0 +1,40 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-badge-color() {
+  .neo-badge-content {
+    background-color: mat-color($neo-light-theme, primary);
+    color: mat-color($neo-light-theme-foreground, primary);
+    box-shadow: inset -2px -2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.4),
+      inset 2px 2px 5px
+        mat-color($neo-light-theme-foreground, light-shadow, 0.5),
+      2px 2px 5px mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+  }
+
+  .neo-badge-disabled {
+    .neo-badge-content {
+      background-color: mat-color($neo-light-theme-foreground, dark-shadow);
+      color: mat-color($neo-light-theme-foreground, disabled-text);
+      box-shadow: 2px 2px 5px mat-color($neo-light-theme-foreground, dark-shadow, 0.4);;
+    }
+  }
+}
+
+@mixin neo-badge-typography() {
+  $neo-badge-font-size: 12px;
+  .neo-badge-content {
+    font-weight: normal;
+    font-size: $neo-badge-font-size;
+    font-family: Open Sans;
+  }
+
+  .neo-badge-small .neo-badge-content {
+    // Set the font size to 75% of the original.
+    font-size: $neo-badge-font-size * 0.75;
+  }
+
+  .neo-badge-large .neo-badge-content {
+    font-size: $neo-badge-font-size * 1.3;
+  }
+}
