@@ -1,0 +1,159 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-toggle-color() {
+  .neo-slide-toggle {
+    @include neo-slide-toggle-checked();
+
+    &::before {
+      box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:not(.neo-toggle-checked)::before {
+      box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow),
+        inset 1px 1px 2px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+    &::after {
+      box-shadow: 2px 2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.3);
+    }
+    &:not(.neo-toggle-checked)::after {
+      box-shadow: 2px 2px 5px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+        inset -1px -1px 2px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:not(.neo-toggle-checked):hover::before {
+      box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow),
+        inset 2px 2px 4px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+    &:not(.neo-toggle-checked):hover::after {
+      box-shadow: 2px 2px 5px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+        inset -2px -2px 4px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &:not(.neo-toggle-checked):active::before {
+      box-shadow: -2px -2px 5px mat-color($neo-light-theme-foreground, light-shadow),
+        inset 2px 2px 4px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.4);
+    }
+
+    &:not(.neo-toggle-checked):active::after {
+      box-shadow: 2px 2px 5px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+        inset -2px -2px 4px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    &.neo-toggle-disabled {
+      opacity: 0.7;
+      .neo-toggle-label {
+        color: mat-color($neo-light-theme-foreground, disabled-text);
+      }
+
+      &::before {
+        box-shadow: inset 1px 1px 2px
+          mat-color($neo-light-theme-foreground, dark-shadow, 0.2);
+      }
+
+      &::after {
+        box-shadow: inset -1px -1px 2px
+          mat-color($neo-light-theme-foreground, light-shadow);
+      }
+    }
+
+    &.neo-toggle-disabled:hover::before,
+    &.neo-toggle-disabled:active::before {
+      box-shadow: inset 1px 1px 2px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.2);
+    }
+    &.neo-toggle-disabled:hover::after,
+    &.neo-toggle-disabled:active::after {
+      box-shadow: inset -1px -1px 2px
+        mat-color($neo-light-theme-foreground, light-shadow);
+    }
+  }
+
+  .neo-slide-toggle-thumb {
+    background-color: mat-color($neo-light-theme-foreground, light-shadow);
+    box-shadow: 1px 1px 2px
+      mat-color($neo-light-theme-foreground, dark-shadow, 0.3);
+  }
+}
+
+@mixin neo-slide-toggle-checked($color: mat-color($neo-light-theme, primary)) {
+  &.neo-toggle-checked:not(.neo-toggle-disabled)::before {
+    background-color: $color;
+  }
+  &.neo-toggle-checked:not(.neo-toggle-disabled):hover::before {
+    background-color: darken($color, 5%);
+  }
+  &.neo-toggle-checked:not(.neo-toggle-disabled):active::before {
+    background-color: darken($color, 5%);
+  }
+}
+
+@mixin neo-slide-toggle-background($outsidecolor, $insidecolor: $outsidecolor) {
+  &::before {
+    box-shadow: -2px -2px 5px lighten($outsidecolor, 15%);
+  }
+  &:not(.neo-toggle-checked)::before {
+    background-color: $insidecolor;
+    box-shadow: -2px -2px 5px lighten($outsidecolor, 15%),
+      inset 1px 1px 2px darken($insidecolor, 15%);
+  }
+  &::after {
+    box-shadow: 2px 2px 5px darken($outsidecolor, 15%);
+  }
+  &:not(.neo-toggle-checked)::after {
+    box-shadow: 2px 2px 5px darken($outsidecolor, 15%),
+      inset -1px -1px 2px lighten($insidecolor, 15%);
+  }
+
+  &:not(.neo-toggle-checked):hover::before {
+    background-color: $insidecolor;
+    box-shadow: -2px -2px 5px lighten($outsidecolor, 15%),
+      inset 2px 2px 4px darken($insidecolor, 15%);
+  }
+  &:not(.neo-toggle-checked):hover::after {
+    box-shadow: 2px 2px 5px darken($outsidecolor, 15%),
+      inset -2px -2px 4px lighten($insidecolor, 15%);
+  }
+
+  &:not(.neo-toggle-checked):active::before {
+    background-color: $insidecolor;
+    box-shadow: -2px -2px 5px lighten($outsidecolor, 15%),
+      inset 2px 2px 4px darken($insidecolor, 15%);
+  }
+
+  &:not(.neo-toggle-checked):active::after {
+    box-shadow: 2px 2px 5px darken($outsidecolor, 15%),
+      inset -2px -2px 4px lighten($insidecolor, 15%);
+  }
+
+  &.neo-toggle-disabled {
+    opacity: 0.7;
+    .neo-toggle-label {
+      color: mat-color($neo-light-theme-foreground, disabled-text);
+    }
+
+    &::before {
+      box-shadow: inset 1px 1px 2px darken($insidecolor, 10%);
+    }
+
+    &::after {
+      box-shadow: inset -1px -1px 2px lighten($insidecolor, 20%);
+    }
+  }
+
+  &.neo-toggle-disabled:hover::before,
+  &.neo-toggle-disabled:active::before {
+    box-shadow: inset 1px 1px 2px darken($insidecolor, 10%);
+  }
+  &.neo-toggle-disabled:hover::after,
+  &.neo-toggle-disabled:active::after {
+    box-shadow: inset -1px -1px 2px lighten($insidecolor, 20%);
+  }
+}

@@ -3,7 +3,7 @@ import { DescriptionItem } from '../models/index';
 export const RADIO_BUTTON_API: DescriptionItem[] = [
   {
     apiName: '@Input("aria-describedby")',
-    apiType: `riaDescribedby: string `,
+    apiType: `ariaDescribedby: string `,
     description: `The 'aria-describedby' attribute is read after the element's label and field type.`,
   },
   {

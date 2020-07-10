@@ -1,18 +1,240 @@
-<div class="text">
-  Select toggle is an on/off control that can be toggled via clickinganimations.
+<div class="title">
+  Neomorph radiobutton
 </div>
-<neo-card class="card"
-  ><neo-card-header>
-    <neo-card-title>Select toggle</neo-card-title>
-  </neo-card-header>
-  <neo-card-content class="card-content">
-  <span text>Controls that collect and validate user input.</span>
-  <div class="wrapper">
-    <label class="container"
-      ><div class="checkbox-text">Slide me!</div>
-      <input type="checkbox" />
-      <span class="checkmark"></span>
-    </label>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoSlideToggleModule &#125;  from '@neomorphism/ng-neomorphism/neo-slide-toggle';   </pre
+  >
+</code>
+
+<div class="text module-description">
+  <strong>&lt;neo-slide-toggle&gt;</strong> is an on/off control that can be
+  toggled via clicking.
+</div>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Basic slide toggle</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-slider-toggle',</span>
+      <span class="code-text">templateUrl: './app-slider-toggle.html',</span> 
+      <span class="code-text">styleUrls: ['./app-slider-toggle.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class SliderToggleComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+  
+          <span class="code-text">&lt;neo-slide-toggle labelPosition="before"&gt;</span>
+          Slide me!
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+          <span class="code-text">&lt;neo-slide-toggle &gt;</span>
+          Slide me right now!
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+          <span class="code-text">&lt;neo-slide-toggle disabled="true"&gt;</span>
+          I am disabled...
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+          <span class="code-text">&lt;neo-slide-toggle checked="true"&gt;</span>
+          I am checked...
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+         
+ 
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS"> </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-slide-toggle
+        class="toggle my-neo-slide-toggle"
+        labelPosition="before"
+        >Slide me!</neo-slide-toggle
+      >
+      <neo-slide-toggle class="toggle">Slide me right now!</neo-slide-toggle>
+      <neo-slide-toggle class="toggle" disabled="true"
+        >I am disabled...</neo-slide-toggle
+      >
+      <neo-slide-toggle class="toggle" checked="true"
+        >I am checked...</neo-slide-toggle
+      >
+    </div>
   </div>
-  </neo-card-content>
-</neo-card>
+</app-element-example>
+<div class="text">
+  <p><strong>&lt;neo-slide-toggle&gt; API proterties</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="slideToggleApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>Styling</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="slideToggleStyleApi"
+></app-api-description>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>neo-slide-toggle-checked($color)</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-slider-toggle',</span>
+      <span class="code-text">templateUrl: './app-slider-toggle.html',</span> 
+      <span class="code-text">styleUrls: ['./app-slider-toggle.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class SliderToggleComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+  
+          <span class="code-text">&lt;neo-slide-toggle class="example-checked-slide-toggle" &gt;</span>
+          Slide me!
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-slide-toggle.mixins";</span> 
+        <span class="code-text">
+          .example-checked-slide-toggle &#123;    
+          @include neo-slide-toggle-checked(#EB5757); 
+          &#125;</span>
+      </div>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-slide-toggle class="toggle example-checked-slide-toggle"
+        >Slide me!</neo-slide-toggle
+      >
+    </div>
+  </div>
+</app-element-example>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example dark-radio-group"
+>
+  <span title>neo-slide-toggle-checked($outsideColor, $insideColor?)</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-slider-toggle',</span>
+      <span class="code-text">templateUrl: './app-slider-toggle.html',</span> 
+      <span class="code-text">styleUrls: ['./app-slider-toggle.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class SliderToggleComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+  
+          <span class="code-text">&lt;neo-slide-toggle class="example-outside-slide-toggle" &gt;</span>
+          Slide me!
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+          <span class="code-text">&lt;neo-slide-toggle class="example-outside-inside-slide-toggle" &gt;</span>
+          Slide me!
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+          <span class="code-text">&lt;neo-slide-toggle class="example-colors-checked-slide-toggle" &gt;</span>
+          Slide me!
+          <span class="code-text">&lt;/neo-slide-toggle &gt;</span> 
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-slide-toggle.mixins";</span> 
+        <span class="code-text">
+          .example-outside-slide-toggle &#123;    
+          @include neo-slide-toggle-background(#373e5a);
+          &#125;</span>
+          <span class="code-text">
+          .example-outside-inside-slide-toggle &#123;    
+          @include neo-slide-toggle-background(#373e5a, #58D38B);
+          &#125;</span>
+          <span class="code-text">
+          .example-colors-checked-slide-toggle &#123;    
+          @include neo-slide-toggle-checked(#373e5a);
+          @include neo-slide-toggle-background(#373e5a, #58D38B);
+          &#125;</span>
+      </div>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-slide-toggle class="toggle example-outside-slide-toggle"
+        >Slide me!</neo-slide-toggle
+      >
+      <neo-slide-toggle class="toggle example-outside-inside-slide-toggle"
+        >Slide me!</neo-slide-toggle
+      >
+      <neo-slide-toggle class="toggle example-colors-checked-slide-toggle"
+        >Slide me!</neo-slide-toggle
+      >
+    </div>
+  </div>
+</app-element-example>

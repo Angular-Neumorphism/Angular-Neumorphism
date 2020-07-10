@@ -7,3 +7,4 @@ export * from './neo-progress-bar';
 export * from './neo-tabs';
 export * from './neo-radio';
 export * from './neo-badge';
+export * from './neo-slide-toggle';
