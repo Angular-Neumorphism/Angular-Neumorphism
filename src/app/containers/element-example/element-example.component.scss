@@ -1,0 +1,74 @@
+:host {
+  border-radius: 16px;
+  width: 100%;
+}
+.wrapper {
+  height: auto;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.title-container {
+  box-sizing: border-box;
+  padding: 15px 25px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  border-radius: 16px 16px 0 0;
+}
+.example {
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.toggle-container {
+  width: 100%;
+}
+
+.mat-icon {
+  font-size: 22px;
+  position: absolute;
+  width: 10px;
+  top: 6px;
+}
+
+.arrow_left {
+  left: 0px;
+}
+
+.arrow_right {
+  right: 13px;
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+}
+
+.toggleButton {
+  display: flex;
+  position: relative;
+  height: 32px;
+  width: 32px;
+
+  &:hover {
+    color: #2086ed;
+  }
+}
+
+:host ::ng-deep .toggleButton {
+  padding: 0;
+}

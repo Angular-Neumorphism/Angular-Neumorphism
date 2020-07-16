@@ -1,5 +1,5 @@
 $neo-light-theme-foreground: (
-  divider-shadow: rgba(34, 34, 34, 0.3),
+  divider-shadow: rgba(34, 34, 34),
   light-shadow: rgba(255, 255, 255),
   dark-shadow: rgba(34, 34, 34),
   button-light-shadow: rgba(255, 255, 255, 1),
@@ -21,6 +21,7 @@ $neo-light-theme-background: (
   card-gradient-start: #f0f0f0,
   app-bar: #e4e4e4,
   button-background: #f3f3f3,
+  dialog-background: #f3f3f3,
   button-background-hover: rgba(34, 34, 34, 0.1),
 );
 

@@ -1,0 +1,857 @@
+<div class="title">
+  Neomorph tabs
+</div>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoFormTabsModule &#125;  from '@neomorphism/ng-neomorphism/neo-tabs'  </pre
+  >
+</code>
+
+<div class="text module-description">
+  <strong>&lt;neo-tab-grout&gt;</strong> Neomorph styled tabs organize content
+  into separate views where only one view can be visible at a time. Each tab's
+  label is shown in the tab header and the active tab's label is designated with
+  the animated ink bar. When the list of tab labels exceeds the width of the
+  header, pagination controls appear to let the user scroll left and right
+  across the labels.
+</div>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Basic tabs</span>
+  <neo-tab-group
+    tabsContent
+    animationDuration="500ms"
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-group&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab label="First"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Second"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Third"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group>
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label="First">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label="Second">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab isActive="true" label="Third">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+<div class="text">
+  <p><strong>&lt;neo-tab&gt; API proterties</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="tabApi"></app-api-description>
+<div class="text">
+  <p><strong>Example</strong></p>
+</div>
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Disabled tab</span>
+  <neo-tab-group
+    tabsContent
+    animationDuration="500ms"
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-group&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab label="First"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab disabled="true" label="Second"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Third"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group animationDuration="500ms">
+        <neo-focused data-label-highlight></neo-focused>
+        <neo-tab label="First">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab disabled="true" label="Second">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab isActive="true" label="Third">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>&lt;neo-tab-group&gt; API proterties</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="tabGroupApi"></app-api-description>
+
+<div class="text">
+  <p><strong>Examples</strong></p>
+</div>
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Slow animation</span>
+  <neo-tab-group
+    tabsContent
+    animationDuration="500ms"
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-group animationDuration="2000ms"&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab label="First"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Second"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Third"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group animationDuration="2000ms">
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label="First">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label="Second">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab isActive="true" label="Third">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Header position - below</span>
+  <neo-tab-group
+    tabsContent
+    animationDuration="500ms"
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+     
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-group headerPosition='below'&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab label="First"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Second"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Third"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group headerPosition="below">
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label="First">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label="Second">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab isActive="true" label="Third">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Current tab index: {{ currentIndexValue }}</span>
+  <neo-tab-group
+    tabsContent
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+        public currentIndexValue = 0;
+        indexChangeHandler(index: number) &#123;
+          this.currentIndexValue = index;
+          &#125;
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-group (selectedIndexChange)="indexChangeHandler($event)"&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab label="First"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Second"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Third"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group (selectedIndexChange)="indexChangeHandler($event)">
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label="First">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label="Second">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab isActive="true" label="Third">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Tab group with stretch labels</span>
+  <neo-tab-group
+    tabsContent
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+      
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-group neo-stretch-tabs&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab label="First"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Second"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab label="Third"&gt;</span>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group neo-stretch-tabs>
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label="First">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label="Second">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab isActive="true" label="Third">
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>Using tabs with a custom label template </strong></p>
+</div>
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Tab group with stretch labels</span>
+  <neo-tab-group
+    tabsContent
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+      
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-groups&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            First
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            Second
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            Third
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <div class="text"></div>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-tab-group>
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab>
+          <ng-template class="label" neo-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            First
+          </ng-template>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab>
+          <ng-template class="label" neo-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            Second
+          </ng-template>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab>
+          <ng-template class="label" neo-tab-label>
+            <mat-icon class="example-tab-icon">thumb_up</mat-icon>
+            Third
+          </ng-template>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>Styling</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="tabStyleApi"></app-api-description>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example styled-card"
+>
+  <span title>@include neo-tabs-background</span>
+  <neo-tab-group
+    tabsContent
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+      
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-groups class="styled-tab-group"&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            First
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            Second
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            Third
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-tabs.mixins";</span> 
+        <span class="code-text">
+          .styled-tab-group &#123;
+              
+              @include neo-tabs-background(#eaeaf1);
+           
+          &#125;</span>
+      </div>
+    </pre>
+  </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card styled-card">
+    <div class="card-content">
+      <neo-tab-group class="styled-tab-group">
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label='First'>
+          <div class="text white-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label='Second'>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label='Third'>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>
+
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example styled-card"
+>
+  <span title>@include neo-tabs-header-background</span>
+  <neo-tab-group
+    tabsContent
+    [selectedIndex]="currentSelectedIndex"
+    class="tab-group"
+    (selectedIndexChange)="changeHandler($event)"
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-tabs',</span>
+      <span class="code-text">templateUrl: './tabs.component.html',</span> 
+      <span class="code-text">styleUrls: ['./tabs.component.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class TabsComponent   &#123;</span>
+      
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-tab-groups class="styled-tab-group"&gt;</span> 
+        <span class="code-text">&lt;neo-focused</span><span> data-label-highlight&gt;</span><span class="code-text">&lt;/neo-focused&gt;</span> //this component using to manage header highlight shadows
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            First
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            Second
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span> 
+          <span class="code-text">&lt;neo-tab&gt;</span>
+          &lt;ng-template neo-tab-label&gt;
+          &lt;mat-icon>thumb_up&lt;/mat-icon&gt;
+            Third
+            &lt;/ng-template&gt;
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          <span class="code-text">&lt;/neo-tab&gt;</span>  
+    <span class="code-text">&lt;/neo-tab-group&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+    <app-code-embed>
+        <pre>
+         <div class="text">
+        <span class="code-text">@import "~@neomorphism/ng-neomorphism/mixins/neo-tabs.mixins";</span> 
+        <span class="code-text">
+          .styled-tab-header &#123;</span> 
+           <span> @include neo-tabs-header-background(#ea4c89);</span> 
+           <span class="code-text"> &#125;</span>
+           </div>
+          </pre>
+        </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card styled-card">
+    <div class="card-content">
+      <neo-tab-group class="styled-tab-header">
+        <neo-focused data-label-highlight></neo-focused>
+
+        <neo-tab label='First'>
+          <div class="text white-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label='Second'>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+        <neo-tab label='Third'>
+          <div class="text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </div>
+        </neo-tab>
+      </neo-tab-group>
+    </div>
+  </div>
+</app-element-example>

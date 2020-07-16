@@ -1,0 +1,129 @@
+<div class="title">
+  Neomorph badge
+</div>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoBadgeModule &#125;  '@neomorphism/ng-neomorphism/neo-badge';     </pre
+  >
+</code>
+
+<div class="text module-description">
+  <strong>&lt;neo-badge&gt;</strong> is a small status descriptors for UI elements. A badge consists of a small circle, typically containing a number or other short set of characters, that appears in proximity to another object.
+</div>
+
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Badges</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-badges',</span>
+      <span class="code-text">templateUrl: './app-badges.html',</span> 
+      <span class="code-text">styleUrls: ['./app-badges.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class BadgesComponent   &#123;</span>
+    isDisabled = true;
+    disabledHandler() &#123;
+      this.isDisabled = !this.isDisabled;
+      &#125;
+    <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+          <span class="code-text">&lt;neo-badge neoBadge="88" neoBadgeSize="large" neoBadgeOverlap="false"&gt;</span>
+          Text with a large badge
+          <span class="code-text">&lt;/neo-badge &gt;</span> 
+          <span class="code-text">&lt;neo-badge
+            neoBadge="4"
+            neoBadgePosition="before"
+            neoBadgeColor="#EA4C89"
+            neoBadgeOverlap="true"
+            [neoBadgeDisabled]="isDisabled"&gt;</span>
+            &lt;button neo-button (click)="disabledHandler()" &gt;
+            &#123; &#123; isDisabled ? "Disabled" : "Enabled" &#125; &#125;
+              &lt;/button&gt;
+          <span class="code-text">&lt;/neo-badge &gt;</span> 
+          <span class="code-text">&lt;neoBadge="4" neoBadgeColor="#EB5757" neoBadgeOverlap="true"&gt;</span>
+          &lt;button neo-button (click)="disabledHandler()" &gt;
+          Basic
+          &lt;/button&gt;
+          <span class="code-text">&lt;/neo-badge &gt;</span> 
+          <span class="code-text">&lt; neoBadge="7" neoBadgeColor="#58D38B" neoBadgeOverlap="true"&gt;</span>
+          &lt;span class="material-icons"&gt;
+            mail_outline
+            &lt;/span&gt;
+          <span class="code-text">&lt;/neo-badge &gt;</span> 
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+ 
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <p class="wrapper">
+          <neo-badge neoBadge="88" neoBadgeSize="large" neoBadgeOverlap="false"
+            ><span class="title">Text with a large badge</span></neo-badge>
+      </p>
+      <div class="wrapper">
+        <neo-badge
+          neoBadge="4"
+          neoBadgePosition="before"
+          neoBadgeColor="#EA4C89"
+          neoBadgeOverlap="true"
+          [neoBadgeDisabled]="isDisabled"
+        >
+          <button neo-button (click)="disabledHandler()" class="button">
+            {{ isDisabled ? "Disabled" : "Enabled" }}
+          </button></neo-badge
+        >
+      </div>
+      <div class="wrapper">
+        <neo-badge neoBadge="4" neoBadgeColor="#EB5757" neoBadgeOverlap="true">
+          <button neo-button class="button">
+            Basic
+          </button></neo-badge
+        >
+      </div>
+      <div class="wrapper">
+        <neo-badge neoBadge="7" neoBadgeColor="#58D38B" neoBadgeOverlap="true">
+          <span class="material-icons">
+            mail_outline
+          </span></neo-badge
+        >
+      </div>
+    </div>
+  </div>
+</app-element-example>
+
+
+<div class="text">
+  <p><strong>&lt;neo-badge&gt; API proterties</strong></p>
+</div>
+
+<app-api-description [apiDescriprionData]="commonApi"></app-api-description>
+
+
+
+
+
+

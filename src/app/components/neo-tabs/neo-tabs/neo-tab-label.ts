@@ -13,4 +13,5 @@ import {CdkPortal} from '@angular/cdk/portal';
 @Directive({
   selector: '[neo-tab-label], [neoTabLabel]',
 })
-export class NeoTabLabel extends CdkPortal {}
+export class NeoTabLabel extends CdkPortal {
+}

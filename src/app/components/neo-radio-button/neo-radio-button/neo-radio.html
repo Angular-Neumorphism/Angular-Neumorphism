@@ -1,0 +1,46 @@
+<label [attr.for]="inputId" class="neo-radio-label" #label>
+  <div class="neo-radio-container">
+      <svg
+        focusable="false"
+        class="neo-radio-checkmark"
+        style="enable-background: new 0 0 10 10;"
+        version="1.1"
+        viewBox="0 0 10 10"
+        xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+      >
+        <g id="check-mark">
+          <circle cx="5" cy="5" r="2.5" [attr.fill]="checkMarkColor" />
+        </g>
+      </svg>
+    <input
+      #input
+      class="neo-radio-input neo-radio-hidden"
+      type="radio"
+      [id]="inputId"
+      [checked]="checked"
+      [disabled]="disabled"
+      [tabIndex]="tabIndex"
+      [attr.name]="name"
+      [attr.value]="value"
+      [required]="required"
+      [attr.aria-label]="ariaLabel"
+      [attr.aria-labelledby]="ariaLabelledby"
+      c
+      [attr.aria-describedby]="ariaDescribedby"
+      (change)="_onInputChange($event)"
+      (click)="_onInputClick($event)"
+    />
+  </div>
+
+  <!-- The label content for radio control. -->
+  <div
+    class="neo-radio-label-content"
+    [class.neo-radio-label-before]="labelPosition == 'before'"
+  >
+    <!-- Add an invisible span so JAWS can read the label -->
+    <span style="display: none;">&nbsp;</span>
+    <ng-content></ng-content>
+  </div>
+</label>

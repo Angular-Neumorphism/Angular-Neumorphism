@@ -1,7 +1,6 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 
-
 @import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
@@ -9,8 +8,6 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
-
-
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -32,8 +29,6 @@ $Angular-Neumorphism-theme: mat-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($Angular-Neumorphism-theme);
-
-
 
 /* You can add global styles to this file, and also import other style files */
 @import "~normalize.css";
@@ -79,30 +74,29 @@ body {
   height: 0.5rem;
 }
 
-.custom-dialog-container {
-  .mat-dialog-container {
-    box-sizing: border-box;
-    background: #f3f3f3;
-    box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
-      inset -2px -2px 5px rgba(34, 34, 34, 0.3);
-    border-radius: 8px;
-  }
-}
+// .custom-dialog-container {
+//   .mat-dialog-container {
+//     box-sizing: border-box;
+//     background: #f3f3f3;
+//     box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 2px 2px 5px #ffffff,
+//       inset -2px -2px 5px rgba(34, 34, 34, 0.3);
+//     border-radius: 8px;
+//   }
+// }
 
-.backdropBackground {
-  background-color: rgba(218, 218, 218, 0.5);
-}
+// .backdropBackground {
+//   background-color: rgba(218, 218, 218, 0.5);
+// }
 
 .custom-snackbar {
-  padding-top: 1.6rem!important;
+  padding-top: 1.6rem !important;
   display: flex;
   align-items: center;
   background: #474747;
   color: white;
-  max-width: 240px!important;
+  max-width: 240px !important;
   height: 54px;
   box-shadow: 2px 2px 5px rgba(34, 34, 34, 0.2), inset 1px 1px 3px #ffffff,
     inset -2px -2px 5px rgba(34, 34, 34, 0.3);
   border-radius: 8px;
 }
-

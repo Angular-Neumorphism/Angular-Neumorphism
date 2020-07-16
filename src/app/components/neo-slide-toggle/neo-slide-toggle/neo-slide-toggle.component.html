@@ -1,0 +1,30 @@
+<label [attr.for]="inputId" class="neo-slide-toggle-label" #label>
+    <div #toggleBar class="neo-slide-toggle-bar"
+         [class.neo-slide-toggle-bar-no-side-margin]="!labelContent.textContent || !labelContent.textContent.trim()">
+  
+      <input #input class="neo-slide-toggle-input" type="checkbox"
+             role="switch"
+             [id]="inputId"
+             [required]="required"
+             [tabIndex]="tabIndex"
+             [checked]="checked"
+             [disabled]="disabled"
+             [attr.name]="name"
+             [attr.aria-checked]="checked.toString()"
+             [attr.aria-label]="ariaLabel"
+             [attr.aria-labelledby]="ariaLabelledby"
+             (change)="_onChangeEvent($event)"
+             (click)="_onInputClick($event)">
+  
+      <div class="neo-slide-toggle-thumb-container" #thumbContainer>
+        <div class="neo-slide-toggle-thumb"></div>
+      </div>
+  
+    </div>
+  
+    <span class="neo-slide-toggle-content" #labelContent (cdkObserveContent)="_onLabelTextChange()">
+      <!-- Add an invisible span so JAWS can read the label -->
+      <span style="display:none">&nbsp;</span>
+      <ng-content></ng-content>
+    </span>
+  </label>

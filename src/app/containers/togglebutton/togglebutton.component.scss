@@ -1,0 +1,86 @@
+@import "~@neomorphism/ng-neomorphism/mixins/neo-slide-toggle.mixins";
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-direction: column;
+  padding: 0 5% 100px 2%;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.module-snippet {
+  border-radius: 16px;
+  background-color: #ebebeb;
+  margin: 0 0 20px 0;
+}
+
+.text {
+  width: 90%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 2rem 0;
+}
+
+.title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  color: #474747;
+  margin: 0 0 4rem 0;
+}
+
+.styled-example {
+  border-radius: 16px;
+  border: 2px solid #ebebeb;
+  margin: 10px 0;
+  color: rgba(71, 71, 71, 0.6);
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.toggle{
+  margin: 20px 0;
+}
+
+.example-checked-slide-toggle{
+  @include neo-slide-toggle-checked(#EB5757);
+}
+
+.dark-radio-group {
+  background-color: #373e5a;
+  color: #f3f3f3;
+}
+
+.example-outside-slide-toggle{
+ @include neo-slide-toggle-background(#373e5a);
+}
+
+.example-outside-inside-slide-toggle{
+  @include neo-slide-toggle-background(#373e5a, #58D38B);
+}
+
+.example-colors-checked-slide-toggle{
+  @include neo-slide-toggle-checked(#373e5a);
+  @include neo-slide-toggle-background(#373e5a, #58D38B);
+}
+
+
+
+

@@ -1,0 +1,76 @@
+<div class="title">
+  Neomorph toolbar
+</div>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoToolbarModule &#125;  from '@neomorphism/ng-neomorphism/neo-toolbar'    </pre
+  >
+</code>
+
+<div class="text module-description">
+  <strong>&lt;neo-toolbar&gt;</strong> is a container for headers, titles, or
+  actions.
+</div>
+
+<app-element-example class="styled-example">
+  <span title>Toolbar</span>
+  <mat-tab-group disableRipple tabsContent class="tab-group">
+    <mat-tab class="mat-tab" tabindex="1" autofocus label="HTML">
+      <app-code-embed>
+        <pre>
+          <span class="code-text">&lt;neo-toolbar&gt;</span> 
+              <span class="code-text">&lt;div&gt;</span>  my application  <span class="code-text">&lt;/div&gt;</span>
+              <span class="code-text">
+              &lt;neo-form-field class="form-field"&gt;
+              &lt;input
+                  neoInput
+                  type="search"
+                  style = 'margin-left: auto'
+                  autocomplete="off"
+                  placeholder="Search"
+                /&gt;
+                &lt;/neo-form-field&gt;</span>
+          <span class="code-text">&lt;/neo-toolbar&gt;</span>
+        
+          <span class="code-text">&lt;neo-toolbar color="primary"&gt;</span> 
+              <span class="code-text">&lt;div&gt;</span>  my application  <span class="code-text">&lt;/div&gt;</span>
+          <span class="code-text">&lt;/neo-toolbar&gt;</span>
+        
+          <span class="code-text">&lt;neo-toolbar color="warn"&gt;</span> 
+              <span class="code-text">&lt;div&gt;</span>  my application  <span class="code-text">&lt;/div&gt;</span>
+          <span class="code-text">&lt;/neo-toolbar&gt;</span>
+        
+        </pre>
+      </app-code-embed>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="card" example>
+    <div class="card-content">
+      <neo-toolbar class="menu">
+        <div class="menu-text-black">my application</div>
+        <neo-form-field class="margin-left">
+          <input
+            neoInput
+            type="search"
+            autocomplete="off"
+            placeholder="Search"
+          />
+        </neo-form-field>
+      </neo-toolbar>
+
+      <neo-toolbar color="primary" class="menu">
+        <div class="menu-text">my application</div>
+        <button neo-button class="margin-left" color="primary">Log in</button>
+      </neo-toolbar>
+
+      <neo-toolbar color="warn" class="menu">
+        <div class="menu-text">my application</div>
+      </neo-toolbar>
+    </div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>API proterties</strong></p>
+</div>
+<app-api-description [apiDescriprionData] = "commonApi"></app-api-description>

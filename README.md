@@ -1,27 +1,30 @@
-# AngularNeumorphism
+# Aggular Neomorphism
+Angular Neomorphism SCSS framework
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0-rc.0.
 
-## Development server
+## Our design concept
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Our [Patreon page](https://www.patreon.com/neomorphism)
 
-## Code scaffolding
+## Available modules
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+For now you can use next Neomorphism modules
+```
+Badge module
+Button module
+Card module
+Checkbox module
+Dialog module
+Divider module
+Input module
+Form-field module
+Progressbar module
+Radio-button module
+Slide-toggle module
+Tabs module
+Toolbar module
+```
 
-## Build
+## Documentation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Documentation, examples and whole list of modules you can find at [Angular Neomorphism](https://angular-neomorphism.web.app/)

@@ -7,8 +7,10 @@ import { NeoTabGroup } from './neo-tabs/neo-tabs.group';
 import { NeoTabBody, NeoTabBodyPortal } from './neo-tabs/neo-tab-body';
 import { NeoTabHeader } from './neo-tabs/neo-tab-header';
 import { NeoTabLabelWrapper } from './neo-tabs/neo-tab-label-wrapper';
-import {NeoTabContent } from './neo-tabs/neo-tab-content';
-import { NeoTabLabel} from './neo-tabs/neo-tab-label';
+import { NeoTabContent } from './neo-tabs/neo-tab-content';
+import { NeoTabLabel } from './neo-tabs/neo-tab-label';
+import { NeoFocusPosition } from './neo-tabs/neo-tab-focus';
+import { PortalModule } from '@angular/cdk/portal';
 
 @NgModule({
   declarations: [
@@ -19,9 +21,19 @@ import { NeoTabLabel} from './neo-tabs/neo-tab-label';
     NeoTabLabelWrapper,
     NeoTabBodyPortal,
     NeoTabContent,
-    NeoTabLabel
+    NeoTabLabel,
+    NeoFocusPosition,
   ],
-  imports: [CommonModule, MatTabsModule, NeoDividerModule],
-  exports: [NeoTab, NeoTabGroup, NeoTabBody, NeoTabHeader, NeoTabLabelWrapper, NeoTabContent],
+  imports: [CommonModule, MatTabsModule, NeoDividerModule, PortalModule],
+  exports: [
+    NeoTab,
+    NeoTabGroup,
+    NeoTabBody,
+    NeoTabHeader,
+    NeoTabLabelWrapper,
+    NeoTabContent,
+    NeoTabLabel,
+    NeoFocusPosition,
+  ],
 })
 export class NeoTabsModule {}

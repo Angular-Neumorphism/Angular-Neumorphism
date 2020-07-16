@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="title-container">
+    <ng-content select="[title]"></ng-content
+    ><button neo-button class="toggleButton" (click)="toggleCodeSnippet()">
+      <mat-icon class="mat-icon arrow_left">chevron_left</mat-icon
+      ><mat-icon class="mat-icon arrow_right">chevron_right</mat-icon>
+    </button>
+  </div>
+  <div class="toggle-container" *ngIf="showCodeSnippet">
+    <ng-content select="[tabsContent]"></ng-content>
+  </div>
+
+  <neo-divider class="divider" *ngIf="showCodeSnippet"></neo-divider>
+  <div class="example">
+    <ng-content select="[example]"></ng-content>
+  </div>
+</div>
