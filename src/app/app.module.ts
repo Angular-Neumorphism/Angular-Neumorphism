@@ -56,6 +56,7 @@ import { NeoProgressBarModule } from '@neomorphism/ng-neomorphism/neo-progressba
 import { NeoRadioButtonModule } from '@neomorphism/ng-neomorphism/neo-radio';
 import { NeoBadgeModule } from '@neomorphism/ng-neomorphism/neo-badge';
 import { NeoSlideToggleModule } from '@neomorphism/ng-neomorphism/neo-slide-toggle';
+import { NeoDialogModule } from '@neomorphism/ng-neomorphism/neo-dialog';
 
 @NgModule({
   declarations: [
@@ -117,6 +118,7 @@ import { NeoSlideToggleModule } from '@neomorphism/ng-neomorphism/neo-slide-togg
     NeoRadioButtonModule,
     NeoBadgeModule,
     NeoSlideToggleModule,
+    NeoDialogModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],

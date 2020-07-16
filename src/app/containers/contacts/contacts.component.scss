@@ -1,21 +1,33 @@
 :host {
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .card {
-    margin-top: 50px;
-    width: 90%;
-    height: 200px;
-  }
-  
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 
-  a{
-    text-decoration: none;
-    cursor: pointer;
-    color: #474747;
-  }
+.contact-card {
+  margin-top: 50px;
+  width: 90%;
+  min-height: 100px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #474747;
+}
+
+.names {
+  color: #2086ed;
+  font-weight: bolder;
+}
+
+.names-wrapper {
+  margin: 10px 0;
+}
+
+:host::ng-deep .contact-card .neo-card-header-text {
+  margin: 0;
+}

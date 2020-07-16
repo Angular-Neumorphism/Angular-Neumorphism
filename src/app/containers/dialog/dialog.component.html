@@ -1,21 +1,309 @@
-<div class="text">
-  Dialog service can be used to open modal dialogs based on Material dialog with
-  neomorph styling.
+<div class="title">
+  Neomorph dialog
 </div>
-<neo-card class="card"
-  ><neo-card-header>
-    <neo-card-title>Dialog</neo-card-title>
-  </neo-card-header>
-  <neo-card-content class="card-content">
-    <div class="text">Answer the question</div>
-    <div class="wrapper">
-      <neo-card-footer>
-        <neo-card-actions align='end'>
-          <button neo-button (mousedown)="openDialog()" class="button">
-            Open dialog
-          </button>
-        </neo-card-actions>
-      </neo-card-footer>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoDialogModule &#125;from '@neomorphism/ng-neomorphism/neo-dialog'    </pre
+  >
+</code>
+<div class="text module-description">
+  <strong>NeoDialog</strong> service can be used to open modal dialogs with
+  Material Design styling and animations.
+</div>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Dialog with header, scrollable content and actions</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    import &#123; NeoDialog &#125; from '@neomorphism/ng-neomorphism/neo-dialog';
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-dialog',</span>
+      <span class="code-text">templateUrl: './app-dialog.html',</span> 
+      <span class="code-text">styleUrls: ['./app-dialog.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class DialogComponent   &#123;</span>
+    constructor(private dialog: NeoDialog) &#123; &#125;
+    openDialog() &#123;
+    const dialogRef = this.dialog.open(DialogPageComponent);
+      &#125;
+    <span class="code-text">  &#125;</span>
+
+    <span class="code-text">@Component(&#123;</span>
+    <span class="code-text">selector: 'app-dialog-page',</span>
+    <span class="code-text">templateUrl: './app-dialog-page.html',</span> 
+    <span class="code-text">styleUrls: ['./app-dialog-page.scss'],</span>  
+    <span class="code-text">&#125;)</span> 
+  <span class="code-text">export class DialogPageComponent   &#123;</span>
+
+  <span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;button  neo-button (click)="openDialog()"&gt;</span> 
+    Open dialog
+    <span class="code-text">&lt;/button &gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="app-dialog-page.html">
+      <app-code-embed>
+        <pre>
+          &lt;h2 neo-dialog-title>Install Angular&lt;/h2&gt;
+          &lt;neo-dialog-content &gt;
+          &lt;h3&gt;Develop across all platforms&lt;/h3&gt;
+          &lt;p&gt;
+              Learn one way to build applications with Angular and reuse your code and
+              abilities to build apps for any deployment target. For web, mobile web,
+              native mobile and native desktop.
+          &lt;/p&gt;
+        
+          &lt;h3&gt;Speed &amp; Performance&lt;/h3&gt;
+          &lt;p&gt;
+              Achieve the maximum speed possible on the Web Platform today, and take it
+              further, via Web Workers and server-side rendering. Angular puts you in
+              control over scalability. Meet huge data requirements by building data
+              models on RxJS, Immutable.js or another push-model.
+          &lt;/p&gt;
+        
+          &lt;h3 &gt;Incredible tooling&lt;/h3 &gt;
+          &lt;p&gt;
+              Build features quickly with simple, declarative templates. Extend the
+              template language with your own components and use a wide array of
+              existing components. Get immediate Angular-specific help and feedback with
+              nearly every IDE and editor. All this comes together so you can focus on
+              building amazing apps rather than trying to make the code work.
+              &lt;/p&gt;
+        
+              &lt;h3&gt;Loved by millions&lt;/h3&gt;
+              &lt;p&gt;
+              From prototype through global deployment, Angular delivers the
+              productivity and scalable infrastructure that supports Google's largest
+              applications.
+              &lt;/p&gt;
+        
+              &lt;h3&gt;What is Angular? &lt;/h3&gt;
+        
+              &lt;p&gt;
+              Angular is a platform that makes it easy to build applications with the
+              web. Angular combines declarative templates, dependency injection, end to
+              end tooling, and integrated best practices to solve development
+              challenges. Angular empowers developers to build applications that live on
+              the web, mobile, or the desktop
+              &lt;/p&gt;
+        
+              &lt;h3&gt;Architecture overview &lt;/h3&gt;
+        
+              &lt;p&gt;
+              Angular is a platform and framework for building client applications in
+              HTML and TypeScript. Angular is itself written in TypeScript. It
+              implements core and optional functionality as a set of TypeScript
+              libraries that you import into your apps.
+              &lt;/p&gt;
+        
+              &lt;p&gt;
+              The basic building blocks of an Angular application are NgModules, which
+              provide a compilation context for components. NgModules collect related
+              code into functional sets; an Angular app is defined by a set of
+              NgModules. An app always has at least a root module that enables
+              bootstrapping, and typically has many more feature modules.
+              &lt;/p&gt;
+            &lt;/neo-dialog-content &gt;
+            &lt;neo-dialog-actions align="center"&gt;
+            &lt;button neo-button neo-dialog-close>Cancel&lt;/button&gt;
+            &lt;button
+              neo-button
+              color="primary"
+              [neo-dialog-close]="true"
+              cdkFocusInitial
+              &gt;
+              Install
+              &lt;/button&gt;
+              &lt;/neo-dialog-actions&gt;
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <button neo-button (click)="openDialog()">
+        Open dialog
+      </button>
     </div>
-  </neo-card-content>
-</neo-card>
+  </div>
+</app-element-example>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Dialog with config object, data receiving and subscription</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    
+    <span class="code-text">@Component(&#123;</span>
+    <span class="code-text">selector: 'app-dialog',</span>
+    <span class="code-text">templateUrl: './app-dialog.html',</span> 
+    <span class="code-text">styleUrls: ['./app-dialog.scss'],</span>  
+    <span class="code-text">&#125;)</span> 
+  <span class="code-text">export class DialogComponent   &#123;</span>
+  public name: string;
+  constructor(private dialog: NeoDialog) &#123; &#125;
+  openDialog() &#123;
+  const dialogRef = this.dialog.open(DialogPageComponent, &#123;
+    width: '250px',
+    data: &#123; configurable: true, name: undefined &#125;,
+    &#125;);
+    dialogRef.afterClosed().subscribe((data) => &#123;
+      if (data.name) &#123;
+        this.name = data.name;
+        &#125;
+      &#125;);
+    &#125;
+  <span class="code-text">  &#125;</span>
+
+  <span class="code-text">@Component(&#123;</span>
+  <span class="code-text">selector: 'app-dialog-page',</span>
+  <span class="code-text">templateUrl: './app-dialog-page.html',</span> 
+  <span class="code-text">styleUrls: ['./app-dialog-page.scss'],</span>  
+  <span class="code-text">&#125;)</span> 
+<span class="code-text">export class DialogPageComponent   &#123;</span>
+
+<span class="code-text">  &#125;</span>
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+          &lt;button neo-button (click)="openDialog()"&gt;
+          Open dialog
+          &lt;/button&gt;
+          &lt;div class="text" *ngIf="name"&gt;Your name is: &#123; &#123; name &#125; &#125;&lt;/div&gt;
+    </pre
+        >
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="app-dialog-page.html">
+      <app-code-embed>
+        <pre>
+          &lt;h2 neo-dialog-title&gt;What is your name?&lt;/h2&gt;
+          &lt;neo-dialog-content class="mat-typography"&gt;
+          &lt;neo-form-field&gt;
+          &lt;input neoInput [(ngModel)]="data.name" /&gt;
+          &lt;/neo-form-field&gt;
+            &lt;/neo-dialog-content&gt;
+            &lt;neo-dialog-actions align="center"&gt;
+            &lt;button neo-button neo-dialog-close>Cancel&lt;/button&gt;
+            &lt;button
+              neo-button
+              color="primary"
+              [neo-dialog-close]="data"
+              cdkFocusInitial
+              &gt;
+              Submit
+              &lt;/button&gt;
+              &lt;/neo-dialog-actions&gt;
+    </pre
+        >
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <button neo-button (click)="openConfiguratedDialog()" class="button">
+        Open dialog
+      </button>
+    </div>
+    <div class="text" *ngIf="name">Your name is: {{ name }}</div>
+  </div>
+</app-element-example>
+
+<div class="text">
+  <p><strong>NeoDialog proterties</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="dialogPropsApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>NeoDialog methods</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="dialogMethodsApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>NeoDialog config</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="dialogConfigApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>NeoDialogRef methods</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="dialogRefgApi"
+></app-api-description>
+
+<neo-divider class="divider"></neo-divider>
+<div class="title">
+  <p><strong>Directives</strong></p>
+</div>
+<div class="text">
+  <p><strong>NeoDialogClose</strong></p>
+  Button that will close the current dialog. Selector: [neo-dialog-close]
+  [neoDialogClose] Exported as: matDialogClose
+</div>
+<app-api-description
+  [apiDescriprionData]="dialogDirectiveCloseApi"
+></app-api-description>
+<div class="text">
+  <p><strong>NeoDialogTitle</strong></p>
+  Title of a dialog element. Stays fixed to the top of the dialog when
+  scrolling. Selector: [neo-dialog-title] [neoDialogTitle] Exported as:
+  matDialogTitle
+</div>
+<app-api-description
+  [apiDescriprionData]="dialogDirectiveTitleApi"
+></app-api-description>
+<div class="text">
+  <p><strong>NeoDialogContent</strong></p>
+  Scrollable content container of a dialog. Selector: [neo-dialog-content]
+  neo-dialog-content [neoDialogContent]
+</div>
+<div class="text">
+  <p><strong>NeoDialogActions</strong></p>
+  Container for the bottom action buttons in a dialog. Stays fixed to the bottom
+  when scrolling. Selector: [neo-dialog-actions] neo-dialog-actions
+  [neoDialogActions]
+</div>
