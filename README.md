@@ -1,4 +1,4 @@
-# Aggular Neomorphism
+# Angular Neomorphism
 Angular Neomorphism SCSS framework
 ![Angular Neomorphism](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/promo%20banner.png)
 
