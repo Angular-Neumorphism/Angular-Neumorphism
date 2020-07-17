@@ -2,6 +2,12 @@
 Angular Neomorphism SCSS framework
 ![Angular Neomorphism](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/promo%20banner.png)
 
+## Download
+
+```
+npm i @neomorphism/ng-neomorphism
+```
+
 ## Our design concept
 
 Our [Patreon page](https://www.patreon.com/neomorphism)
