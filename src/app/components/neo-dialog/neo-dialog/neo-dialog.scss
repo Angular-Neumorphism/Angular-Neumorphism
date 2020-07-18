@@ -1,5 +1,5 @@
 @import './neo-dialog.theme.scss';
-@import './overlay-styles.scss';
+@import '../../../core/cdk/overlay-styles.scss';
 
 @include neo-dialog-color();
 @include neo-dialog-typography();

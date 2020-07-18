@@ -9,3 +9,4 @@ export * from './neo-radio';
 export * from './neo-badge';
 export * from './neo-slide-toggle';
 export * from './neo-dialog';
+export * from './neo-snack-bar';

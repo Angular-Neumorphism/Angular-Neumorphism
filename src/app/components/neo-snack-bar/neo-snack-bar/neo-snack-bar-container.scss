@@ -1,0 +1,42 @@
+@import './neo-snack-bar.theme.scss';
+@import '../../../core/cdk/overlay-styles.scss';
+
+@include neo-snack-bar-color();
+@include neo-snack-bar-typography();
+@include cdk-overlay();
+
+$mat-snack-bar-padding: 14px 16px !default;
+$mat-snack-bar-min-height: 54px !default;
+$mat-snack-bar-min-width: 344px !default;
+$mat-snack-bar-max-width: 33vw !default;
+$mat-snack-bar-spacing-margin: 24px !default;
+$mat-snack-bar-spacing-margin-handset: 8px !default;
+
+
+.neo-snack-bar-container {
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: block;
+  margin: $mat-snack-bar-spacing-margin;
+  max-width: $mat-snack-bar-max-width;
+  min-width: $mat-snack-bar-min-width;
+  padding: $mat-snack-bar-padding;
+  min-height: $mat-snack-bar-min-height;
+  transform-origin: center;
+
+}
+
+/**
+ * The mat-snack-bar-handset class will be applied to the overlay
+ * element causing styling to both it and the snack bar container.
+ */
+.mat-snack-bar-handset {
+  width: 100%;
+
+  .neo-snack-bar-container {
+    margin: $mat-snack-bar-spacing-margin-handset;
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+}
