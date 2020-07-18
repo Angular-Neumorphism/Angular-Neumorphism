@@ -1,23 +1,8 @@
-/**
- * @license
- * Copyright Google LLC All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-
 import { FocusOrigin } from '@angular/cdk/a11y';
-import { ESCAPE, hasModifierKey } from '@angular/cdk/keycodes';
-import { GlobalPositionStrategy, OverlayRef } from '@angular/cdk/overlay';
-import { Observable, Subject } from 'rxjs';
-import { filter, take } from 'rxjs/operators';
-import { DialogPosition } from './neo-dialog-config';
+import {  OverlayRef } from '@angular/cdk/overlay';
 import { NeoDialogContainer } from './neo-dialog-container';
 import { MatDialogRef } from '@angular/material/dialog';
 
-// TODO(jelbourn): resizing
-
-// Counter for unique dialog ids.
 let uniqueId = 0;
 
 
