@@ -1,5 +1,7 @@
 # Angular Neomorphism
 Angular Neomorphism SCSS framework
+Based on Angular Material 9.2.4
+
 ![Angular Neomorphism](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/promo%20banner.png)
 
 ## Install

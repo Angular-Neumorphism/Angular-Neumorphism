@@ -1,20 +1,136 @@
-<div class="text">
-  Snackbar is a service for displaying snack-bar notifications.A snack-bar can
-  contain either a string message or a given component.
+<div class="title">
+  Neomorph snack-bar
 </div>
-<neo-card class="card"
-  ><neo-card-header>
-    <neo-card-title>Snackbar</neo-card-title>
-  </neo-card-header>
-  <neo-card-content class="card-content">
-  </neo-card-content>
-  <neo-card-footer>
-    <neo-card-actions>
-      <div class="wrapper">
-        <button neo-button (mousedown)="openSnackBar()" class="button">
-          Show snackbar
-        </button>
-      </div>
-    </neo-card-actions>
-  </neo-card-footer>
-</neo-card>
+<code class="module-snippet code width">
+  <pre>
+    import &#123; NeoSnackBarModule &#125;from '@neomorphism/ng-neomorphism/neo-snack-bar'    </pre
+  >
+</code>
+<div class="text module-description">
+  <strong>NeoSnackBar</strong> is a service for displaying snack-bar
+  notifications.A snack-bar can contain either a string message or a given
+  component.
+</div>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Basic snack-bar</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+    import &#123; NeoSnackBar &#125; from '@neomorphism/ng-neomorphism/neo-snack-bar';
+    
+    <span class="code-text">@Component(&#123;</span>
+      <span class="code-text">selector: 'app-snackbar',</span>
+      <span class="code-text">templateUrl: './app-snackbar.html',</span> 
+      <span class="code-text">styleUrls: ['./app-snackbar.scss'],</span>  
+      <span class="code-text">&#125;)</span> 
+    <span class="code-text">export class DialogComponent   &#123;</span>
+    constructor(private _snackBar: NeoSnackBar) &#123; &#125;
+    openSnackBar(message: string, action: string) &#123;
+      this._snackBar.open(message, action, &#123;
+        duration: 2000,
+        &#125;);
+        &#125;
+        </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+    <span class="code-text">&lt;neo-form-field &gt;</span> 
+      <span class="code-text">&lt;neo-lalel &gt;</span> Message<span class="code-text">&lt;/neo-lalel &gt;</span> 
+      <span class="code-text">&lt;input neoInput value="Disco party!" #message / &gt;</span> 
+    <span class="code-text">&lt;/neo-form-field &gt;</span> 
+    <span class="code-text">&lt;neo-form-field &gt;</span> 
+      <span class="code-text">&lt;neo-lalel &gt;</span> Action<span class="code-text">&lt;/neo-lalel &gt;</span> 
+      <span class="code-text">&lt;input neoInput value="Dance" #action / &gt;</span> 
+    <span class="code-text">&lt;/neo-form-field &gt;</span> 
+    
+    <span class="code-text">&lt; button neo-button color='primary' class="button" (click)="openSnackBar(message.value, action.value)"&gt;</span>
+      Show snack-bar
+      <span class="code-text">&lt; /button&gt;</span>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="card-content">
+      <neo-form-field>
+        <neo-label>Message</neo-label>
+        <input neoInput value="Disco party!" #message />
+      </neo-form-field>
+
+      <neo-form-field>
+        <neo-label>Action</neo-label>
+        <input neoInput value="Dance" #action />
+      </neo-form-field>
+
+      <button
+        neo-button
+        color="primary"
+        class="button"
+        (click)="openSnackBar(message.value, action.value)"
+      >
+        Show snack-bar
+      </button>
+    </div>
+  </div>
+</app-element-example>
+
+
+<div class="text">
+  <p><strong>NeoSnackBar proterties</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="snackbarPropsApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>NeoSnackBar methods</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="snackbarMethodsApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>NeoSnackBar config</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="snackbarConfigApi"
+></app-api-description>
+
+<div class="text">
+  <p><strong>NeoSnackBarRef methods</strong></p>
+</div>
+
+<app-api-description
+  [apiDescriprionData]="snackbarRefApi"
+></app-api-description>
+
+<neo-divider class="divider"></neo-divider>
+<div class="title">
+  <p><strong>Directives</strong></p>
+</div>
+<div class="text">
+  <p><strong>NeoSimpleSnackBar</strong></p>
+  A component used to open as the default snack bar, matching material spec. This should only be used internally by the snack bar service.
+  Selector: simple-neo-snack-bar
+</div>
+
+<app-api-description
+  [apiDescriprionData]="snackbarDirectiveApi"
+></app-api-description>

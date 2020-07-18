@@ -1,0 +1,72 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+@mixin neo-snack-bar-color() {
+  .neo-snack-bar-container {
+    color: mat-color($neo-light-theme-foreground, light-shadow);
+    background: mat-color($neo-light-theme-background, snack-bar);
+
+    box-shadow: 2px 2px 5px
+        mat-color($neo-light-theme-foreground, dark-shadow, 0.2),
+      inset 2px 2px 5px
+        lighten(mat-color($neo-light-theme-foreground, dark-shadow), 35%),
+      inset -2px -2px 5px
+        darken(mat-color($neo-light-theme-foreground, dark-shadow), 10%);
+  }
+
+  .neo-simple-snackbar-action {
+    $default: mat-color($neo-light-theme, primary);
+    $background-default: mat-color($neo-light-theme-background, snack-bar);
+    $background-hover: mat-color(
+      $neo-light-theme-background,
+      button-background-hover
+    );
+    $light-shadow: lighten(mat-color($neo-light-theme-foreground, dark-shadow), 45%);
+    $dark-shadow: darken(mat-color($neo-light-theme-foreground, dark-shadow), 2%);
+    .snackbar-button {
+      color: $default;
+      background-color: $background-default;
+
+      &::before {
+        mix-blend-mode: soft-light;
+        box-shadow: -2px -2px 5px $light-shadow;
+      }
+      &::after {
+        mix-blend-mode: soft-light;
+        box-shadow: 2px 2px 5px $dark-shadow;
+      }
+
+      &:hover {
+        background: linear-gradient(0deg, $background-hover, $background-hover),
+          $background-default;
+        background-blend-mode: color-burn, normal;
+
+        &::before {
+          box-shadow: -1px -1px 3px $light-shadow;
+        }
+        &::after {
+          box-shadow: 1px 1px 3px $dark-shadow;
+        }
+      }
+    }
+  }
+}
+
+@mixin neo-snack-bar-typography() {
+  .neo-simple-snackbar {
+    font: {
+      family: Open Sans;
+      size: 14px;
+    }
+    line-height: 22px;
+  }
+
+  .mat-simple-snackbar-action {
+    line-height: 22px;
+    font: {
+      family: inherit;
+      size: inherit;
+      weight: normal;
+    }
+  }
+}
