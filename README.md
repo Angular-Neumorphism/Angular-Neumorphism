@@ -2,7 +2,7 @@
 Angular Neomorphism SCSS framework
 ![Angular Neomorphism](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/promo%20banner.png)
 
-## Download
+## Install
 
 ```
 npm i @neomorphism/ng-neomorphism
@@ -37,6 +37,9 @@ Documentation,live examples and whole list of modules you can find at [Angular N
 
 ### Buttons
 ![Neo buttons](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/development/src/assets/preview/button.png)
+
+### Card
+![Neo checkbox](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/development/src/assets/preview/card.png)
 
 ### Checkbox
 ![Neo checkbox](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/development/src/assets/preview/checkbox.png)
