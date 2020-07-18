@@ -35,10 +35,10 @@ Toolbar module
 Documentation, examples and whole list of modules you can find at [Angular Neomorphism](https://angular-neomorphism.web.app/)
 
 ### Buttons
-![Neo buttons](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/preview/button.png)
+![Neo buttons](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/development/src/assets/preview/button.png)
 
 ### Checkbox
-![Neo checkbox](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/preview/checkbox.png)
+![Neo checkbox](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/development/src/assets/preview/checkbox.png)
 
 ### Checkbox
-![Neo input](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/master/src/assets/preview/input.png)
+![Neo input](https://github.com/Angular-Neumorphism/Angular-Neumorphism/blob/development/src/assets/preview/input.png)
