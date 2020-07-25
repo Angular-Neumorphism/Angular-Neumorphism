@@ -58,6 +58,7 @@ import { NeoBadgeModule } from '@neomorphism/ng-neomorphism/neo-badge';
 import { NeoSlideToggleModule } from '@neomorphism/ng-neomorphism/neo-slide-toggle';
 import { NeoDialogModule } from '@neomorphism/ng-neomorphism/neo-dialog';
 import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
+import { NeoSelectModule } from './components/neo-select/neo-select.module';
 
 @NgModule({
   declarations: [
@@ -121,6 +122,7 @@ import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
     NeoSlideToggleModule,
     NeoDialogModule,
     NeoSnackBarModule,
+    NeoSelectModule,
   ],
   entryComponents: [DialogComponent],
   providers: [],
