@@ -1,6 +1,7 @@
+import { NeoSliderModule } from './components/neo-slider/neo-slider.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -123,6 +124,7 @@ import { NeoSelectModule } from './components/neo-select/neo-select.module';
     NeoDialogModule,
     NeoSnackBarModule,
     NeoSelectModule,
+    NeoSliderModule
   ],
   entryComponents: [DialogComponent],
   providers: [],
