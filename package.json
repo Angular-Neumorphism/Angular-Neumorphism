@@ -29,6 +29,7 @@
     "@nguniversal/express-engine": "^9.1.0",
     "express": "^4.15.2",
     "normalize.css": "^8.0.1",
+    "rgb-hex": "^3.0.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
