@@ -1,0 +1,487 @@
+
+@import "./slider.theme";
+// This refers to the thickness of the slider. On a horizontal slider this is the height, on a
+// vertical slider this is the width.
+$neo-slider-thickness: 48px !default;
+$neo-slider-min-size: 128px !default;
+$neo-slider-padding: 8px !default;
+
+$swift-ease-out-duration: 400ms !default;
+$swift-ease-out-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1) !default;
+
+$neo-slider-track-thickness: 4px !default;
+$neo-slider-thumb-size: 20px !default;
+$neo-slider-thumb-border-width: 3px !default;
+$neo-slider-thumb-border-width-active: 2px !default;
+$neo-slider-thumb-border-width-disabled: 4px !default;
+
+$neo-slider-thumb-default-scale: 0.7 !default;
+$neo-slider-thumb-focus-scale: 1 !default;
+$neo-slider-thumb-disabled-scale: 0.5 !default;
+
+$neo-slider-thumb-arrow-gap: 12px !default;
+
+$neo-slider-thumb-label-size: 28px !default;
+
+$neo-slider-tick-size: 2px !default;
+
+$neo-slider-focus-ring-size: 30px !default;
+
+@mixin cursor-grab {
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+  
+@mixin cursor-grabbing {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+@mixin backface-visibility($value) {
+    -webkit-backface-visibility: $value;
+    backface-visibility: $value;
+  }
+  
+
+@include neo-slider-color();
+
+.neo-slider .neo-slider-track-wrapper {
+  border-radius: 2px;
+}
+
+.neo-slider {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  padding: $neo-slider-padding;
+  outline: none;
+  vertical-align: middle;
+
+  &:not(.neo-slider-disabled):active,
+  &.neo-slider-sliding:not(.neo-slider-disabled) {
+    @include cursor-grabbing;
+  }
+}
+
+.neo-slider-wrapper {
+  position: absolute;
+}
+
+.neo-slider-track-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.neo-slider-track-fill {
+  position: absolute;
+  transform-origin: 0 0;
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+              background-color $swift-ease-out-duration $swift-ease-out-timing-function;
+}
+
+.neo-slider-track-background {
+  position: absolute;
+  transform-origin: 100% 100%;
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+              background-color $swift-ease-out-duration $swift-ease-out-timing-function;
+}
+
+.neo-slider-ticks-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.neo-slider-ticks {
+  background-repeat: repeat;
+  background-clip: content-box;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity $swift-ease-out-duration $swift-ease-out-timing-function;
+}
+
+.neo-slider-thumb-container {
+  position: absolute;
+  z-index: 1;
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function;
+}
+
+.neo-slider-focus-ring {
+  position: absolute;
+  width: $neo-slider-focus-ring-size;
+  height: $neo-slider-focus-ring-size;
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+              background-color $swift-ease-out-duration $swift-ease-out-timing-function,
+              opacity $swift-ease-out-duration $swift-ease-out-timing-function;
+
+  .neo-slider.cdk-keyboard-focused &,
+  .neo-slider.cdk-program-focused & {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+%_neo-slider-cursor {
+  .neo-slider:not(.neo-slider-disabled):not(.neo-slider-sliding) & {
+    @include cursor-grab;
+  }
+}
+
+.neo-slider-thumb {
+  @extend %_neo-slider-cursor;
+
+  position: absolute;
+  right: -$neo-slider-thumb-size / 2;
+  bottom: -$neo-slider-thumb-size / 2;
+  box-sizing: border-box;
+  width: $neo-slider-thumb-size;
+  height: $neo-slider-thumb-size;
+  border: $neo-slider-thumb-border-width solid transparent;
+  border-radius: 50%;
+  transform: scale($neo-slider-thumb-default-scale);
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+              background-color $swift-ease-out-duration $swift-ease-out-timing-function,
+              border-color $swift-ease-out-duration $swift-ease-out-timing-function;
+}
+
+.neo-slider-thumb-label {
+  @extend %_neo-slider-cursor;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: $neo-slider-thumb-label-size;
+  height: $neo-slider-thumb-label-size;
+  border-radius: 50%;
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+              border-radius  $swift-ease-out-duration $swift-ease-out-timing-function,
+              background-color  $swift-ease-out-duration $swift-ease-out-timing-function;
+
+//   @include cdk-high-contrast(active, off) {
+//     outline: solid 1px;
+//   }
+}
+
+.neo-slider-thumb-label-text {
+  z-index: 1;
+  opacity: 0;
+  transition: opacity $swift-ease-out-duration $swift-ease-out-timing-function;
+}
+
+
+// Slider sliding state.
+.neo-slider-sliding {
+  .neo-slider-track-fill,
+  .neo-slider-track-background,
+  .neo-slider-thumb-container {
+    // Must use `transition-duration: 0ms` to disable animation rather than `transition: none`.
+    // On Mobile Safari `transition: none` causes the slider thumb to appear stuck.
+    transition-duration: 0ms;
+  }
+}
+
+
+// Slider with ticks when not disabled.
+.neo-slider-has-ticks {
+
+  .neo-slider-wrapper::after {
+    content: '';
+    position: absolute;
+    border-width: 0;
+    border-style: solid;
+    opacity: 0;
+    transition: opacity $swift-ease-out-duration $swift-ease-out-timing-function;
+  }
+}
+
+
+// Slider with thumb label.
+.neo-slider-thumb-label-showing {
+  .neo-slider-focus-ring {
+    display: none;
+  }
+
+  .neo-slider-thumb-label {
+    display: flex;
+  }
+}
+
+
+// Inverted slider.
+.neo-slider-axis-inverted {
+  .neo-slider-track-fill {
+    transform-origin: 100% 100%;
+  }
+
+  .neo-slider-track-background {
+    transform-origin: 0 0;
+  }
+}
+
+
+// Active slider.
+.neo-slider:not(.neo-slider-disabled) {
+  &.cdk-focused {
+    &.neo-slider-thumb-label-showing .neo-slider-thumb {
+      transform: scale(0);
+    }
+
+    .neo-slider-thumb-label {
+      border-radius: 50% 50% 0;
+    }
+
+    .neo-slider-thumb-label-text {
+      opacity: 1;
+    }
+  }
+
+  &.cdk-mouse-focused,
+  &.cdk-touch-focused,
+  &.cdk-program-focused {
+    .neo-slider-thumb {
+      border-width: $neo-slider-thumb-border-width-active;
+      transform: scale($neo-slider-thumb-focus-scale);
+    }
+  }
+}
+
+
+// Disabled slider.
+.neo-slider-disabled {
+  .neo-slider-focus-ring {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  .neo-slider-thumb {
+    border-width: $neo-slider-thumb-border-width-disabled;
+    transform: scale($neo-slider-thumb-disabled-scale);
+  }
+
+  .neo-slider-thumb-label {
+    display: none;
+  }
+}
+
+
+// Horizontal slider.
+.neo-slider-horizontal {
+  height: $neo-slider-thickness;
+  min-width: $neo-slider-min-size;
+
+  .neo-slider-wrapper {
+    height: $neo-slider-track-thickness;
+    top: ($neo-slider-thickness - $neo-slider-track-thickness) / 2;
+    left: $neo-slider-padding;
+    right: $neo-slider-padding;
+  }
+
+  .neo-slider-wrapper::after {
+    height: $neo-slider-track-thickness;
+    border-left-width: $neo-slider-tick-size;
+    right: 0;
+    top: 0;
+  }
+
+  .neo-slider-track-wrapper {
+    height: $neo-slider-track-thickness;
+    width: 100%;
+  }
+
+  .neo-slider-track-fill {
+    height: $neo-slider-track-thickness;
+    width: 100%;
+    transform: scaleX(0);
+  }
+
+  .neo-slider-track-background {
+    height: $neo-slider-track-thickness;
+    width: 100%;
+    transform: scaleX(1);
+  }
+
+  .neo-slider-ticks-container {
+    height: $neo-slider-track-thickness;
+    width: 100%;
+  }
+
+  .neo-slider-ticks {
+    height: $neo-slider-track-thickness;
+    width: 100%;
+  }
+
+  .neo-slider-thumb-container {
+    width: 100%;
+    height: 0;
+    top: 50%;
+  }
+
+  .neo-slider-focus-ring {
+    top: -$neo-slider-focus-ring-size / 2;
+    right: -$neo-slider-focus-ring-size / 2;
+  }
+
+  .neo-slider-thumb-label {
+    right: -$neo-slider-thumb-label-size / 2;
+    top: -($neo-slider-thumb-label-size + $neo-slider-thumb-arrow-gap);
+    transform: translateY($neo-slider-thumb-label-size / 2 + $neo-slider-thumb-arrow-gap)
+        scale(0.01)
+        rotate(45deg);
+  }
+
+  .neo-slider-thumb-label-text {
+    transform: rotate(-45deg);
+  }
+
+  &.cdk-focused {
+    .neo-slider-thumb-label {
+      transform: rotate(45deg);
+    }
+
+    // @include cdk-high-contrast(active, off) {
+    //   .neo-slider-thumb-label,
+    //   .neo-slider-thumb-label-text {
+    //     transform: none;
+    //   }
+    // }
+  }
+}
+
+
+// Vertical slider.
+.neo-slider-vertical {
+  width: $neo-slider-thickness;
+  min-height: $neo-slider-min-size;
+
+  .neo-slider-wrapper {
+    width: $neo-slider-track-thickness;
+    top: $neo-slider-padding;
+    bottom: $neo-slider-padding;
+    left: ($neo-slider-thickness - $neo-slider-track-thickness) / 2;
+  }
+
+  .neo-slider-wrapper::after {
+    width: $neo-slider-track-thickness;
+    border-top-width: $neo-slider-tick-size;
+    bottom: 0;
+    left: 0;
+  }
+
+  .neo-slider-track-wrapper {
+    height: 100%;
+    width: $neo-slider-track-thickness;
+  }
+
+  .neo-slider-track-fill {
+    height: 100%;
+    width: $neo-slider-track-thickness;
+    transform: scaleY(0);
+  }
+
+  .neo-slider-track-background {
+    height: 100%;
+    width: $neo-slider-track-thickness;
+    transform: scaleY(1);
+  }
+
+  .neo-slider-ticks-container {
+    width: $neo-slider-track-thickness;
+    height: 100%;
+
+    // @include cdk-high-contrast(active, off) {
+    //   width: 0;
+    //   outline: solid $neo-slider-track-thickness;
+    //   left: $neo-slider-track-thickness / 2;
+    // }
+  }
+
+  .neo-slider-focus-ring {
+    bottom: -$neo-slider-focus-ring-size / 2;
+    left: -$neo-slider-focus-ring-size / 2;
+  }
+
+  .neo-slider-ticks {
+    width: $neo-slider-track-thickness;
+    height: 100%;
+  }
+
+  .neo-slider-thumb-container {
+    height: 100%;
+    width: 0;
+    left: 50%;
+  }
+
+  .neo-slider-thumb {
+    @include backface-visibility(hidden);
+  }
+
+  .neo-slider-thumb-label {
+    bottom: -$neo-slider-thumb-label-size / 2;
+    left: -($neo-slider-thumb-label-size + $neo-slider-thumb-arrow-gap);
+    transform: translateX($neo-slider-thumb-label-size / 2 + $neo-slider-thumb-arrow-gap)
+        scale(0.01)
+        rotate(-45deg);
+  }
+
+  .neo-slider-thumb-label-text {
+    transform: rotate(45deg);
+  }
+
+  &.cdk-focused {
+    .neo-slider-thumb-label {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+// Slider in RTL languages.
+[dir='rtl'] {
+  .neo-slider-wrapper::after {
+    left: 0;
+    right: auto;
+  }
+
+  .neo-slider-horizontal {
+    .neo-slider-track-fill {
+      transform-origin: 100% 100%;
+    }
+
+    .neo-slider-track-background {
+      transform-origin: 0 0;
+    }
+
+    &.neo-slider-axis-inverted {
+      .neo-slider-track-fill {
+        transform-origin: 0 0;
+      }
+
+      .neo-slider-track-background {
+        transform-origin: 100% 100%;
+      }
+    }
+  }
+}
+
+// Slider inside a component with disabled animations.
+.neo-slider._mat-animation-noopable {
+  .neo-slider-track-fill,
+  .neo-slider-track-background,
+  .neo-slider-ticks,
+  .neo-slider-thumb-container,
+  .neo-slider-focus-ring,
+  .neo-slider-thumb,
+  .neo-slider-thumb-label,
+  .neo-slider-thumb-label-text,
+  .neo-slider-has-ticks .neo-slider-wrapper::after {
+    transition: none;
+  }
+}

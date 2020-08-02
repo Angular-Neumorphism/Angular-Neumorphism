@@ -1,0 +1,47 @@
+@import "~@angular/material/theming";
+@import "../../../core/theme/theme.scss";
+
+$background-default: mat-color(
+    $neo-light-theme-background,
+    button-background
+);
+
+$background-hover: mat-color(
+    $neo-light-theme-background,
+    button-background-hover
+);
+
+@mixin neo-slider-color() {
+    .neo-slider .neo-slider-track-background {
+        background-color: #ebebeb;
+        box-shadow: inset 1px 1px 1px mat-color($neo-light-theme-foreground, dark-shadow, 0.3),
+          inset -1px -1px 1px mat-color($neo-light-theme-foreground, light-shadow);
+    }
+
+    .neo-slider:hover,
+    .cdk-focused {
+        .neo-slider-track-background {
+            background-color: inherit;
+        }
+    }
+
+    .neo-slider-min-value:not(.neo-slider-thumb-label-showing) .neo-slider-thumb {
+        border: none;
+        background: #F3F3F3;
+        box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px  mat-color($neo-light-theme-foreground, button-dark-shadow)
+    }
+
+    .neo-slider 
+    .neo-slider-thumb {
+        background: linear-gradient(0deg, $background-hover, $background-hover),
+        $background-default;
+        box-shadow:  2px 2px 5px mat-color($neo-light-theme-foreground, button-dark-shadow);
+    }
+    
+
+    .neo-slider  .neo-slider-track-fill,
+    .neo-slider  .neo-slider-thumb,
+    .neo-slider  .neo-slider-thumb-label {
+        background-color: mat-color($neo-light-theme, primary);
+    }
+}

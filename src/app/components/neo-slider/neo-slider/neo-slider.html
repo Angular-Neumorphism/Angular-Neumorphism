@@ -1,0 +1,17 @@
+<div class="neo-slider-wrapper" #sliderWrapper>
+    <div class="neo-slider-track-wrapper">
+      <div class="neo-slider-track-background" [ngStyle]="trackBackgroundStyleMerged"></div>
+      <div class="neo-slider-track-fill" [ngStyle]="_trackFillStyles"></div>
+    </div>
+    <div class="neo-slider-ticks-container" [ngStyle]="_ticksContainerStyles">
+      <div class="neo-slider-ticks" [ngStyle]="_ticksStyles"></div>
+    </div>
+    <div class="neo-slider-thumb-container" [ngStyle]="_thumbContainerStyles">
+      <div class="neo-slider-focus-ring"></div>
+      <div class="neo-slider-thumb" [ngStyle]="thumbStyle"></div>
+      <div class="neo-slider-thumb-label">
+        <span class="neo-slider-thumb-label-text">{{displayValue}}</span>
+      </div>
+  </div>
+</div>
+  

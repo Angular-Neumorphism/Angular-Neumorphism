@@ -1,3 +1,11 @@
 <span class="neo-button-wrapper">
   <ng-content></ng-content>
 </span>
+
+<div
+  neoRipple
+  class="neo-button-ripple"
+  [neoRippleTrigger]="_getHostElement()"
+></div>
+<div class="mat-button-focus-overlay"></div>
+

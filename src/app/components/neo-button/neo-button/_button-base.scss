@@ -47,6 +47,13 @@
     line-height: $icon-size;
   }
 
+  .neo-button-wrapper {
+    z-index: 1;
+
+    // for some reason position should be relative to apply z-index;
+    position: relative;
+  }
+
   .neo-button-wrapper > * {
     vertical-align: middle;
   }

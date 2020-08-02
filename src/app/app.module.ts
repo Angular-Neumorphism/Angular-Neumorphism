@@ -1,7 +1,9 @@
+import { NeoSliderModule } from './components/neo-slider/neo-slider.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MAT_RIPPLE_GLOBAL_OPTIONS } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,9 +46,16 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ElementExampleComponent } from './containers/element-example/element-example.component';
 import { ApiDescriptionComponent } from './containers/api-description/api-description.component';
 
+import {
+  NeoRippleModule,
+  RIPPLE_TYPE,
+  RIPPLE_TYPES,
+} from './components/neo-ripple/neo-ripple.module';
+
 import { NeoFormFieldModule } from '@neomorphism/ng-neomorphism/neo-form-field';
 import { NeoCheckboxModule } from '@neomorphism/ng-neomorphism/neo-checkbox';
-import { NeoButtonModule } from '@neomorphism/ng-neomorphism/neo-button';
+// import { NeoButtonModule } from '@neomorphism/ng-neomorphism/neo-button';
+import { NeoButtonModule } from './components/neo-button/neo-button.module';
 import { NeoDividerModule } from '@neomorphism/ng-neomorphism/neo-divider';
 import { NeoCardModule } from '@neomorphism/ng-neomorphism/neo-card';
 import { NeoInputModule } from '@neomorphism/ng-neomorphism/neo-input';
@@ -58,6 +67,7 @@ import { NeoBadgeModule } from '@neomorphism/ng-neomorphism/neo-badge';
 import { NeoSlideToggleModule } from '@neomorphism/ng-neomorphism/neo-slide-toggle';
 import { NeoDialogModule } from '@neomorphism/ng-neomorphism/neo-dialog';
 import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
+import { NeoSelectModule } from './components/neo-select/neo-select.module';
 
 @NgModule({
   declarations: [
@@ -91,7 +101,7 @@ import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
     SnackbarComponent,
     CodeEmbedComponent,
     ElementExampleComponent,
-    ApiDescriptionComponent,
+    ApiDescriptionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -121,9 +131,18 @@ import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
     NeoSlideToggleModule,
     NeoDialogModule,
     NeoSnackBarModule,
+    NeoSelectModule,
+    NeoSliderModule,
+    NeoRippleModule
   ],
   entryComponents: [DialogComponent],
-  providers: [],
+  providers: [
+    { provide: RIPPLE_TYPE, useValue: RIPPLE_TYPES.NEO },
+    {
+      provide: MAT_RIPPLE_GLOBAL_OPTIONS,
+      useValue: { animation: { enterDuration: 1000 } },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
