@@ -22,6 +22,8 @@ import { AboutComponent } from './containers/about/about.component';
 import { ContactsComponent } from './containers/contacts/contacts.component';
 import { ComponentsComponent } from './containers/components/components.component';
 import { SnackbarComponent } from './containers/snackbar/snackbar.component';
+import { NeoSliderContainerComponent } from './containers/neo-slider-container/neo-slider-container.component';
+import { RippleContainerComponent } from './containers/ripple/ripple-container/ripple-container.component';
 
 const routes: Routes = [
   {
@@ -55,6 +57,8 @@ const routes: Routes = [
           { path: 'progressbar', component: ProgressbarComponent },
           { path: 'chips', component: ChipsComponent },
           { path: 'snackbar', component: SnackbarComponent },
+          { path: 'slider', component: NeoSliderContainerComponent },
+          { path: 'ripple', component: RippleContainerComponent },
         ],
       },
       { path: 'about', component: AboutComponent },

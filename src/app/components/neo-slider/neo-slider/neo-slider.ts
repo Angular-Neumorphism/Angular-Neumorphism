@@ -1,4 +1,4 @@
-import { NeoColors } from './../../../services/neo-colors.service';
+import { NeoColors } from '../neo-colors.service';
 import {
   Component,
   ElementRef,

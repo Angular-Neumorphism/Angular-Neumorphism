@@ -1,0 +1,96 @@
+<div class="title">
+  Neomorph ripple
+</div>
+<code class="module-snippet code width">
+  <pre>
+      import &#123; NeoRippleModule &#125;from '@neomorphism/ng-neomorphism/neo-ripple'    </pre
+  >
+</code>
+<div class="text module-description">
+  <strong>neoRipple</strong> connect user input to screen reactions by using ripples to both indicate the point of touch, and to confirm that touch input was received. For touch or mouse, this occurs at the point of contact.
+  Also you could use matRipple without additional modules import. To provide one type ripple for whole application import RIPPLE_TYPE and RIPPLE_TYPES from NeoRippleModule and use &#123; provide: RIPPLE_TYPE, useValue: RIPPLE_TYPES.NEO &#125; or &#123; provide: RIPPLE_TYPE, useValue: RIPPLE_TYPES.MATERIAL &#125; at app module providers section
+</div>
+
+<app-element-example
+  (snippetShowing)="snippetShowingHandler($event)"
+  class="styled-example"
+>
+  <span title>Basic ripple</span>
+  <neo-tab-group
+    [selectedIndex]="currentSelectedIndex"
+    (selectedIndexChange)="changeHandler($event)"
+    tabsContent
+  >
+    <neo-focused data-label-highlight></neo-focused>
+    <neo-tab class="mat-tab" tabindex="1" label="TS">
+      <app-code-embed>
+        <pre>
+      <span class="code-text">import &#123;Component&#125; from '@angular/core'</span>
+      
+      <span class="code-text">@Component(&#123;</span>
+        <span class="code-text">selector: 'app-ripple',</span>
+        <span class="code-text">templateUrl: './app-ripple.html',</span> 
+        <span class="code-text">styleUrls: ['./app-ripple.scss'],</span>  
+        <span class="code-text">&#125;)</span> 
+      <span class="code-text">export class RippleComponent   &#123;</span>
+      constructor() &#123; &#125;
+      &#125;
+          </pre>
+      </app-code-embed>
+    </neo-tab>
+    <neo-tab class="mat-tab" tabindex="1" label="HTML">
+      <app-code-embed>
+        <pre>
+      <span class="code-text">&lt;div class="card-example"&gt;</span> 
+        <span class="code-text">&lt;div matRipple class="ripple-card-content" &gt;</span> <span class="code-text">&lt;/div&gt;</span> 
+      <span class="code-text">&lt;/div &gt;</span> 
+
+      <span class="code-text">&lt;div class="card-example"&gt;</span> 
+      <span class="code-text">&lt;div neoRipple class="ripple-card-content" &gt;</span> <span class="code-text">&lt;/div&gt;</span> 
+    <span class="code-text">&lt;/div &gt;</span> 
+      </pre>
+      </app-code-embed>
+    </neo-tab>
+
+    <neo-tab class="mat-tab" tabindex="1" label="SCSS">
+      <app-code-embed>
+        <pre>
+      <div class="text">
+        <span class="code-text">
+          .card-example &#123;    
+          position: relative;
+          background-color: #44b3f1;
+          border-radius: 8px;
+          margin: 10px 0;  
+          &#125;</span>
+      </div>
+    </pre>
+      </app-code-embed>
+    </neo-tab>
+  </neo-tab-group>
+
+  <div example class="card">
+    <div class="text">
+      <p><strong>Material ripple</strong></p>
+    </div>
+    <div class="card-example">
+      <div
+        matRipple
+        class="ripple-card-content"
+      ></div>
+    </div>
+    <div class="text">
+      <p><strong>Neomorph ripple</strong></p>
+    </div>
+    <div class="card-example">
+      <div
+        [neoRippleDisabled]="false"
+        [neoRippleRadius]="50"
+        neoRipple
+        class="ripple-card-content"
+      ></div>
+    </div>
+  </div>
+</app-element-example>
+
+<app-api-description [apiDescriprionData]="commonApi"></app-api-description>

@@ -1,4 +1,3 @@
-import { NeoSliderModule } from './components/neo-slider/neo-slider.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -45,17 +44,17 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { ElementExampleComponent } from './containers/element-example/element-example.component';
 import { ApiDescriptionComponent } from './containers/api-description/api-description.component';
+import { RippleContainerComponent } from './containers/ripple/ripple-container/ripple-container.component';
 
 import {
   NeoRippleModule,
   RIPPLE_TYPE,
   RIPPLE_TYPES,
-} from './components/neo-ripple/neo-ripple.module';
+} from '@neomorphism/ng-neomorphism/neo-ripple';
 
 import { NeoFormFieldModule } from '@neomorphism/ng-neomorphism/neo-form-field';
 import { NeoCheckboxModule } from '@neomorphism/ng-neomorphism/neo-checkbox';
-// import { NeoButtonModule } from '@neomorphism/ng-neomorphism/neo-button';
-import { NeoButtonModule } from './components/neo-button/neo-button.module';
+import { NeoButtonModule } from '@neomorphism/ng-neomorphism/neo-button';
 import { NeoDividerModule } from '@neomorphism/ng-neomorphism/neo-divider';
 import { NeoCardModule } from '@neomorphism/ng-neomorphism/neo-card';
 import { NeoInputModule } from '@neomorphism/ng-neomorphism/neo-input';
@@ -68,6 +67,8 @@ import { NeoSlideToggleModule } from '@neomorphism/ng-neomorphism/neo-slide-togg
 import { NeoDialogModule } from '@neomorphism/ng-neomorphism/neo-dialog';
 import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
 import { NeoSelectModule } from './components/neo-select/neo-select.module';
+import { NeoSliderModule } from '@neomorphism/ng-neomorphism/neo-slider';
+import { NeoSliderContainerComponent } from './containers/neo-slider-container/neo-slider-container.component';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,9 @@ import { NeoSelectModule } from './components/neo-select/neo-select.module';
     SnackbarComponent,
     CodeEmbedComponent,
     ElementExampleComponent,
-    ApiDescriptionComponent
+    ApiDescriptionComponent,
+    NeoSliderContainerComponent,
+    RippleContainerComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -133,7 +136,7 @@ import { NeoSelectModule } from './components/neo-select/neo-select.module';
     NeoSnackBarModule,
     NeoSelectModule,
     NeoSliderModule,
-    NeoRippleModule
+    NeoRippleModule,
   ],
   entryComponents: [DialogComponent],
   providers: [

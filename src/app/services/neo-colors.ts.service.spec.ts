@@ -1,7 +1,7 @@
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, async, inject } from '@angular/core/testing';
-import { NeoColors } from './neo-colors.service';
+import { NeoColors } from '../components/neo-slider/neo-colors.service';
 
 describe('Service: NeoColors.ts', () => {
   beforeEach(() => {

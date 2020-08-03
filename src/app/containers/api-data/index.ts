@@ -10,3 +10,5 @@ export * from './neo-badge';
 export * from './neo-slide-toggle';
 export * from './neo-dialog';
 export * from './neo-snack-bar';
+export * from './neo-slider';
+export * from './neo-ripple';

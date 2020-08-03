@@ -18,7 +18,6 @@ $background-hover: mat-color(
           inset -1px -1px 1px mat-color($neo-light-theme-foreground, light-shadow);
     }
 
-    .neo-slider:hover,
     .cdk-focused {
         .neo-slider-track-background {
             background-color: inherit;
@@ -28,7 +27,7 @@ $background-hover: mat-color(
     .neo-slider-min-value:not(.neo-slider-thumb-label-showing) .neo-slider-thumb {
         border: none;
         background: #F3F3F3;
-        box-shadow: -2px -2px 5px #FFFFFF, 2px 2px 5px  mat-color($neo-light-theme-foreground, button-dark-shadow)
+        box-shadow: 2px 2px 5px  mat-color($neo-light-theme-foreground, button-dark-shadow)
     }
 
     .neo-slider 

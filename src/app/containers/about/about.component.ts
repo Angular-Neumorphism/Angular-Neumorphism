@@ -13,13 +13,18 @@ export class AboutComponent implements OnInit {
     'Button module',
     'Card module',
     'Checkbox module',
+    'Dialog module',
     'Divider module',
     'Input module',
     'Form-field module',
     'Progressbar module',
     'Radio-button module',
+    'Ripple module',
+    'Slider module',
+    'Slide-toggle module',
+    'Snack-bar module',
     'Tabs module',
-    'Toolbar module',
+    'Toolbar module'
   ];
 
   ngOnInit(): void {}
