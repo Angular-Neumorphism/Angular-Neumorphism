@@ -1,1 +1,46 @@
-<p>neo-select works!</p>
+<div cdk-overlay-origin
+     class="neo-select-trigger"
+     (click)="toggle()"
+     #origin="cdkOverlayOrigin"
+     #trigger>
+  <div class="neo-select-value" [ngSwitch]="empty" [attr.id]="_valueId">
+    <span class="neo-select-placeholder" *ngSwitchCase="true">{{placeholder || '\u00A0'}}</span>
+    <span class="neo-select-value-text" *ngSwitchCase="false" [ngSwitch]="!!customTrigger">
+      <span *ngSwitchDefault>{{triggerValue || '\u00A0'}}</span>
+      <ng-content select="neo-select-trigger" *ngSwitchCase="true"></ng-content>
+    </span>
+  </div>
+
+  <div class="neo-select-arrow-wrapper"><div class="neo-select-arrow"></div></div>
+</div>
+
+<ng-template
+cdk-connected-overlay
+cdkConnectedOverlayLockPosition
+cdkConnectedOverlayHasBackdrop
+cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+[cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
+[cdkConnectedOverlayOrigin]="origin"
+[cdkConnectedOverlayOpen]="panelOpen"
+[cdkConnectedOverlayPositions]="_positions"
+[cdkConnectedOverlayMinWidth]="_triggerRect?.width!"
+[cdkConnectedOverlayOffsetY]="_offsetY"
+(backdropClick)="close()"
+(attach)="_onAttached()"
+(detach)="close()">
+  <div class="neo-select-panel-wrap" [@transformPanelWrap]>
+    <div
+      #panel
+      [attr.id]="id + '-panel'"
+      class="neo-select-panel {{ _getPanelTheme() }}"
+      [ngClass]="panelClass"
+      [@transformPanel]="multiple ? 'showing-multiple' : 'showing'"
+      (@transformPanel.done)="_panelDoneAnimatingStream.next($event.toState)"
+      [style.transformOrigin]="_transformOrigin"
+      [style.font-size.px]="_triggerFontSize"
+      (keydown)="_handleKeydown($event)"
+    >
+      <ng-content></ng-content>
+    </div>
+  </div>
+</ng-template>

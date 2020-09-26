@@ -1,3 +1,5 @@
+@import "../../core/common/responsive-mixin.scss";
+
 :host {
   height: 100%;
   width: 100%;
@@ -5,7 +7,7 @@
   justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
-  padding: 0 5% 100px 2%;
+  padding: 0 5px 100px 5px;
 }
 
 .wrapper {
@@ -54,3 +56,20 @@
   width: 140px;
 }
 
+@include screen("tablet-landscape") {
+  :host {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 0 10px 100px 5px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}

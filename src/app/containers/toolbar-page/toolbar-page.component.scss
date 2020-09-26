@@ -1,3 +1,5 @@
+@import "../../core/common/responsive-mixin.scss";
+
 :host {
   height: 100%;
   width: 100%;
@@ -5,7 +7,20 @@
   justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
-  padding: 0 5% 100px 2%;
+  padding: 0 5px 100px 5px;
+}
+
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.module-snippet {
+  border-radius: 16px;
+  background-color: #ebebeb;
+  margin: 0 0 20px 0;
 }
 
 .width {
@@ -24,25 +39,6 @@
   padding: 0 15px;
 }
 
-.code {
-  margin: 20px 0;
-  width: 100%;
-  height: 400px;
-  display: flex;
-  flex: 1;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 1.4rem;
-  line-height: 2.2rem;
-  color: #474747;
-  background-color: #f3f3f3;
-  border-radius: 8px;
-  overflow: auto;
-  .code-text {
-    color: #2086ed;
-  }
-}
 
 .text {
   width: 90%;
@@ -226,7 +222,16 @@
   border-radius: 8px;
 }
 
-@media (max-width: 870px) {
+@include screen("tablet-landscape") {
+  :host {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 0 10px 100px 5px;
+  }
   .wrapper {
     flex-direction: column;
     justify-content: center;
@@ -237,5 +242,17 @@
   .tab-group {
     margin: 20px 0;
     width: 98%;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@include screen("tablet-portrait") {
+  .margin-left {
+   display: none;
   }
 }

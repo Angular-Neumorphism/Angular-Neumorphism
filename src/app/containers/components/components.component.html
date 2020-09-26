@@ -1,10 +1,10 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav class="sidenav" #sidenav mode="side" [(opened)]="opened">
+<mat-sidenav-container hasBackdrop='false' class="example-container">
+  <mat-sidenav class="sidenav" #sidenav mode="push" [(opened)]="opened">
     <app-sidenav> </app-sidenav>
   </mat-sidenav>
 
   <mat-sidenav-content class="content">
-    <button neo-icon-button (mousedown)="menuToggle($event)" class="button">
+    <button *ngIf='isMenuToggled' neo-icon-button (mousedown)="menuToggle($event)" class="button">
       <span class="material-icons">
         {{ opened ? "close" : "menu" }}
       </span>

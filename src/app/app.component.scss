@@ -1,3 +1,5 @@
+@import './core/common/responsive-mixin.scss';
+
 :host {
   height: 100%;
   width: 100%;
@@ -7,6 +9,9 @@
 .fake-menu {
   height: 7rem;
   border-radius: 0 0 20px 20px;
+  // @include screen('tablet-landscape'){
+  //   height: 13rem;
+  // }
 }
 
 .scroll-container {
@@ -22,8 +27,3 @@
   width: 100vw;
 }
 
-@media (max-width: 860px) {
-  .fake-menu {
-    height: 13rem;
-  }
-}

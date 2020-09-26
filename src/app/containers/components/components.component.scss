@@ -1,10 +1,12 @@
+@import "../../core/common/responsive-mixin.scss";
+
 .example-container {
   position: absolute;
   top: 60px;
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 2rem;
+  padding: 0;
   background-color: #f3f3f3;
 }
 
@@ -18,13 +20,10 @@
 }
 
 .sidenav {
-  min-width: 17%;
+  min-width: 20%;
   z-index: 1;
 }
 
-.content {
-  padding-left: 30px;
-}
 
 .mat-drawer-side {
   border-right: 0;
@@ -51,6 +50,7 @@
   flex: 1;
   box-sizing: border-box;
   margin: 3rem 0;
+  padding-right: 20%;
 }
 
 .button {
@@ -62,28 +62,13 @@
   left: 0px
 }
 
-// .components-button-wrapper {
 
-//   z-index: 999;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   width: 100%;
-//   height: 4rem;
-//   box-sizing: border-box;
-// }
-
-@media (max-width: 870px) {
-  .button {
-    display: block;
-  }
-  .closed {
-    display: none;
-  }
+@media (max-width: 1000px) {
 
   .example-container {
     top: 130px;
   }
+
 }
 
 @media (max-width: 420px) {
@@ -91,30 +76,11 @@
     margin: 0;
     box-sizing: border-box;
   }
-  // .components-wrapper {
-  //   transition: none;
-  // }
-  // .closed .button {
-  //   left: 1rem;
-  // }
-  // .closed {
-  //   width: 100%;
-  //   transform: none;
-  // }
-  // .components-content-wrapper {
-  //   display: none;
-  // }
-  // .closed .sidenav-menu-wrapper {
-  //   width: 0;
-  //   padding: 0;
-  // }
+}
 
-  // .sidenav-menu-wrapper {
-  //   width: 80%;
-  // }
+@include screen("tablet-landscape") {
 
-  // .closed .components-content-wrapper {
-  //   display: flex;
-  //   width: 100%;
-  // }
+  .components-content-wrapper {
+    padding-right: 0
+  }
 }

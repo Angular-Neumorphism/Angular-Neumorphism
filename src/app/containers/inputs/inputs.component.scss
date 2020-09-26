@@ -1,5 +1,6 @@
 @import "../../components/neo-form-field/neo-form-field/form-field.theme";
 @import "../../components/neo-input/neo-input/input.theme";
+@import "../../core/common/responsive-mixin.scss";
 
 :host {
   height: 100%;
@@ -8,8 +9,7 @@
   justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
-  padding: 0 5% 100px 2%;
-  box-sizing: border-box;
+  padding: 0 5px 100px 5px;
 }
 
 .card {
@@ -179,38 +179,6 @@
   }
 }
 
-// :host {
-//   height: 100%;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: baseline;
-//   flex-direction: column;
-//   width: 100%;
-//   box-sizing: border-box;
-//   padding-bottom: 100px;
-// }
-
-// .wrapper {
-//   width: 100%;
-//   display: flex;
-// }
-
-// .card {
-//   min-height: 370px;
-//   height: fit-content;
-//   margin-right: 20px;
-// }
-
-// .text {
-//   width: 90%;
-//   font-family: Open Sans;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 1.4rem;
-//   line-height: 2.2rem;
-//   color: #474747;
-//   margin: 0 0 4rem 0;
-// }
 
 .form {
   height: 100%;
@@ -251,83 +219,30 @@
   margin: 15px 0;
 }
 
-// //tabs
-
-// .tab-group {
-//   width: 60%;
-//   height: 400px;
-//   overflow-y: auto;
-// }
-
-// :host ::ng-deep .tab-group .mat-ink-bar {
-//   display: none;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-header {
-//   border: none !important;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-header::after {
-//   pointer-events: none;
-//   content: "";
-//   position: absolute;
-//   left: 0;
-//   top: 98%;
-//   width: 100%;
-//   height: 2px;
-//   width: 100%;
-//   background: #f3f3f3;
-//   box-shadow: inset 1px 1px 1px rgba(174, 174, 192, 0.3),
-//     inset -1px -1px 1px rgba(255, 255, 255, 0.5);
-//   border-radius: 2px;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-label-content {
-//   font-family: Open Sans;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 12px;
-//   line-height: 18px;
-//   /* identical to box height, or 150% */
-
-//   text-transform: uppercase;
-
-//   color: #000000;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-label {
-//   margin: 0 0.4rem 0.5rem 0.4rem;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-body-wrapper {
-//   height: 100%;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-label:hover .mat-tab-label-content {
-//   color: #2086ed;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-label:focus .mat-tab-label-content {
-//   color: #2086ed;
-// }
-
-// :host ::ng-deep .tab-group .mat-tab-label:focus {
-//   background: #f3f3f3;
-//   box-shadow: inset 2px 2px 5px rgba(34, 34, 34, 0.4),
-//     inset -2px -2px 5px #ffffff;
-//   border-radius: 8px;
-// }
-
-// @media (max-width: 870px) {
-//   .wrapper {
-//    flex-direction: column;
-//    justify-content: center;
-//   }
-//   .card {
-//     width: 98%;
-//   }
-//   .tab-group{
-//     margin: 20px 0;
-//     width: 98%;
-//   }
-// }
+@include screen("tablet-landscape") {
+  :host {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 0 10px 100px 5px;
+  }
+  .form {
+    flex-direction: column;
+    height: fit-content;
+  }
+  .inputs_wrapper{
+    margin: 0;
+  }
+  .card-content {
+    height: fit-content;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}

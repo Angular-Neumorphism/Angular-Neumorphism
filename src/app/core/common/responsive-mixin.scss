@@ -1,0 +1,17 @@
+@mixin screen($breakpoint) {
+	@if map-has-key($map: $breakpoints, $key: $breakpoint) {
+		@media (max-width: map-get($map: $breakpoints, $key: $breakpoint)) {
+			@content;
+		}
+	}
+	@else {
+		@warn "There is no `#{$breakpoint}` breakpoint.";
+	}
+}
+
+$breakpoints: (
+    'mobile': 420px,
+	'tablet-portrait': 600px,
+	'tablet-landscape': 1000px,
+	'desktop': 1280px
+)

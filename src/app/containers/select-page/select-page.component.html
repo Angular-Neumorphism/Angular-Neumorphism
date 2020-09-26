@@ -1,4 +1,4 @@
-<div class="text">
+<!-- <div class="text">
   Provides the same functionality as a native input type="select"
 </div>
 <neo-card class="card"
@@ -6,17 +6,18 @@
     <neo-card-title>Select</neo-card-title>
   </neo-card-header>
   <neo-card-content class="card-content">
-  <span text>Controls that collect and validate user input.</span>
-  <div class="form-wrapper">
-     <app-neomorph-select [placeholder]="'Favorive Food'">
-    <option option value="0">Option 1</option>
-    <option option value="1">Option 2</option>
-    <option option value="2">Option 3</option>
-    <option option value="3">Option 4</option>
-    <option option value="4">Option 5</option>
-    <option option value="5">Option 6</option>
-  </app-neomorph-select>
-  </div>
- 
+    Select
+    <neo-select></neo-select>
   </neo-card-content>
-</neo-card>
+</neo-card>-->
+<neo-form-field>
+  <neo-label>Favorite food</neo-label>
+
+  <neo-form-field appearance="fill">
+    <neo-select placeholder="hello" [formControl]="toppings">
+      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{
+        topping
+      }}</mat-option>
+    </neo-select>
+  </neo-form-field>
+</neo-form-field>

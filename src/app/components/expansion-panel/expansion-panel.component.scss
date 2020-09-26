@@ -75,7 +75,7 @@
   font-size: 1.4rem;
   line-height: 2.2rem;
   text-transform: capitalize;
-
+  margin-left: 14px;
   color: #474747;
 }
 
@@ -136,10 +136,15 @@
 .shadow {
   transition: all 0.1s linear;
   transform-origin: 60% 50%;
+  transform: rotate(-180deg);
+  -webkit-filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 1px #ffffff);
+  filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(1px 1px 1px #ffffff);
 }
 
 .mat-expanded.panel .shadow {
-  transform: rotate(-180deg);
+  transform: rotate(0deg);
   -webkit-filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))
     drop-shadow(1px 1px 1px #ffffff);
   filter: drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.5))

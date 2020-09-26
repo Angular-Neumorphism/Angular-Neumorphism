@@ -68,7 +68,10 @@ import { NeoDialogModule } from '@neomorphism/ng-neomorphism/neo-dialog';
 import { NeoSnackBarModule } from '@neomorphism/ng-neomorphism/neo-snack-bar';
 import { NeoSelectModule } from './components/neo-select/neo-select.module';
 import { NeoSliderModule } from '@neomorphism/ng-neomorphism/neo-slider';
+
 import { NeoSliderContainerComponent } from './containers/neo-slider-container/neo-slider-container.component';
+
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -137,6 +140,8 @@ import { NeoSliderContainerComponent } from './containers/neo-slider-container/n
     NeoSelectModule,
     NeoSliderModule,
     NeoRippleModule,
+
+    MatSelectModule
   ],
   entryComponents: [DialogComponent],
   providers: [

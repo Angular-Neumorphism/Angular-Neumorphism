@@ -1,6 +1,6 @@
 :host {
   border-radius: 16px;
-  width: 100%;
+  width: calc(100% - 10px)
 }
 .wrapper {
   height: auto;

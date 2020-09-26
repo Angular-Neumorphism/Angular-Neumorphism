@@ -1,3 +1,5 @@
+@import "../../core/common/responsive-mixin.scss";
+
 :host {
   height: 70px;
   width: fit-content;
@@ -126,17 +128,63 @@ button.router-link-active {
   }
 }
 
-@media (max-width: 870px) {
+@include screen("tablet-landscape") {
   .menu {
-    position: relative;
-    display: flex;
     height: auto;
-    flex: 1;
     align-items: center;
     border-radius: 0px 0px 20px 20px;
     padding: 0 20px;
-    background: #2086ed;
     flex-wrap: wrap;
+  }
+  .menu-text {
+    font-size: 12px;
+    margin: 0 4px;
+  }
+
+  .spacer {
+    display: none;
+  }
+  .menu-button {
+    display: flex;
+    flex: 1;
+    margin: 12px;
+  }
+
+  .button-block {
+    order: 4;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .guthub-button {
+    flex: 0;
+    margin-left: 20px;
+    justify-self: end;
+  }
+  .patreon-button {
+    flex: 0;
+    margin-left: auto;
+  }
+  .version {
+    margin-left: 0.3rem;
+  }
+}
+
+
+@include screen("tablet-portrait") {
+  .menu {
+    height: auto;
+    align-items: center;
+    border-radius: 0px 0px 20px 20px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  .menu-text {
+    font-size: 10px;
+    margin: 0 4px;
+  }
+  .github-text {
+    display: none;
   }
   .spacer {
     display: none;
@@ -157,15 +205,27 @@ button.router-link-active {
     flex: 0;
     margin-left: auto;
     justify-self: end;
+    width: 50px;
+  }
+  .patreon-button {
+    flex: 0;
+    margin-left: auto;
+    justify-self: end;
+    width: 115px;
+    padding: 0;
   }
   .version {
-    margin-left: auto;
+    margin-left: 0.3rem;
   }
 }
 
-@media (max-width: 420px) {
+@include screen("mobile") {
+  .menu {
+    padding: 0 10px;
+  }
   .menu-text {
-    margin: 0 10px 0 4px;
+    font-size: 10px;
+    margin: 0 4px;
   }
 
   .github-text {
@@ -173,7 +233,7 @@ button.router-link-active {
   }
 
   .github-logo {
-    margin-left: 1rem;
+    margin-left: 5px;
   }
 
   .menu {
@@ -185,13 +245,10 @@ button.router-link-active {
   .menu-button {
     display: flex;
     flex: 1;
+    font-size: 8px;
+    justify-content: center;
+    align-items: center;
     margin: 10px 0 10px 5px;
-  }
-
-  .button-block {
-    order: 4;
-    width: 100%;
-    justify-content: space-between;
   }
 
   .version {
@@ -200,7 +257,12 @@ button.router-link-active {
 
   .guthub-button {
     flex: 0;
-    margin-left: auto;
     justify-self: end;
+    margin-left: auto;
+   width: auto;
+  }
+
+  .patreon-button {
+    display: none;
   }
 }

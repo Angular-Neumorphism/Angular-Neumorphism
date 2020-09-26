@@ -1,4 +1,5 @@
 @import "~@neomorphism/ng-neomorphism/mixins/neo-tabs.mixins";
+@import "../../core/common/responsive-mixin.scss";
 
 :host {
   height: 100%;
@@ -7,7 +8,7 @@
   justify-content: flex-start;
   align-items: baseline;
   flex-direction: column;
-  padding: 0 5% 100px 2%;
+  padding: 0 5px 100px 5px;
 }
 
 .wrapper {
@@ -107,4 +108,22 @@
   border: 2px solid #ebebeb;
   margin: 10px 0;
   color: rgba(71, 71, 71, 0.6);
+}
+
+@include screen("tablet-landscape") {
+  :host {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 0 10px 100px 5px;
+  }
+  .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
 }
