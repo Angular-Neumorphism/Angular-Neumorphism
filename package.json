@@ -17,7 +17,7 @@
   "dependencies": {
     "@angular/cdk": "^9.2.0",
     "@angular/compiler": "~9.1.0-rc.1",
-    "@angular/core": "~9.1.0-rc.1",
+    "@angular/core": "~11.0.5",
     "@angular/fire": "^6.0.0",
     "@angular/forms": "~9.1.0-rc.1",
     "@angular/material": "^9.2.0",
